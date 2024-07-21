@@ -1,0 +1,361 @@
+* *::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ContenedorT {
+    min-height: 100%;
+    max-height: 100%;
+    width: 100%;
+    /*background-color: black;*/
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+
+.ContenedorTitulo {
+    max-height: fit-content;
+    width: fit-content;
+    margin-top: 20px;
+    align-items: center;
+    justify-items: center;
+    background-color: white;
+}
+
+.textP {
+    color: #146A93;
+}
+
+
+.linea1 {
+    width: 100%;
+    height: 2px;
+    background-color: #146A93;
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+html {
+    font-size: 16px;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.contenidoP {
+    width: min(90%, 1140px);
+    margin: 3rem auto;
+}
+
+.comentario {
+    position: relative;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-right: 40px;
+}
+
+.comentario::before {
+    content: "";
+    background-color: white;
+    position: absolute;
+    min-height: 100%;
+    width: 1px;
+    left: -10px;
+}
+
+.comentario:not(:first-child) {
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+.ComentarioC {
+    padding: 20px;
+    padding-left: 10px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-width: 100%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+
+}
+
+.ComentarioC:hover {
+    transform: translateY(-10px);
+}
+
+.comentarioT {
+    color: #1591CC;
+    font-size: 25px;
+}
+
+.rectanguloP {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: fit-content;
+    padding-bottom: 20px;
+    background-color: #1A89BD;
+}
+
+.comentarioD {
+    padding-top: 30px;
+    font-size: 30px;
+}
+
+.sizedbox {
+    padding-bottom: 20px;
+}
+
+.a {
+    text-decoration: none;
+    color: black;
+}
+
+.InfoC {
+    color: #0D4560;
+    padding: 20px;
+    /* Ajuste del espaciado */
+    font-size: 2rem;
+    /* Cambiado a unidades relativas */
+}
+
+.C1,
+.C2,
+.C3 {
+    color: #000000;
+    padding: 10px 0;
+    padding-left: 20px;
+    font-size: 1.6rem;
+    /* Cambiado a unidades relativas */
+}
+
+.ComentarioDetalle {
+    position: absolute;
+    padding: 100px;
+    padding-left: 10px;
+    padding-top: 10px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    height: 40%;
+    width: 95%;
+    top: 73%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.CT1 {
+    color: #0D4560;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 30px;
+}
+
+.Comentario {
+    color: black;
+    font-size: 30px;
+    padding-top: 50px;
+    padding-left: 40px;
+    text-align: center;
+}
+
+.DetalleProducto {
+    position: absolute;
+    padding: 100px;
+    padding-left: 110px;
+    padding-top: 110px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    width: 23%;
+    height: 45%;
+    top: 25%;
+    right: 15%;
+    transform: translate(50%, -50%);
+}
+
+.PD {
+    color: #0D4560;
+    position: absolute;
+    top: 3%;
+    right: 30%;
+    font-size: 23px;
+}
+
+.zapatoC {
+    position: relative;
+    bottom: 170%;
+    right: 60%;
+}
+
+.DC {
+    font-size: 1.4rem;
+    padding: 10px 0;
+    margin-top: -100%;
+    margin-left: -80%;
+}
+
+.DC1 {
+    font-size: 1.4rem;
+    padding: 10px 0;
+    margin-top: -32%;
+    margin-left: -80%;
+}
+
+.DC2 {
+    font-size: 1.4rem;
+    padding: 10px 0;
+    margin-top: -32%;
+    margin-left: -80%;
+}
+
+.DC3 {
+    font-size: 1.4rem;
+    padding: 10px 0;
+    margin-top: -36%;
+    margin-left: -80%;
+}
+
+
+.contenedor-botones {
+    position: relative;
+    width: 100%;
+}
+
+
+.idComentario {
+    margin: 30px;
+    width: 90%;
+    height: fit-content;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 1rem;
+    /* Centrar horizontalmente */
+}
+
+
+.detalleZapato
+{
+    background-color: #EFEFEF;
+    width: max-content;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+.contenedorInfoCliente{
+    justify-self: center;
+    align-self: center;
+    justify-content: flex-start;
+
+}
+.contedorDataZapato{
+    justify-self: flex-end;
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+.btn1
+{
+    background-color: #0D4560;
+}
+
+.btn .btn-outline-primary{
+    border: none;
+}
+
+@media  (max-width: 1440px){
+    .Comentario{
+        width: 110%;
+        padding-left: 10px;
+    }
+}
+
+@media  (max-width: 1200px){
+    .Comentario{
+        font-size: 27px;
+        width: 105%;
+        right: 5%;
+    }
+}
+
+@media  (max-width: 990px){
+    .Comentario{
+        font-size: 23px;
+        text-align:left;
+        width: 105%;
+        right: 5%;
+    }
+}
+
+@media  (max-width: 990px){
+    .DetalleProducto{
+        position: relative;
+        width: 100%;
+        left: -80px;
+    }
+}
+
+@media  (max-width: 990px){
+    .InfoC{
+        position: relative;
+        font-size: 30px;
+        text-align:left;
+        width: 105%;
+        bottom: 30%;
+        right: 1%;
+    }
+}
+
+@media  (max-width: 990px){
+    .C1{
+        position: relative;
+        font-size: 25px;
+        text-align:left;
+        width: 105%;
+        bottom: 33%;
+        right: 1%;
+    }
+}
+
+@media  (max-width: 990px){
+    .C2{
+        position: relative;
+        font-size: 25px;
+        text-align:left;
+        width: 105%;
+        bottom: 34%;
+        right: 1%;
+    }
+}
+
+@media  (max-width: 990px){
+    .C3{
+        position: relative;
+        font-size: 25px;
+        text-align:left;
+        width: 105%;
+        bottom: 36%;
+        right: 1%;
+    }
+}
+
+@media  (max-width: 990px){
+    .ComentarioDetalle{
+        position: absolute;
+        width: 90%;
+        bottom: -1000px;
+        right: 50%;
+    }
+}

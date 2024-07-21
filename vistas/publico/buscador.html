@@ -1,0 +1,224 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento -->
+<html lang="es"> <!-- Declaración del idioma para el documento -->
+
+<head>
+    <title>Buscador - FeasVerse</title> <!-- Título del documento -->
+    <meta charset="utf-8"> <!-- Metadato de codificación de caracteres -->
+    <meta name="author" content="FeasVerseCompany"> <!-- Metadato del autor -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Metadato de la vista en dispositivos -->
+
+    <!-- IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- Llamada al icono de la página web -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Llamada a las hojas de estilos del framework Bootstrap -->
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- Estilos adicionales de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Iconos de Bootstrap -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet"> <!-- Hojas de estilos de fuentes -->
+    <link href="../../recursos/estilos/publico/plantilla.css" rel="stylesheet">
+    <!-- Hojas de estilos de la plantilla -->
+    <link href="../../recursos/estilos/publico/buscador.css" rel="stylesheet">
+    <!-- Hojas de estilos específicas del buscador -->
+</head>
+
+<body>
+    <main> <!-- Contenido principal del documento -->
+        <!-- Contenedor principal -->
+        <div class="col-lg-12 col-sm-12">
+            <!-- Encabezado del buscador -->
+            <div class="col-lg-12 col-sm-12 d-flex justify-content-center mt-3 flex-row flex-wrap px-5"
+                id="encabezadoBuscador">
+                <!-- Div de la imagen -->
+                <div class="col-lg-2 col-md-4 col-sm-5 col-5 d-flex justify-content-center align-items-center me-4">
+                    <img src="" alt="Foto de la marca" id="imagenMarca">
+                </div>
+                <!-- Div del texto -->
+                <div
+                    class="col-lg-9 col-sm-12 col-12 col-md-7 d-flex flex-row justify-content-center align-items-center ms-5 ms-sm-0">
+                    <div class="col-lg-12 col-sm-12 d-flex flex-column justify-content-center align-items-center">
+                        <h1 class="titillium-web-bold col-lg-12 pb-0 mb-0 mt-sm-3" id="nombreDeLaMarca">
+                            <!-- Título de la marca -->
+                        </h1>
+                        <!--DESCRIPCION DE LA MARCA-->
+                        <p class="titillium-web col-lg-12 col-sm-12 mt-sm-3" id="descripcionDeLaMarca">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Contenedor del buscador y resultados -->
+            <div class="col-log-12 d-flex flex-column justify-content-center align-items-center mt-5 mb-4">
+                <!-- Contenedor de select y buscador -->
+                <div class="col-lg-12 d-flex flex-row flex-md-column flex-sm-column justify-content-center align-items-center"
+                    id="contenedorSelectBuscado">
+                    <!-- Contenedor del buscador input -->
+                    <div class="col-lg-6 col-md-12 col-sm-12 contenedorSelectBuscado">
+                        <div class="col-lg-12 col-sm-12 contenedorSelectBuscado">
+                            <form id="buscador">
+                                <div class="search-container me-5">
+                                    <input class="form-control" type="search" name="search" placeholder="Buscar...."
+                                        id="buscadorInputZapatos" required>
+                                    <span class="search-icon"><i class="bi bi-search"></i></span>
+                                    <span class="clear-icon" onclick="clearSearch()"><i
+                                            class="bi clear-icon"></i></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contenedor del filtro del buscador -->
+                <div class="col-lg-10 d-flex justify-content-center align-items-start mt-4 col-12">
+                    <div class="col-lg-3 d-flex flex-column align-items-center justify-content-center me-5">
+                        <!-- Encabezado de filtros -->
+                        <div
+                            class="col-lg-12 col-md-12 contendorFiltroHeader d-flex flex-row align-items-center pt-2 ps-1">
+                            <div class="col-lg-6">
+                                <div class="col-lg-11 ms-3 d-flex justify-content-md-start">
+                                    <h4 class="titillium-web color-5blue">FILTROS</h4>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 pb-2">
+                                <div
+                                    class="col-lg-12 d-flex justify-content-end justify-content-md-end justify-content-sm-end">
+                                    <div class="col-lg-2 me-3 pe-4">
+                                        <span class="x-icon" onclick=""><i class="bi bi-x"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion de los filtros -->
+                        <div class="accordion col-lg-12 col-md-12 rounded-0 border border-0 bg-color-0gray"
+                            id="accordionDeFiltros">
+                            <!--ACCORDION DE TALLAS-->
+                            <div class="accordion-item col-md-12 rounded-0 border border-0 bg-color-0gray">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button color-5blue titillium-web-bold bg-color-0gray"
+                                        id="accordionTallas" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelTallasAccordionAlwaysOpen" aria-expanded="true"
+                                        aria-controls="panelTallasAccordionAlwaysOpen">
+                                        TALLAS
+                                    </button>
+                                </h2>
+                                <!--COMIENZO DEL CUERPO DEL ACCODION QUE SE ABRE-->
+                                <div id="panelTallasAccordionAlwaysOpen" class="accordion-collapse collapse show">
+                                    <div class="accordion-body">
+                                        <div class="tallasScroll col-lg-12 col-md-12 d-flex justify-content-center">
+                                            <!--CARDS DE TALLAS-->
+                                            <div class="contenedorFilaTallas d-flex flex-row flex-wrap justify-content-center"
+                                                id="contenedorFilaTallas">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--ACCORDION DE COLORES-->
+                            <div class="accordion-item col-md-12 rounded-0 border border-0 bg-color-0gray">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed color-5blue titillium-web-bold bg-color-0gray"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelColorAccordionAlwaysOpen" aria-expanded="false"
+                                        aria-controls="panelColorAccordionAlwaysOpen">
+                                        COLORES
+                                    </button>
+                                </h2>
+                                <div id="panelColorAccordionAlwaysOpen" class="accordion-collapse collapse">
+                                    <!--contedor del SELECT-->
+                                    <div
+                                        class="accordion-body col-lg-12 col-md-12 d-flex justify-content-center align-items-center">
+                                        <div class="col-lg-10 col-md-10">
+                                            <div class="col-lg-12 col-md-12">
+                                                <!--SELECCION DE COLORES-->
+                                                <select class="form-select color-5blue" id="coloresSelect"
+                                                    name="coloresSelect">
+                                                    <option disabled selected value="0">Selecciona un color</option>
+                                                </select required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--ACCORDION DE GENERO-->
+                            <div class="accordion-item rounded-0 col-md-12 border border-0 bg-color-0gray">
+                                <h2 class="accordion-header">
+                                    <button
+                                        class="accordion-button collapsed color-5blue titillium-web-bold bg-color-0gray"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#generosPanelAccordionAlwaysOpen" aria-expanded="false"
+                                        aria-controls="generosPanelAccordionAlwaysOpen">
+                                        GENEROS
+                                    </button>
+                                </h2>
+                                <!--ACCORDION DE BODY CHECK-->
+                                <div id="generosPanelAccordionAlwaysOpen" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <!--DIV DE cHECK para seleccion de los generos de zapato-->
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkboxHombre"
+                                                data-genero="Masculino">
+                                            <label class="form-check-label color-5blue titillium-web-bold"
+                                                for="checkboxHombre">Masculino</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkboxMujer"
+                                                data-genero="Femenino">
+                                            <label class="form-check-label color-5blue titillium-web-bold"
+                                                for="checkboxMujer">Femenino</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkboxUnisex"
+                                                data-genero="Unisex">
+                                            <label class="form-check-label color-5blue titillium-web-bold"
+                                                for="checkboxUnisex">Unisex</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Contenedor del resultado y select col-lg-9 d-flex flex-column col-9-->
+                    <div class="A">
+                        <!--Contenedor del resultado de las cardse2-->
+                        <div class="col-lg-12 col-12">
+                            <div class="row col-lg-12 col-12 justify-content-center mb-4" id="cardsZapato">
+                                <!--CONTENEDOR DE LA CARD DE ZAPATOS-->
+
+                            </div>
+                        </div>
+                        <!--DIV PARA LA NAVEGACION ENTRE RESULTADOS-->
+                        <div class="col-lg-12 d-flex justify-content-center col-12" id="pagination">
+                            <nav aria-label="Page navigation col-lg-10 col-10">
+                                <ul class="pagination col-lg-12 col-12">
+                                    <li class="page-item backNext"><a class="page-link" href="#"
+                                            aria-label="ANTERIOR">&laquo; ANTERIOR</a></li>
+                                    <!-- Aquí se insertan dinámicamente los números de página -->
+                                    <li class="page-item num active"><a class="page-link num2" href="#">1</a></li>
+                                    <li class="page-item num"><a class="page-link num2" href="#">2</a></li>
+                                    <li class="page-item num"><a class="page-link num2" href="#">3</a></li>
+                                    <li class="page-item backNext"><a class="page-link" href="#"
+                                            aria-label="SIGUIENTE">SIGUIENTE &raquo;</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--*Libreria de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *Llamada al controlador del sitio publico -->
+    <script type="text/javascript" src="../../controlador/utilidades/publico.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <!-- *Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controlador/publico/buscador.js"></script>
+</body>
+
+</html>

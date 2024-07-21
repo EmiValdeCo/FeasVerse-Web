@@ -1,0 +1,76 @@
+
+/* Estilos para la imagen del zapato */
+.imgHeader {
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    /* Radio de borde */
+    height: 100%;
+    min-width: 100%;
+    aspect-ratio: 2/1;
+    /* Proporción de aspecto */
+}
+.headerImage {
+    height: 20vh;
+}
+.ribbon {
+    width: 0px;
+    height: 120px;
+    border-left: 50px solid #d9534f;
+    border-right: 50px solid #d9534f;
+    border-bottom: 35px solid transparent;
+    position: absolute;
+    top: -6%;
+}
+.red {
+    left: 12%;
+}
+.red2 {
+    right: 12%;
+}
+.graficContainer{
+    width: 300px;
+}
+
+.mainBody{
+    width: fit-content;
+}
+.mainFooter,#mainContent{
+    width: auto;
+}
+
+/** Clase donde se pondrá la animación */
+#mainContent {
+    animation: transitionIn 1s;
+    /* Animación de entrada con duración de 1 segundo */
+}
+
+#mainContent {
+    animation: transitionIn 1s;
+}
+
+/** Animación de entrada a la página */
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        /* Inicialmente invisible */
+        transform: rotateX(-10deg);
+        /* Rotación en el eje X */
+    }
+
+    to {
+        opacity: 1;
+        /* Se vuelve completamente visible */
+        transform: rotateX(0);
+        /* Sin rotación */
+    }
+}
+
+@media screen and (min-width: 550px) {
+    .graficContainer{
+        width: 550px;
+    }
+    
+}

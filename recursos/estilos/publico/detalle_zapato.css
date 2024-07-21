@@ -1,0 +1,380 @@
+/* Estilos para el contenedor total */
+.contenedorTotal {
+    /* Altura mínima del 50% del viewport height */
+    min-height: 50vh;
+    /* Altura máxima del 100% del viewport height */
+    max-height: 100%;
+    /* Ancho del 100% */
+    width: 100%;
+    /* Flexbox con un factor de flexibilidad de 1 */
+    flex: 1;
+    /* Los elementos hijos se muestran como una fila */
+    display: flex;
+}
+
+/* Estilos para las columnas */
+.columna1,
+.columna2 {
+    /* Altura del 100% */
+    height: 100%;
+}
+
+/* Estilos para el contenedor de imagen */
+.contenedorImg {
+    /* Ancho del 100% */
+    width: 100%;
+    /* Altura del 20% */
+    height: 20%;
+    /* Ocultar el contenido que se desborda */
+    overflow: hidden;
+}
+
+/* Estilos para el contenedor de reseñas */
+.contenedorReseñas {
+    /* Ancho del 100% */
+    width: 100%;
+    /* Altura del 80% */
+    height: 80%;
+    /* Ocultar el contenido que se desborda */
+    overflow: hidden;
+}
+
+/* Estilos para la imagen del zapato */
+.imgShoe {
+    /* Ancho del 100% */
+    width: 100%;
+    /* Altura mínima del 20% */
+    min-height: 20%;
+    /* La imagen se ajusta para cubrir completamente el contenedor */
+    object-fit: cover;
+}
+
+/* Estilos para el título de reseñas */
+.titleReseñas {
+    /* Bordes redondeados en la esquina superior derecha e inferior derecha */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* Altura máxima ajustada al contenido */
+    max-height: fit-content;
+    /* Posicionamiento en la izquierda */
+    left: 0;
+}
+
+/* Estilos para el contenedor de comentarios */
+.contenedorComentarios {
+    /* Ocultar el desplazamiento horizontal */
+    overflow-x: hidden;
+    /* Permitir el desplazamiento vertical */
+    overflow-y: auto;
+    /* Altura mínima y máxima de 550px */
+    min-height: 550px;
+    max-height: 550px;
+}
+
+/* Estilos para cada comentario */
+.comentario {
+    /* Borde inferior de 0px sólido gris */
+    border-bottom: 0px solid gray;
+    /* Bordes redondeados de 15px */
+    border-radius: 15px;
+}
+
+/* Estilos para el cuerpo del comentario */
+.comentarioBody {
+    /* Margen a la izquierda de 55px */
+    margin-left: 55px;
+}
+
+/* Estilos para la descripción del comentario */
+.comentarioDesc {
+    /* Margen a la izquierda de 20px */
+    margin-left: 20px;
+}
+
+/* Estilos para el pie de página del comentario */
+.comentarioFooter {
+    /* Margen a la derecha de 20px */
+    margin-right: 20px;
+}
+
+/* Estilos para las imágenes de las estrellas */
+.estrellasImg {
+    /* Los elementos se muestran como bloque */
+    display: block;
+}
+
+/* Estilos para los números de estrellas */
+.estrellasNum {
+    /* Ocultar los números de estrellas */
+    display: none;
+}
+
+/* Estilos adicionales para la columna 2 */
+.columna2 {
+    /* Añadir un relleno a la izquierda de 45px */
+    padding-left: 45px;
+}
+
+/* Media query para pantallas con un ancho máximo de 380px */
+@media screen and (max-width: 380px) {
+    /* Estilos para el cuerpo del comentario */
+    .comentarioBody {
+        /* Resetear el margen izquierdo a 0px */
+        margin-left: 0px;
+    }
+
+    /* Estilos para la descripción del comentario */
+    .comentarioDesc {
+        /* Resetear el margen izquierdo a 0px */
+        margin-left: 0px;
+    }
+
+    /* Estilos para el pie de página del comentario */
+    .comentarioFooter {
+        /* Resetear el margen derecho a 0px */
+        margin-right: 0px;
+    }
+
+    /* Estilos para las imágenes de las estrellas */
+    .estrellasImg {
+        /* Ocultar las imágenes de las estrellas */
+        display: none;
+    }
+
+    /* Estilos para los números de estrellas */
+    .estrellasNum {
+        /* Mostrar los números de estrellas */
+        display: block;
+    }
+
+    /* Estilos adicionales para la columna 2 */
+    .columna2 {
+        /* Añadir un relleno a la izquierda de 10px */
+        padding-left: 10px;
+    }
+}
+
+/* Media query para pantallas con un ancho máximo de 767px */
+@media screen and (max-width: 767px) {
+    /* Estilos para el contenedor 1 */
+    .contenedor1 {
+        /* Invertir el orden de envoltura flex */
+        flex-wrap: wrap-reverse;
+    }
+}
+
+/* Estilos para el contenedor 1 */
+.contenedor1 {
+    /* Mostrar los elementos en una fila */
+    display: flex;
+    /* Dirección de la fila */
+    flex-direction: row;
+}
+
+/* Estilos para el contenedor de tallas */
+.contenedorTallas {
+    /* Fondo blanco para el contenedor de tallas */
+    background-color: white;
+}
+
+/* Estilos para el contenedor de fila de tallas */
+.contenedorFilaTallas {
+    /* Bordes redondeados de 5px */
+    border-radius: 5px;
+    /* Ancho mínimo y máximo del 100% */
+    min-width: 100%;
+    max-width: 100%;
+    /* Altura mínima ajustada al contenido */
+    min-height: min-content;
+    /* Altura máxima de 320px */
+    max-height: 320px;
+    /* Permitir el desplazamiento vertical */
+    overflow-y: auto;
+    /* Ocultar el desplazamiento horizontal */
+    overflow-x: hidden;
+}
+
+/* Estilos para los cuadrados de talla */
+.cuadradoTalla {
+    /* Fondo blanco para los cuadrados de talla */
+    background-color: white;
+    /* Borde de 1px sólido en #5F5F5F */
+    border: 1px solid #5F5F5F;
+    /* Bordes redondeados de 5px */
+    border-radius: 5px;
+    /* Los elementos se alinearán y justificarán al centro */
+    align-items: center;
+    justify-content: center;
+    /* Los elementos se muestran como una fila */
+    display: flex;
+    /* Margen de 10px en todos los lados */
+    margin: 10px;
+    /* Ancho de 60px */
+    width: 60px;
+    /* Alto de 60px */
+    height: 60px;
+    /* Transición con duración de 0.3s con efecto ease-in-out */
+    transition: .3s ease-in-out;
+}
+
+/* Estilos para los cuadrados de talla cuando se hace hover */
+.cuadradoTalla:hover {
+    /* Traslación de -5px hacia arriba en el eje Y */
+    transform: translateY(-5px);
+    /* Propiedad de transición solo para transformar */
+    transition-property: transform;
+    /* Duración de la transición de 0.5s */
+    transition-duration: 0.5s;
+    /* Función de temporización de la transición: ease */
+    transition-timing-function: ease;
+    /* Retraso de la transición: 0s */
+    transition-delay: 0s;
+    /* Fondo en #EDEDED al hacer hover */
+    background-color: #EDEDED;
+}
+
+/*----------------------------------- CARRUSEL ---------------------------- */
+
+/* Estilos para el contenedor de las tarjetas */
+.containerCards {
+    /* Ancho del 100% */
+    width: 100%;
+    /* Ocultar el desplazamiento vertical */
+    overflow-y: hidden;
+    /* Permitir el desplazamiento horizontal */
+    overflow-x: auto;
+}
+
+/* Media query para pantallas con un ancho máximo de 1100px */
+@media screen and (max-width: 1100px) {
+    /* Estilos para las tarjetas en dispositivos de pantalla pequeña */
+    .cardC {
+        /* Margen de 15px en todos los lados, con un margen izquierdo adicional de 25px */
+        margin: 15px;
+        margin-left: 25px;
+        /* Ancho calculado para ocupar el 80% del espacio disponible (1 tarjeta por fila) */
+        width: calc(80% / 1);
+    }
+
+    /* Estilos para la imagen dentro del contenedor */
+    .image-wrapper2 img {
+        /* La imagen se ajusta al 100% del ancho y altura del contenedor */
+        width: 100%;
+        height: 100%;
+        /* La imagen se ajusta para cubrir completamente el contenedor */
+        object-fit: cover;
+    }
+
+    /* Estilos para el contenedor de la imagen */
+    .image-wrapper2 {
+        /* Altura del 30% del viewport height */
+        height: 30vh;
+        /* Los elementos hijos se centran horizontal y verticalmente */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Fondo con color #ADAFAB */
+        background-color: #ADAFAB;
+    }
+}
+
+/* Media query para pantallas con un ancho mínimo de 1101px */
+@media screen and (min-width: 1101px) {
+    /* Estilos para las tarjetas en dispositivos de pantalla grande */
+    .cardC {
+        /* Margen de 15px en todos los lados, con un margen izquierdo adicional de 25px */
+        margin: 15px;
+        margin-left: 25px;
+        /* Ancho calculado para ocupar el 90% del espacio disponible (3 tarjetas por fila) */
+        width: calc(90% / 3);
+    }
+
+    /* Estilos para la imagen dentro del contenedor */
+    .image-wrapper2 img {
+        /* La imagen se ajusta al 100% del ancho y altura del contenedor */
+        width: 100%;
+        height: 100%;
+        /* La imagen se ajusta para cubrir completamente el contenedor */
+        object-fit: cover;
+    }
+
+    /* Estilos para el contenedor de la imagen */
+    .image-wrapper2 {
+        /* Fondo con color #F6F6F6 */
+        background-color: #F6F6F6;
+        /* Altura del 50% del viewport height */
+        height: 50vh;
+        /* Los elementos hijos se centran horizontal y verticalmente */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Estilos para la línea de imagen */
+.lineImgC {
+    /* Fondo con color #1591CC */
+    background-color: #1591CC;
+    /* Ancho del 100% */
+    width: 100%;
+    /* Altura de 4px */
+    height: 4px;
+}
+
+/*----------------------------------- SWEET ALERT ---------------------------- */
+/* Estilos para el título */
+.title {
+    /* Color del texto en gris oscuro */
+    color: #4A4B4D;
+}
+
+/* Estilos para la línea vertical izquierda */
+.lineaIzq {
+    /* Altura del 100% */
+    height: 100%;
+    /* Ancho de 15px */
+    width: 15px;
+    /* Bordes redondeados de 5px */
+    border-radius: 5px;
+    /* Posicionamiento absoluto */
+    position: absolute;
+    /* Posicionamiento en la parte superior izquierda */
+    top: 0;
+    left: 0;
+}
+
+/* Estilos para el contenedor de imagen */
+.contenedorImg {
+    /* Ancho del 100% */
+    width: 100%;
+    /* Altura ajustada al contenido */
+    height: fit-content;
+}
+
+/* Estilos para la imagen del hombre */
+.imgHombre {
+    /* Ancho del 100% */
+    width: 100%;
+    /* La imagen se ajusta para cubrir completamente el contenedor */
+    object-fit: cover;
+    /* Bordes redondeados de 5px */
+    border-radius: 5px;
+}
+
+/* Estilos para el contenedor del cuerpo */
+.contenedorCuerpo {
+    /* Los elementos hijos se alinean en el centro */
+    align-items: center;
+    /* Altura ajustada al contenido */
+    height: fit-content;
+}
+
+/* Estilos para el segundo botón */
+.btn2 {
+    /* Fondo blanco */
+    background-color: white;
+    /* Texto en negro */
+    color: black;
+    /* Borde de 1px sólido en #EDEDED */
+    border: 1px solid #EDEDED;
+}

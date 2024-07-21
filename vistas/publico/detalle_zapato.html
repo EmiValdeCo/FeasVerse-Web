@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<head>
+    <!-- TODO Título del documento -->
+    <title>Descripción - Zapato</title>
+    <!-- Metadatos de la página web -->
+    <meta charset="utf-8">
+    <meta name="author" content="FeasVerseCompany">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- TODO Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- *Llamada a las hojas de estilos del framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- *Llamada a las hojas de estilos propios de css -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/publico/plantilla.css" rel="stylesheet">
+    <link href="../../recursos/estilos/publico/detalle_zapato.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- *Contenido principal del documento -->
+    <main class="position-relative">
+        <div class="contenedorTotal d-flex flex-column mt-5"> <!-- *Contenedor total -->
+            <div class="contenedor1"> <!-- *Contenedor 1 -->
+                <div class="columna1 d-flex flex-column col-lg-5 col-md-6 col-sm-12 col-12 mb-5"> <!-- *Columna 1 -->
+                    <div class="contenedorImg mb-5" id="Container_Imagen"></div> <!-- *Contenedor de la img -->
+                    <div class="contenedorReseñas d-flex flex-column"> <!-- *Contenedor de las reseñas -->
+                        <div
+                            class="titleReseñas ps-5 pt-2 bg-color-1blue position-absolute col-12 col-sm-12 col-md-5 col-lg-5 ">
+                            <!-- *Contenedor del titulo de reseñas -->
+                            <h2 class="titillium-web-semibold text-white">Reseñas</h2>
+                        </div>
+                        <!-- *Contenedor de los comentarios-->
+                        <div class="contenedorComentarios p-2 d-flex flex-column mt-5 pt-4 col-12 col-sm-12 col-md-11 col-lg-11"
+                            id="Container_Resegnas">
+                            <!-- *Contenedor del comentario-->
+                        </div>
+                    </div>
+                </div>
+                <!--CONTENEDOR DE LA INFO DEL ZAPATO-->
+                <div class="columna2 col-lg-7 col-md-6 col-sm-12" id="c2">
+                    <div class="contenedorTitulo" id="Container_Title"></div>
+                    <!--CONTENEDOR DEL PRECIO Y ESTRALLAS, CALIFIACIOn-->
+                    <div class="contenedorPrecioCalificacion d-flex flex-row justify-content-start mt-4 mb-4"
+                        id="Container_Precio_Calificacion"></div>
+                    <!-- CONTENEDOR DE COLORES DISPONIBLES-->
+                    <div class="contenedorColoresTotal">
+                        <div class="contenedorTitulo">
+                            <h5 class="m-0 p-0 titillium-web-bold clgr2 mb-2">
+                                Colores disponibles
+                            </h5>
+                        </div>
+                        <div id="contenedorColores" class="d-flex flex-row flex-wrap">
+                            <div class="col-lg-4 col-md-6 col-6">
+                                <div class="custom-select">
+                                    <select class="form-select" aria-label="Default select example" id="coloresInput"
+                                        name="coloresInput"> </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CONTENEDOR DE DESCRIPCION DE ZAPATO-->
+                    <div class="contenedorDescripcion mt-5" id="Container_Descripcion"></div>
+                    <!-- CONTENEDOR DE TALLAS-->
+                    <div class="contenedorTallas d-flex flex-column mt-4 shadow p-3">
+                        <div class="tituloTallas">
+                            <h4 class="m-0 p-0 titillium-web-bold">Tallas</h4>
+                        </div>
+                        <div class="tallasScroll mt-2 ms-4">
+                            <!-- CARDS DE LAS TALLAS DISPONIBLES-->
+                            <div class="contenedorFilaTallas d-flex flex-row flex-wrap" id="Container_Tallas"></div>
+                        </div>
+                    </div>
+                    <!-- CONTENEDOR DE BOTON DE AGREGAR CARRITO Y DE LA CANTIDAD FALTANTE-->
+                    <div
+                        class="contenedorBotonCantidad mt-5 pt-4 col-12 d-flex flex-column justify-content-center align-items-center mb-5">
+                        <div class="col-md-6 mb-4">
+                            <label for="cantidadInput" class="form-label ">Cantidad</label>
+                            <input type="number" class="form-control" id="cantidadInput" name="cantidadInput"
+                                placeholder="Ingresa la cantidad a pedir" step="1" pattern="\d+" required >
+                        </div>
+                        <!-- BOTON DE AGREGAR CARRITO-->
+                        <button type="button" id="agregarCarritoBtn" onclick="AddCarrito()"
+                            class="btn btn-primary shadow bg-color-5blue col-lg-7 col-md-12 col-sm-12 col-12">
+                            <h5 class="titillium-web-regular m-0 p-0 pt-2 pb-2">
+                                Agregar al carrito
+                            </h5>
+                        </button>
+                        <div id="Container_Cantidad_Disponible">
+                            <!-- CANTIDAD DISPONIBLE-->
+                            <h6 class="m-0 p-0 titillium-web-regular clgr2 mt-3">
+                            
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CONTENEDOR DEL CARRUSEL DE IMAGES-->
+            <div class="contenedor2 d-flex flex-column mt-5">
+                <!--*Slider de recomendados-->
+                <h1 class="titillium-web-regular text35 mx-5 text-black mt-3 mb-1"> También podría gustarte</h1>
+                <!-- CARDS DE ZAPATOS-->
+                <div class="containerCards d-flex flex-nowrap" id="Container_Podria_Gustarte">
+                </div>
+                <div class="pb-3"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--*Libreria de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *Llamada al controlador del sitio publico -->
+    <script type="text/javascript" src="../../controlador/utilidades/publico.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <!-- *Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controlador/publico/detalle_zapato.js"></script>
+</body>
+
+</html>

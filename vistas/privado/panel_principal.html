@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- TODO Título del documento -->
+    <title>FeasVerse Panel Privado</title>
+    <!-- Metadatos de la página web -->
+    <meta charset="UTF-8">
+    <meta name="author" content="FeasVerseCompany">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- TODO Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- *Llamada a las hojas de estilos del framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- *Llamada a las hojas de estilos propios de css -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/plantilla.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/panel_principal.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Encabezado de la página -->
+    <header id="header"></header>
+    <!-- Contenedor lateral, probablemente para un menú o barra lateral -->
+    <div id="slide"></div>
+    <!-- Área principal de contenido -->
+    <main id="mainContent" class="p-3"> <!--Este es el contenedor que se mete a la plantilla duh-->
+        <div class="mainHeader d-flex flex-wrap justify-content-center gap-5 align-items-center position-relative"
+            class="col-12">
+            <div class="ribbon red d-none d-sm-none d-lg-block"></div>
+            <div class="ribbon red2 d-none d-sm-none d-lg-block"></div>
+            <div class="textWrap col-lg-3 col-11 my-5 my-lg-0">
+                <h2 id="mainTitle" class="titillium-web-semibold m-0 p-0"> </h2>
+                <h6 class="color-gray1 titillium-web-regular m-0 p-0">Apartado exlusivo para visualizar las gráficas
+                    super importantes acerca del funcionamiento de el negocio FeasVerse</h6>
+            </div>
+            <div class="headerImage col-6 col-lg-3 px-3 my-5 d-none d-sm-none d-lg-block">
+                <img src="../../recursos/imagenes/icons/imagePanel.svg" class="imgHeader">
+            </div>
+        </div>
+        <div class="mainBody d-flex flex-wrap gap-5 justify-content-center align-items-center px-lg-0 px-md-0 mx-2">
+            <!-- Se muestra un gráfico de ventas -->
+            <div class="graficContainer shadow">
+                <canvas id="chart1"></canvas>
+            </div>
+            <div class="graficContainer shadow">
+                <canvas id="chart2"></canvas>
+            </div>
+            <div class="graficContainer shadow">
+                <canvas id="chart3"></canvas>
+            </div>
+            <div class="shadow col-lg-6 col-md-6">
+                <canvas id="chart4"></canvas>
+            </div>
+            <div class="shadow col-lg-5 p-3 col-md-5">
+                <canvas id="chart5"></canvas>
+            </div>
+        </div>
+        <div class="mainFooter my-5 p-4 d-flex justify-content-center flex-column align-items-center h-100">
+            <h2 class="titillium-web-semibold m-0 p-0 mb-4"> Gráfica sobre datos previsitivos</h2>
+            <div class="shadow col-lg-9 col-md-9">
+                <canvas id="chart6"></canvas>
+            </div>
+        </div>
+    </main>
+    <!-- Pie de página -->
+    <footer id="footer"></footer>
+    <!-- Importación de la librería Chart.js para generar gráficos -->
+    <script type="text/javascript" src="../../recursos/chart.umd.min.js"></script>
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- *Llamada al controlador general de la aplicación -->
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <!-- *Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controlador/utilidades/privado.js"></script>
+    <!-- *Llamada al controlador del sitio privado -->
+    <script type="text/javascript" src="../../controlador/privado/panel_principal.js"></script>
+</body>
+
+</html>

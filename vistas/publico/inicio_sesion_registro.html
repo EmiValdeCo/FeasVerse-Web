@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- TODO Título del documento -->
+    <title>Inicio de sesion</title>
+    <!-- Metadatos de la página web -->
+    <meta charset="utf-8">
+    <meta name="author" content="FeasVerseCompany">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- TODO Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- *Llamada a las hojas de estilos propios de css -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/publico/plantilla.css" rel="stylesheet">
+    <link href="../../recursos/estilos/publico/iniciosesion.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Pagina de Inicio de Sesion-->
+    <main class="d-flex align-items-center justify-content-center flex-column position-relative mainContent">
+        <!--Contenedor para formulario de Inicio de Sesion-->
+        <div class="ContenedorForm d-none col-lg-5 col-md-7 col-sm-10 col-10
+        " id="login">
+            <!--Contenedor para imagen-->
+            <div class="ContenedorImg d-flex justify-content-center align-items-center mt-5 mb-4" widht=>
+                <img src="../../recursos/imagenes/Group.svg">
+            </div>
+            <!--Contenedor para titulo y texto de bienvenida-->
+            <div
+                class="d-flex flex-column justify-content-center align-items-center col-sm-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2 mb-4">
+                <h3 class="titulo titillium-web-regular">¡Mucho tiempo sin verte!</h3>
+                <h6 class="textoBienvenida titillium-web-regular">Inicia sesión en tu cuenta de FEASVERSE</h6>
+                <h6 class="textoBienvenida titillium-web-regular">ingresando la información solicitada debajo</h6>
+            </div>
+            <!--Formulario de inicio de sesion-->
+            <form class="row g-3" id="loginForm">
+                <!-- Contenedor del Input de correo -->
+                <div class="correo col-11 ms-4">
+                    <div class="d-flex align-items-start">
+                        <img src="../../recursos/imagenes/correo.svg" class="me-1" width="20" alt="candado">
+                        <label for="correo" class="form-label titillium-web-regular">Correo electrónico</label>
+                    </div>
+                    <input id="correo" type="email" name="correo"
+                        class="form-control titillium-web-regular correo bordesAzul"
+                        placeholder="Ingrese su correo electronico" required>
+                </div>
+                <!-- Contenedor del Input de contraseña -->
+                <div class="contraseña col-11 ms-4 mt-0">
+                    <div class="d-flex align-items-start">
+                        <img src="../../recursos/imagenes/candado2.svg" class="me-1" width="20" alt="candado">
+                        <label for="clave" class="form-label titillium-web-regular">Contraseña</label>
+                    </div>
+                    <input id="clave" type="password" name="clave"
+                        class="form-control contraseña titillium-web-regular bordesAzul"
+                        placeholder="Ingrese su contraseña" required>
+                </div>
+                <!-- Texto para llevar al formulario de Recuperacion de Contraseña -->
+                <label class="text-end col-11 mb-2 ms-3" for="olvidaste_clave">
+                    <a class="color-5blue" onclick="showPass1()">¿Olvidaste tu contraseña?</a>
+                </label>
+                <!-- Boton para ingresar -->
+                <div class="d-flex justify-content-center">
+                    <div class="text-center col-sm-12 col-md-6">
+                        <button type="submit" class="btn btn-primary titillium-web-regular botonIngreso"><i
+                                class="bi bi-send"></i>
+                            Ingresar
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <!-- Texto para llevar al formulario de creacion de cuenta -->
+            <label class="text-center col-sm-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2 mb-2" for="olvidaste_clave">
+                ¿No tienes una cuenta?
+                <a class="color-5blue" onclick="Registro()">Registrate GRATIS </a>
+            </label>
+            <label class="text-center col-sm-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2 mb-2" for="olvidaste_clave">
+                <a class="color-5blue" href="index.html">Regresar</a>
+            </label>
+        </div>
+        <!-- *Pagina de Registro -->
+        <div class="ContenedorRegistro d-none position-relative col-lg-6 col-md-8 col-sm-8 col-10
+        " id="registro">
+            <!--Contenedor para imagen-->
+            <div class="ContenedorImg d-flex align-items-start " widht=20px>
+                <img src="../../recursos/imagenes/Group.svg">
+            </div>
+            <!--Contenedor para titulo y texto de bienvenida-->
+            <div class="d-flex flex-column justify-content-start align-items-start texto">
+                <h3 class="titulo titillium-web-regular">Registro</h3>
+                <h6 class="textoBienvenida titillium-web-regular">Ingresa tu información solicitada a continuación para
+                    crear tu cuenta e iniciar</h6>
+            </div>
+            <!--Contenedor para FORMULARIO y texto -->
+
+            <div class="ContenedorForms">
+                <form class="row needs-validation form1" novalidate id="registroForm">
+                    <div class="col-12 ps-5 col-lg-6">
+                        <label for="nombreInput" class="form-label">Nombres</label>
+                        <input type="text" class="form-control bordesAzul" id="nombreInput"
+                            placeholder="Ingresa los nombres" required name="nombreInput">
+                    </div>
+                    <div class="col-12 ps-5 pe-lg-5 col-lg-6">
+                        <label for="apellidosInput" class="form-label ">Apellidos</label>
+                        <input type="text" class="form-control bordesAzul" id="apellidosInput"
+                            placeholder="Ingresa los apellidos" required name="apellidosInput">
+                    </div>
+                    <div class="col-12 ps-5 col-lg-6">
+                        <label for="duiInput" class="form-label ">DUI</label>
+                        <input type="text" class="form-control bordesAzul" id="duiInput" placeholder="Ingresa el dui"
+                            required name="duiInput">
+                    </div>
+                    <div class="col-12 ps-5 pe-lg-5 col-lg-6">
+                        <label for="telefonoInput" class="form-label ">Teléfono</label>
+                        <input type="text" class="form-control bordesAzul" id="telefonoInput"
+                            placeholder="Ingresa el número telefonico" required name="telefonoInput">
+                    </div>
+                    <div class="col-12 ps-5 col-lg-6">
+                        <label for="correoInput" class="form-label ">Correo electrónico</label>
+                        <input type="email" class="form-control bordesAzul" id="correoInput"
+                            placeholder="Ingresa el correo electrónico" required name="correoInput">
+                    </div>
+                    <div class="col-12 ps-5 pe-lg-5 col-lg-6">
+                        <label for="fecharInput" class="form-label">Fecha de Registro</label>
+                        <input type="date" class="form-control bordesAzul" id="fecharInput" name="fecharInput"
+                            placeholder="21/2/2024" required>
+                    </div>
+                    <div class="col-12 ps-5 col-lg-6">
+                        <label for="fechanInput" class="form-label ">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control bordesAzul" id="fechanInput"
+                            placeholder="Ingresa la fecha de nacimiento" required name="fechanInput">
+                    </div>
+                    <div class="col-12 ps-5 pe-lg-5 col-lg-6">
+                        <label for="direccionInput" class="form-label ">Dirección</label>
+                        <input type="text" class="form-control bordesAzul" id="direccionInput"
+                            placeholder="Ingresa la dirección" required name="direccionInput">
+                    </div>
+                    <div class="col-12 ps-5 col-lg-6">
+                        <label for="contraInput" class="form-label ">Contraseña</label>
+                        <input type="password" class="form-control bordesAzul" id="contraInput"
+                            placeholder="Ingresa una contraseña" required name="contraInput">
+                    </div>
+                    <div class="col-12 ps-5 pe-lg-5 col-lg-6">
+                        <label for="direccionCliente" class="form-label">Confirmar contraseña</label>
+                        <input type="password" id="confirmContraseña" maxlength="250" class="form-control bordesAzul"
+                            required name="confirmContraseña">
+                    </div>
+                    <div class="row gx-5 ">
+                        <div class="col">
+                            <div class="text-center d-flex justify-content-center mt-3 ms-5">
+                                <button type="submit" class="btn btn-primary titillium-web-regular botonIngreso"
+                                    onclick=""><i class="bi bi-send"></i>
+                                    Cancelar</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="text-center d-flex justify-content-center mt-3">
+                                <button type="submit" class="btn btn-primary titillium-web-regular botonIngreso1"><i
+                                        class="bi bi-send"></i>
+                                    Registrarse</button>
+                            </div>
+                        </div>
+                    </div>
+                    <label class="text-center col-11 mt-3 mb-2 ms-3" for="olvidaste_clave"> ¿Ya tienes cuenta?
+                        <a class="color-5blue" onclick="showLogIn()">Inicia Sesion</a>
+                    </label>
+                </form>
+            </div>
+        </div>
+        <!-- Formulario para olvidaste contraseña, paso 1 -->
+        <div class="row">
+            <div class="">
+                <!--Comienzo del formulario de restablecer contrarseña -->
+                <form class="d-none bg-light rounded-5 p-3 bordesAzul" id="password1">
+                    <div class="my-3"></div>
+                    <!--Contenedor del texto de restablecimiento de contraseña -->
+                    <div
+                        class="d-flex flex-column justify-content-center align-items-center col-sm-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2 mb-4">
+                        <h3 class="titillium-web-bold ">Restablecer contraseña</h3>
+                        <h6 class="text-center titillium-web-light">Por favor, ingrese tu correo electrónico,
+                            para mandarle un código para el restablecimiento de contraseña</h6>
+                    </div>
+                    <!--Contenedor del input, volver y el boton de siguiente -->
+                    <div class="row g-3">
+                        <div class="col-sm-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2">
+                            <!--Contenedor del Input de correo electronico -->
+                            <div class="d-flex align-items-center">
+                                <img src="../../recursos/imagenes/correo.svg" class="me-1 mb-2" width="15"
+                                    alt="candado">
+                                <label for="correo_electronico_paso1" class="form-label titillium-web-regular">Correo
+                                    electrónico</label>
+                            </div>
+                            <input id="correo_electronico_paso1" type="email" name="correo_electronico_paso1"
+                                class="form-control titillium-web-regular bordesAzul"
+                                placeholder="Ingresa tu correo electrónico" required>
+                        </div>
+                        <!--Boton de mandar código -->
+                        <div class="d-flex justify-content-center">
+                            <div class="text-center col-sm-12 col-md-6">
+                                <button type="submit" class="btn btn-primary titillium-web-regular botonAzul">
+                                    <i class="bi bi-send"></i>
+                                    Mandar código
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mx-5"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Formulario para olvidaste contraseña, paso 2 -->
+        <div class="row 3">
+            <div class="col-12">
+                <!--Comienzo del formulario del paso 2 del restablecimiento de contraseña -->
+                <form class="d-none bg-light rounded-5 p-3 bordesAzul" id="password2"
+                    onsubmit="handleLoginFormSubmission(event)">
+                    <div class="my-3"></div>
+                    <!--Contenedor del texto y indicaciones del codigo de verificacion-->
+                    <div
+                        class="d-flex flex-column justify-content-center align-items-center col-sm-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2 mb-4">
+                        <h3 class="titillium-web-bold">Código de verficación</h3>
+                        <h6 class="text-center titillium-web-light">Por favor, ingrese tu el código para poder
+                            continuar con los pasos para el restablecer su contraseña</h6>
+                    </div>
+                    <!--Contenedor del Input,volver al paso anteriro y el boton-->
+                    <div class="row g-3">
+                        <div class="col-sm-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2">
+                            <!--Contenedor del Input de codigo -->
+                            <div class="d-flex align-items-center">
+                                <img src="../../recursos/imagenes/correo.svg" class="me-1 mb-2" width="15"
+                                    alt="candado">
+                                <label for="codigoPaso2" class="form-label titillium-web-regular">
+                                    Código
+                                </label>
+                            </div>
+                            <input id="codigoPaso2" type="text" name="codigoPaso2"
+                                class="form-control titillium-web-regular bordesAzul" required>
+                        </div>
+                        <!--Contenedor del texto de volver al paso anterior -->
+                        <label class="text-end col-sm-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2 mb-2" for="volver">
+                            <a href="javascript:void(0);" onclick="showPass1()" class="color-5blue">
+                                Volver al paso anterior
+                            </a>
+                        </label>
+                        <!--Contenedor del boton de confirmar codigo -->
+                        <div class="d-flex justify-content-center">
+                            <div class="text-center col-sm-12 col-md-6">
+                                <button type="submit" class="btn btn-primary titillium-web-regular botonAzul"
+                                    href="javascript:void(0);"><i class="bi bi-send"></i>
+                                    Confirmar código</button>
+                            </div>
+                        </div>
+                        <div class="mx-5"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Formulario para olvidaste contraseña, paso 3 -->
+        <div class="row 3">
+            <div class="col-12">
+                <!--Comienzo del formulario del paso tres -->
+                <form class="d-none bg-light rounded-5 p-3 bordesAzul" id="password3">
+                    <div class="my-3"></div>
+                    <!--Contenedor del texto sobre el paso tres de nueva contraseña -->
+                    <div
+                        class="d-flex flex-column justify-content-center align-items-center col-sm-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2 mb-4">
+                        <h3 class="titillium-web-bold text-center">Ingrese su nueva contraseña</h3>
+                        <h6 class="text-center titillium-web-light">Ingrese su nueva contraseña, con los
+                            estandares de seguridad que le proporcionamos</h6>
+                    </div>
+                    <!--Contenedor de los inputs y boton de restabablecer contra -->
+                    <div class="row g-3">
+                        <div class="col-sm-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2">
+                            <!--Contenedor del texto de contra e imagen-->
+                            <div class="d-flex align-items-center">
+                                <img src="../../recursos/imagenes/candado2.svg" class="me-1 mb-2" width="15"
+                                    alt="candado">
+                                <label for="clavePaso3" class="form-label titillium-web-regular">Contraseña</label>
+                            </div>
+                            <!--Contenedor del input de contraseña-->
+                            <input id="clavePaso3" type="password" name="clavePaso3"
+                                class="form-control titillium-web-regular bordesAzul" placeholder="●●●●●●●●●●" required>
+                        </div>
+                        <!--Contenedor del Input de confirmar contraseña -->
+                        <div class="col-sm-12 col-md-6 offset-md-3 col-lg-8 offset-lg-2">
+                            <div class="d-flex align-items-center">
+                                <!--Contenedor del texto de contra e imagen-->
+                                <img src="../../recursos/imagenes/candado2.svg" class="me-1 mb-2" width="15"
+                                    alt="candado">
+                                <label for="clave2_paso3" class="form-label titillium-web-regular">Confirmar
+                                    contraseña</label>
+                            </div>
+                            <!--Contenedor del input de contraseña-->
+                            <input id="clave2_paso3" type="password" name="clave2_paso3"
+                                class="form-control titillium-web-regular bordesAzul" placeholder="●●●●●●●●●●" required>
+                        </div>
+                        <div class="mb-2"></div>
+                        <!--Contenedor donde estan los botones de restablecer contraseña-->
+                        <div class="d-flex justify-content-center">
+                            <div class="text-center col-sm-12 col-md-6">
+                                <button type="submit" class="btn btn-primary titillium-web-regular botonAzul"><i
+                                        class="bi bi-send" href="javascript:void(0);"></i>
+                                    Restablecer contraseña</button>
+                            </div>
+                        </div>
+                        <div class="mx-5"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+    </main>
+    <!-- *Llamada al framework de bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- *Llamada al controlador del sitio público -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *Llamada al controlador del sitio público -->
+    <script type="text/javascript" src="../../controlador/utilidades/publico.js"></script>
+    <script type="text/javascript" src="../../controlador/publico/inicio_sesion.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <script type="text/javascript" src="../../controlador/privado/index.js"></script>
+</body>
+
+</html>

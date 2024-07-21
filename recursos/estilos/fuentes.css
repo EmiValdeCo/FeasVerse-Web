@@ -1,0 +1,187 @@
+.bg-color-1blue {
+    background-color: #1591CC;
+}
+.bg-color-2blue
+{
+    background-color: #1A89BD;
+}
+
+.bg-color-3blue {
+    background-color: #0E72A1;
+}
+
+.bg-color-4blue {
+    background-color: #146A93;
+}
+
+.bg-color-5blue {
+    background-color: #0D4560;
+}
+
+.bg-color-white {
+    background-color: #ffffff;
+}
+
+.bg-color-1gray{
+    background-color: #A7A7A7;
+}
+
+.bg-color-01gray{
+    background-color: #F4F2F2;
+}
+
+.bg-color-0gray{
+    background-color: #E7E7E3;
+}
+
+.bg-color-white{
+    background-color: white;
+}
+
+.color-1blue {
+    color: #1591CC;
+}
+
+.color-3blue {
+    color: #0E72A1;
+}
+
+.color-4blue {
+    color: #146A93;
+}
+
+.color-5blue {
+    color: #0D4560;
+}
+
+.color-gray1 {
+    color: #8F8F8F;
+}
+
+.titillium-web-extralight {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.titillium-web-light {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.titillium-web-regular {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.titillium-web-semibold {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.titillium-web-bold {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.titillium-web-black {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.titillium-web-extralight-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.titillium-web-light-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.titillium-web-regular-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.titillium-web-semibold-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.titillium-web-bold-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.text20 {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.text25 {
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.text15 {
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.text12 {
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.text8 {
+    color: white;
+    font-size: 8px;
+    text-decoration: none;
+}
+
+.text18 {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.text48 {
+    font-size: 48px;
+    text-decoration: none;
+}
+
+.text40 {
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.text35 {
+    font-size: 35px;
+    text-decoration: none;
+}
+
+.clYellowStar2,.clYellowStar {
+    color: #FFC700;
+}
+
+.clgr3 {
+    color: #7D7D7D;
+}
+.clgr2 {
+    color: #5F5F5F;
+}

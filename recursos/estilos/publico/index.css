@@ -1,0 +1,258 @@
+/*-------------------------- CARRUSEL PRINCIPAL ------------------*/
+/* Estilos del carrusel */
+.carrusel {
+    min-height: fit-content;
+    /* Altura mínima ajustada al contenido */
+    max-height: max-content;
+    /* Altura máxima ajustada al contenido */
+    background-color: black;
+    /* Color de fondo negro */
+    display: flex;
+    /* Mostrar como flexbox */
+    align-items: center;
+    /* Centrar verticalmente */
+    justify-content: center;
+    /* Centrar horizontalmente */
+    text-align: center;
+    /* Alinear texto al centro */
+}
+
+.cards-wrapper {
+    align-content: center;
+    justify-content: center;
+}
+
+.fit{
+    width: fit-content;
+}
+
+/* Estilos del carrusel interno */
+.carruselA {
+    min-height: 500px;
+    /* Altura mínima del carrusel */
+    width: 100%;
+    /* Ancho completo */
+    display: flex;
+    /* Mostrar como flexbox */
+    justify-content: start;
+    /* Justificar contenido al inicio */
+}
+
+/* Estilos de las imágenes del carrusel */
+.imgC1 {
+    width: 100%;
+    /* Ancho completo */
+    min-height: 500px;
+    /* Altura mínima de la imagen */
+    object-fit: cover;
+    /* Ajustar la imagen al contenedor */
+    object-position: bottom;
+    /* Posicionar la imagen en la parte inferior */
+}
+
+/*-------------------------- CARRUSEL DE MARCAS ------------------*/
+
+/* Estilos para las imágenes de las marcas */
+.imgMarca {
+    width: 80px;
+    /* Ancho de las imágenes */
+    height: 80px;
+    /* Altura de las imágenes */
+}
+
+/* Estilos para la línea */
+.linea {
+    background-color: #146A93;
+    /* Color de fondo de la línea */
+    width: 100%;
+    /* Ancho completo */
+    height: 3px;
+    /* Altura de la línea */
+}
+
+/* Estilos para los botones del carrusel */
+.a {
+    width: 30px;
+    /* Ancho de los botones */
+}
+
+/* Estilos para el contenedor de las tarjetas */
+.containerCards {
+    overflow-y: hidden;
+    /* Ocultar el desbordamiento vertical */
+    overflow-x: auto;
+    /* Mostrar la barra de desplazamiento horizontal si es necesario */
+}
+
+/* Media query para pantallas grandes */
+@media screen and (min-width: 667px) {
+
+    /* Estilos para el contenedor de las tarjetas en pantallas grandes */
+    .cards-wrapper {
+        display: flex;
+        /* Mostrar las tarjetas en fila */
+    }
+
+    /* Estilos para cada tarjeta en pantallas grandes */
+    .cardM {
+        margin: 25px;
+        /* Margen entre tarjetas */
+        width: calc(100%/5);
+        /* Ancho de cada tarjeta */
+    }
+
+    /* Estilos para el contenedor de imagen en pantallas grandes */
+    .image-wrapper {
+        height: 16vw;
+        /* Altura del contenedor de imagen */
+        display: flex;
+        /* Mostrar como flexbox */
+        align-items: center;
+        /* Centrar verticalmente */
+        justify-content: center;
+        /* Centrar horizontalmente */
+    }
+
+    /* Estilos para las imágenes dentro del contenedor en pantallas grandes */
+    .image-wrapper img {
+        width: 16vw;
+        /* Ancho de la imagen */
+        height: 16vw;
+        /* Altura de la imagen */
+    }
+}
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 666px) {
+
+    /* Ocultar todas las tarjetas excepto la primera en pantallas pequeñas */
+    .cardM{
+        margin: 25px;
+        height: fit-content;
+        width: fit-content;
+    }
+
+    /* Estilos para el contenedor de imagen en pantallas grandes */
+    .image-wrapper {
+        height: 46vw;
+        /* Altura del contenedor de imagen */
+        display: flex;
+        /* Mostrar como flexbox */
+        align-items: center;
+        /* Centrar verticalmente */
+        justify-content: center;
+        /* Centrar horizontalmente */
+    }
+
+    /* Estilos para las imágenes dentro del contenedor en pantallas grandes */
+    .image-wrapper img {
+        width: 46vw;
+        /* Ancho de la imagen */
+        height: 46vw;
+        /* Altura de la imagen */
+    }
+
+    /* Estilos para el contenedor de las tarjetas en pantallas pequeñas */
+    .cards-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* Mostrar las tarjetas en fila */
+    }
+
+}
+
+/*-------------------------- CARRUSEL DE ZAPATOS ------------------*/
+
+/* Estilos para el contenedor de las tarjetas */
+.containerCards {
+    width: 99vw;
+    /* Ancho del contenedor al 99% del ancho de la ventana */
+}
+
+/* Media query para pantallas con un ancho máximo de 1100px */
+@media screen and (max-width: 1100px) {
+
+    /* Estilos para cada tarjeta en pantallas pequeñas */
+    .cardC {
+        margin: 15px;
+        /* Margen exterior */
+        margin-left: 30px;
+        /* Margen izquierdo adicional */
+        width: calc(80%/1);
+        /* Ancho de la tarjeta */
+    }
+
+    /* Estilos para la imagen dentro del contenedor en pantallas pequeñas */
+    .image-wrapper2 img {
+        width: 100%;
+        /* Ancho de la imagen */
+        height: 100%;
+        /* Altura de la imagen */
+        object-fit: cover;
+        /* Ajustar la imagen al contenedor */
+    }
+
+    /* Estilos para el contenedor de la imagen en pantallas pequeñas */
+    .image-wrapper2 {
+        height: 30vh;
+        /* Altura del contenedor de imagen */
+        display: flex;
+        /* Mostrar como flexbox */
+        align-items: center;
+        /* Centrar verticalmente */
+        justify-content: center;
+        /* Centrar horizontalmente */
+        background-color: #ADAFAB;
+        /* Color de fondo */
+    }
+}
+
+/* Media query para pantallas con un ancho mínimo de 1101px */
+@media screen and (min-width: 1101px) {
+
+    /* Estilos para cada tarjeta en pantallas grandes */
+    .cardC {
+        margin: 15px;
+        /* Margen exterior */
+        margin-left: 30px;
+        /* Margen izquierdo adicional */
+        width: calc(90%/3);
+        /* Ancho de la tarjeta */
+    }
+
+    /* Estilos para la imagen dentro del contenedor en pantallas grandes */
+    .image-wrapper2 img {
+        width: 100%;
+        /* Ancho de la imagen */
+        height: 100%;
+        /* Altura de la imagen */
+        object-fit: cover;
+        /* Ajustar la imagen al contenedor */
+    }
+
+    /* Estilos para el contenedor de la imagen en pantallas grandes */
+    .image-wrapper2 {
+        background-color: #F6F6F6;
+        /* Color de fondo */
+        height: 50vh;
+        /* Altura del contenedor de imagen */
+        display: flex;
+        /* Mostrar como flexbox */
+        align-items: center;
+        /* Centrar verticalmente */
+        justify-content: center;
+        /* Centrar horizontalmente */
+    }
+}
+
+/* Estilos para la línea debajo de las imágenes */
+.lineImgC {
+    background-color: #1591CC;
+    /* Color de la línea */
+    width: 100%;
+    /* Ancho completo */
+    height: 4px;
+    /* Altura de la línea */
+}

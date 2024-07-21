@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- TODO Título del documento -->
+    <title></title>
+    <!-- Metadatos de la página web -->
+    <meta charset="UTF-8">
+    <meta name="author" content="FeasVerseCompany">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- TODO Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- *Llamada a las hojas de estilos del framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- *Llamada a las hojas de estilos propios de css -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/plantilla.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/zapatos.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header"></header> <!--* Elemento de Plantilla-->
+    <div id="slide"></div> <!--* Elemento de Plantilla-->
+    <main id="mainContent"> <!--* Elemento de Plantilla-->
+        <div class="ContenedorT"> <!--Contenedor de Todo-->
+            <div class="ContenedorTitulo position-relative"> <!--* Contenedor para titulo y la linea de abajo-->
+                <h3 class="titillium-web-semibold textP"> Zapatos </h3>
+                <div class="linea1"></div>
+            </div>
+            <div class="ContenedorPestaña"> <!--Contenedor para las "Pestañas"-->
+                <ul class="nav nav-tabs ms-5">
+                    <li class="nav-item" role="presentation">
+                        <!--Boton para los zapatos registrados-->
+                        <button class="nav-link boton-cambiar-color" data-bs-toggle="tab" id="registrados-tab"
+                            type="button" data-bs-target="#registrados" role="tab" aria-controls="registrados"
+                            aria-selected="true" onclick="showZapatos(this)">
+                            Registrados
+                        </button>
+                    </li>
+
+                    <li class="nav-item ms-3" role="presentation">
+                        <!--Boton para la pagina de agregar zapato-->
+                        <button class="nav-link boton-cambiar-color" data-bs-toggle="tab" id="agregar-tab" type="button"
+                            data-bs-target="#agregar" role="tab" aria-controls="agregar" aria-selected="true"
+                            onclick="showAgregar(this)">
+                            Agregar
+                        </button>
+                    </li>
+                    <!--Boton para el apartado de colores de zapato-->
+
+                    <li class="nav-item ms-3" role="presentation">
+                        <button class="nav-link boton-cambiar-color" data-bs-toggle="tab" id="colores-tab" type="button"
+                            data-bs-target="#colores" role="tab" aria-controls="colores" aria-selected="true"
+                            onclick="showColores(this)">
+                            Colores
+                        </button>
+                    </li>
+
+                    <li class="nav-item ms-3" role="presentation">
+                        <button class="nav-link boton-cambiar-color" data-bs-toggle="tab" id="tallas-tab" type="button"
+                            data-bs-target="#tallas" role="tab" aria-controls="tallas" aria-selected="true"
+                            onclick="showTallas(this)">
+                            Tallas
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content contenidoP" id="">
+                    <!-- Rectángulo de fondo -->
+                    <div id="container">
+                        <form class="ms-2 col-lg-12 col-md-10 col mt-3 mb-4" id="searchForm">
+                            <div class="row col-lg-12">
+                                <div class="search-container">
+                                    <input type="search" class="form-control" name="buscadorZapato"
+                                        placeholder="Buscar....." id="buscadorZapato">
+
+                                </div>
+                            </div>
+                        </form>
+                        <div id="slider-container" class="p-0 m-0">
+                            <div id="slider"></div>
+
+                        </div>
+                    </div>
+                    <!--Pagina de colores-->
+                    <div class="tab-pane fade show z-3 d-none" role="tabpanel" id="colores"
+                        aria-labelledby="colores-tab">
+                        <div class="ContenedorB1">
+                            <div class="ContenedorTotalA d-flex flex-column align-items-center">
+                                <form id="AddColor">
+                                    <div class="contenedor1 d-flex flex-row align-items-center justify-content-evenly">
+
+                                        <div class="col-lg-6 col-md-6">
+                                            <label for="tallaInputAdd"
+                                                class="form-label text25 m-1 titillium-web-extralight">Nombre
+                                                del
+                                                color</label>
+
+                                            <input type="text" class="form-control" id="nombreColorInput"
+                                                placeholder="Ingresa el color" required name="nombreColorInput">
+                                        </div>
+
+                                        <div class="contenedorBotones1 col-lg-6 ">
+                                            <button
+                                                class="btn btnAdd btn-primary shadow ms-5 text18 titillium-web-regular"
+                                                id="btnAddColor" onclick="addColores()" type="submit">Agregar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="contenedor2 d-flex flex-column align-items-center mt-2">
+                                    <div class="tituloColoresD mt-5">
+                                        <h2 class="titillium-web-extralight text25">Colores disponibles</h2>
+                                    </div>
+                                    <div class="contenedorColoresScroll d-flex flex-column">
+                                        <div class="contenedorFilaTallas d-flex flex-row flex-wrap"
+                                            id="contenedorFilaColores">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Pagina de Tallas-->
+                    <div class="tab-pane fade show z-3 d-none" role="tabpanel" id="tallas" aria-labelledby="tallas-tab">
+                        <div class="ContenedorB1">
+                            <div class="ContenedorTotalA d-flex flex-column align-items-center">
+                                <form class="ms-2 col-lg-12 col-md-10 col mt-3 mb-4" id="searchFormTalla">
+                                    <div class="row col-lg-12">
+                                        <div class="search-container">
+                                            <input type="search" class="form-control" name="buscadorTalla"
+                                                placeholder="Buscar....." id="buscadorTalla">
+                                        </div>
+                                    </div>
+                                </form>
+                                <form id="addTallas">
+                                    <div class="contenedor1 d-flex flex-row align-items-center justify-content-evenly">
+                                        <div class="col-lg-6 col-md-6">
+                                            <label for="tallasInput"
+                                                class="form-label text25 m-1 titillium-web-extralight"> </label>
+                                            <input type="number" class="form-control" id="tallasInput"
+                                                placeholder="Ingresa la talla" required name="tallasInput">
+                                        </div>
+                                        <div class="contenedorBotones1 col-lg-6 ">
+                                            <button
+                                                class="btn btnAdd btn-primary shadow ms-5 text18 titillium-web-regular"
+                                                id="btnAddTalla" onclick="addTallas()" type="submit">Agregar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="contenedor2 d-flex flex-column align-items-center mt-2">
+                                    <div class="tituloColoresD mt-5">
+                                        <h2 class="titillium-web-extralight text25">Tallas disponibles</h2>
+                                    </div>
+                                    <div class="contenedorColoresScroll d-flex flex-column">
+                                        <div class="contenedorFilaColores d-flex flex-row flex-wrap"
+                                            id="contenedorFilaTallas">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Pagina para Agregar Zapato-->
+                    <div class="tab-pane1 fade z-2 position-relative d-none h-100" role="tabpanel" id="agregar"
+                        aria-labelledby="agregar-tab">
+                        <div class="ContenedorTotal z-3 position-relative">
+                            <div class="ContenedorTituloA">
+                                <h1 class="titillium-web-regular text25 text-white mb-3 mt-1">Agregar Zapatos
+                                </h1>
+                            </div>
+                            <div class="ContenedorForm py-5">
+                                <form class="row needs-validation form1" novalidate id="addZapato">
+                                    <div class="col-md-6">
+                                        <label for="nombreInput" class="form-label">Nombre del zapato</label>
+                                        <input type="text" class="form-control" id="nombreZapatoInput"
+                                            placeholder="Ingresa los nombres" required name="nombreZapatoInput">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="marcaInput" class="form-label ">Marca del zapato</label>
+                                        <select class="form-select" aria-label="Marca" id="marcaInput" name="marcaInput"
+                                            required>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="generoInput" class="form-label ">Género del zapato</label>
+                                        <select class="form-select" aria-label="Genero" id="generoInput"
+                                            name="generoInput" required>
+                                            <option value="" disabled selected>Selecciona un género</option>
+                                            <option value="1">UNISEX</option>
+                                            <option value="2">Hombre</option>
+                                            <option value="3">Femenino</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="precioInput" class="form-label ">Precio del zapato</label>
+                                        <input type="number" class="form-control" id="precioInput" min="0"
+                                            pattern="^\d+$-" placeholder="Ingresa el precio del producto" required
+                                            name="precioInput">
+                                    </div>
+                                    <div class="col md-6 mt-3">
+                                        <label for="Descripcion" class="form-label">Descripcion del
+                                            zapato</label>
+                                        <textarea class="form-control" id="descripcionInput"
+                                            placeholder="Ingresa una descripcion para el producto" required rows="3"
+                                            name="descripcionInput"></textarea>
+                                    </div>
+                                    <div class="contenedorBotones1A">
+                                        <button type="button" onclick="returnBack()"
+                                            class="btn btn2 btn-primary ms-2 shadow text18 titillium-web-regular">Cancelar</button>
+                                        <button class="btn btn3 btn-primary shadow ms-4 text18 titillium-web-regular"
+                                            onclick="addDetalles(this)" type="submit">Siguiente</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal para AGREGAR TALLAS -->
+                    <!-- TODO ----------------------------AGREGAR TALLAS MODAL------------------------------------------>
+                    <div class="modal fade" id="dataModalTallas" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <!-- Encabezado del modal -->
+                                <div class="modal-header d-flex justify-content-center align-items-center">
+                                    <h1 class="modal-title fs-5 text-center" id="modalTitle"></h1>
+                                </div>
+                                <!-- Formulario para crear o actualizar un registro -->
+                                <form id="AddTallasF" name="AddTallasF">
+                                    <div class="modal-body row g-3 d-flex flex-column align-items-center">
+                                        <!-- Campo de nombres -->
+                                        <div class="col-sm-6 col-md-6">
+                                            <label for="addTalla" class="form-label">Ingresa la talla</label>
+                                            <select class="form-select" aria-label="Default select example" id="idTalla"
+                                                name="idTalla">
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <label for="addTalla" class="form-label">Ingresa un color</label>
+                                            <select class="form-select" aria-label="Default select example" id="Color"
+                                                name="Color">
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-6 col-md-6 mb-3">
+                                            <label for="addTalla" class="form-label">Ingresa el stock para el
+                                                color</label>
+                                            <input type="number" class="form-control" id="cantidad" name="cantidad"
+                                                min=0>
+                                        </div>
+                                        <div class="lineaS align-items-center mt-4"></div>
+                                        <div class="contenedorImagen d-flex flex-column align-items-center">
+                                            <h1 class="text-white titillium-web-regular text25 text-white mt-3">Foto
+                                                del
+                                                zapato
+                                            </h1>
+                                            <!-- Imagen seleccionada y botón para elegir imagen -->
+                                            <img id="selectedImageF" class="sizeCard borderImage"
+                                                src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                                alt="example placeholder" />
+                                            <div class="btn btn-primary btn-rounded mt-3">
+                                                <label class="form-label text-white m-1" for="customFile2">Seleccionar
+                                                    imagen</label>
+                                                <input type="file" class="form-control d-none" id="customFile2" readonly
+                                                    name="customFile2"
+                                                    onchange="displaySelectedImage(event, 'selectedImageF')" />
+                                            </div>
+                                        </div>
+                                        <!-- Botones en el pie del modal -->
+                                        <div class="modal-footer mt-5 d-flex justify-content-center align-items-center">
+                                            <div class="contenedorBotones3">
+                                                <!-- Botón para cancelar la operación -->
+                                                <button type="button" id="cancelarBtn"
+                                                    class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                                    onclick="botonCancelarTalla()">
+                                                    Cancelar
+                                                </button>
+                                                <!-- Botón para actualizar el registro -->
+                                                <button type="button" id="actualizarBtn"
+                                                    class="btn btn3 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                                    onclick="createRowPT2()">
+                                                    Actualizar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal para Tallas -->
+                    <!-- Modal para COLORES -->
+                    <!-- TODO ----------------------------COLORES MODAL------------------------------------------>
+                    <div class="modal fade" id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <!-- Encabezado del modal -->
+                                <div class="modal-header d-flex justify-content-center align-items-center">
+                                    <h1 class="modal-title fs-5 text-center" id="modalTitle"></h1>
+                                </div>
+                                <!-- Formulario para crear o actualizar un registro -->
+                                <form id="updateFromColor" name="updateFromColor">
+                                    <div class="modal-body row g-3 d-flex flex-column align-items-center">
+                                        <!-- Campo de nombres -->
+                                        <div class="col-sm-6 col-md-6">
+                                            <label for="nombreColor" class="form-label">Nombre del color</label>
+                                            <input id="nombreColor" type="text" name="nombreColor"
+                                                class="form-control editableInput" required readonly>
+                                        </div>
+
+                                        <!-- Botones en el pie del modal -->
+                                        <div class="modal-footer mt-5 d-flex justify-content-center align-items-center">
+                                            <div class="contenedorBotones3">
+                                                <!-- Botón para cancelar la operación -->
+                                                <button type="button" id="cancelarBtnColor"
+                                                    class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                                    onclick="botonCancelarColor()">
+                                                    Cancelar
+                                                </button>
+                                                <!-- Botón para actualizar el registro -->
+                                                <button type="button" id="actualizarBtnColor"
+                                                    class="btn btn3 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                                    onclick="botonActualizarColor()">
+                                                    Actualizar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- TODO ----------------------------TALLAS MODAL------------------------------------------>
+                    <div class="modal fade" id="dataModalTallasD" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <!-- Encabezado del modal -->
+                                <div class="modal-header d-flex justify-content-center align-items-center">
+                                    <h1 class="modal-title fs-5 text-center" id="modalTitle"></h1>
+                                </div>
+                                <!-- Formulario para crear o actualizar un registro -->
+                                <form id="updateFromTalla" name="updateFromTalla">
+                                    <div class="modal-body row g-3 d-flex flex-column align-items-center">
+                                        <!-- Campo de nombres -->
+                                        <div class="col-sm-6 col-md-6">
+                                            <label for="nombreColor" class="form-label">Numero de talla</label>
+                                            <input id="nombreTalla" type="text" name="nombreTalla"
+                                                class="form-control editableInput" required readonly>
+                                        </div>
+                                        <!-- Botones en el pie del modal -->
+                                        <div class="modal-footer mt-5 d-flex justify-content-center align-items-center">
+                                            <div class="contenedorBotones3">
+                                                <!-- Botón para cancelar la operación -->
+                                                <button type="button" id="cancelarBtnColor"
+                                                    class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                                    onclick="botonCancelarTalla()">
+                                                    Cancelar
+                                                </button>
+                                                <!-- Botón para actualizar el registro -->
+                                                <button type="button" id="actualizarBtnTalla"
+                                                    class="btn btn3 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                                    onclick="botonActualizarTalla()">
+                                                    Actualizar
+                                                </button>
+                                                <button type="button" id="eliminarBtnTalla"
+                                                    class="btn btn3 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                                    onclick="eliminarTalla()">
+                                                    Eliminar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal para Tallas -->
+                    <!-- TODO ----------------------------AGREGAR ZAPATO MODAL------------------------------------------>
+                    <!-- <div class="modal fade" id="dataModalAdd" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="modalTitleD" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center align-items-center">
+                                    <h1 class="modal-title fs-5 text-center" id="modalTitleD"></h1>
+                                </div>
+                                <div class="ContenedorTotalD d-flex flex-column flex-wrap">
+                                    <div class="ContenedorForms row flex-wrap">
+                                        <div class="formZapato mt-2 col-md-5">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Tallas</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="formGenero mt-2 me-5 col-md-5">
+                                            <label for="exampleFormControlInput1" class="formMarca">Stock</label>
+                                            <input type="text" class="form-control" id="floatingInputDisabled"
+                                                placeholder="UNISEX">
+                                        </div>
+                                        <div class="formZapato mt-2  col-md-5">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Colores</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="ContenedorFoto d-flex flex-column align-items-center">
+                                            <h3>Foto del zapato</h3>
+                                            <img id="selectedImageD" class="sizeCard1 borderImage"
+                                                src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                                alt="example placeholder" />
+                                            <div class="btn btn-primary btn-rounded mt-3">
+                                                <label class="form-label text-white m-1" for="customFile1">Seleccionar
+                                                    imagen</label>
+                                                <input type="file" class="form-control d-none" id="customFile1" readonly
+                                                    onchange="displaySelectedImage(event, 'selectedImageD')" />
+                                            </div>
+                                            <div class="ContenedorBajo d-flex flex-row">
+                                                <button type="button" id="botonD"
+                                                    class="btn4 btn-primary mt-4 shadow text15 titillium-web-regular"
+                                                    onclick="openTallas()"> Editar Detalles Finales
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer mt-5 d-flex justify-content-center align-items-center">
+                                        <div class="contenedorBotones3">
+                                            <button type="button" id="cancelarBtn3"
+                                                class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                                onclick="botonCancelar3()">
+                                                Cancelar
+                                            </button>
+                                            <button type="button" id="actualizarBtn3"
+                                                class="btn btn3 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                                onclick="botonActualizar3()">
+                                                Actualizar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- TODO ----------------------------AGREGAR ZAPATO MODAL----------------------------------------
+                    <div class="modal fade" id="dataModalAdd" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="modalTitleD" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex justify-content-center align-items-center">
+                                    <h1 class="modal-title fs-5 text-center" id="modalTitleD"></h1>
+                                </div>
+                                <div class="ContenedorTotalD d-flex flex-column flex-wrap">
+                                    <div class="ContenedorForms row flex-wrap">
+                                        <div class="formZapato mt-4 col-md-7">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Tallas</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="formGenero mt-4 col-md-7">
+                                            <label for="exampleFormControlInput1" class="formMarca">Stock</label>
+                                            <input type="text" class="form-control" id="floatingInputDisabled"
+                                                placeholder="UNISEX">
+                                        </div>
+                                        <div class="formZapato mt-4 col-md-7">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Colores</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="ContenedorFoto d-flex flex-column align-items-center">
+                                            <h3>Foto del zapato</h3>
+                                            <img id="selectedImageD" class="sizeCard1 borderImage"
+                                                src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                                alt="example placeholder" />
+                                            <div class="btn btn-primary btn-rounded mt-3">
+                                                <label class="form-label text-white m-1" for="customFile1">Seleccionar
+                                                    imagen</label>
+                                                <input type="file" class="form-control d-none" id="customFile1" readonly
+                                                    onchange="displaySelectedImage(event, 'selectedImageD')" />
+                                            </div>
+                                            <div class="ContenedorBajo d-flex flex-row">
+                                                <button type="button" id="botonD"
+                                                    class="btn4 btn-primary mt-4 shadow text15 titillium-web-regular"
+                                                    onclick="openTallas()"> Editar Detalles Finales
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer mt-5 d-flex justify-content-center align-items-center">
+                                        <div class="contenedorBotones3">
+                                            <button type="button" id="cancelarBtn3"
+                                                class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                                onclick="botonCancelar3()">
+                                                Cancelar
+                                            </button>
+                                            <button type="button" id="actualizarBtn3"
+                                                class="btn btn3 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                                onclick="botonActualizar3()">
+                                                Actualizar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- TODO ----------------------------DETALLES ZAPATO MODAL------------------------------------------>
+                    <div class="modal fade" id="dataModalD" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="modalTitleD" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                                <!-- Encabezado del modal -->
+                                <div class="modal-header d-flex justify-content-center align-items-center">
+                                    <h1 class="modal-title fs-5 text-center" id="modalTitleD"></h1>
+                                </div>
+                                <!-- Formulario para crear o actualizar un registro -->
+                                <div class="ContenedorTotalD d-flex flex-column flex-wrap">
+                                    <div class="contenedorR1">
+                                        <div class="contenedorInputs">
+                                            <form
+                                                class="row needs-validation form1 d-flex justify-content-center col-12 p-0 m-0"
+                                                id="formZapatoEdit">
+                                                <div class="formZapato mt-2 mx-2 col-md-5">
+                                                    <label for="nombreZapatoD" class="formNombre">
+                                                        Nombre del zapato</label>
+                                                    <input type="text" class="form-control" id="nombreZapatoD"
+                                                        name="nombreZapatoD">
+                                                </div>
+                                                <div class="col-md-6 mt-2 mx-2">
+                                                    <label for="generoInput" class="form-label ">Género del
+                                                        zapato</label>
+                                                    <select class="form-select" aria-label="Genero" id="generoZapatoD"
+                                                        name="generoZapatoD" required>
+                                                        <option value="0" disabled selected>Selecciona un género</option>
+                                                        <option value="1">UNISEX</option>
+                                                        <option value="2">Hombre</option>
+                                                        <option value="3">Femenino</option>
+                                                    </select>
+                                                </div>
+                                                <div class="formZapato mt-2 col-md-5 mx-2">
+                                                    <label for="marcaZapatoD" class="formMarca">
+                                                        Marca del zapato</label>
+                                                    <select id="marcaZapatoD" name="marcaZapatoD" class="form-select"
+                                                        required>
+                                                    </select>
+                                                </div>
+                                                <div class="formGenero mt-2 mx-2 col-md-5">
+                                                    <label for="precioZapatoD" class="formMarca">
+                                                        Precio del zapato </label>
+                                                    <input type="text" class="form-control" id="precioZapatoD"
+                                                        name="precioZapatoD">
+                                                </div>
+                                                <div class="formZapato mt-2 mx-2 mb-4 col-md-10">
+                                                    <label for="descripcionZapatoD" class="formMarca">
+                                                        Descripcion del zapato</label>
+                                                    <textarea class="form-control" id="descripcionZapatoD"
+                                                        name="descripcionZapatoD"> </textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="ContenedorFoto d-flex flex-column align-items-center">
+                                            <h3>Foto del zapato</h3>
+                                            <img id="selectedImageDetalleZapato" class="sizeCard1 borderImage"
+                                                alt="example placeholder" />
+                                            <div class="btn btn-primary btn-rounded mt-3">
+                                                <label class="form-label text-white m-1" for="customFile1">Seleccionar
+                                                    imagen</label>
+                                                <input type="file" class="form-control d-none" id="customFile1" name="customFile1"
+                                                    onchange="displaySelectedImage(event, 'selectedImageDetalleZapato')" />
+                                            </div>
+                                        </div>
+                                        <button class="Rojo" onclick="openAddDetalleModal()"> <img class="note"
+                                            src="../../recursos/imagenes/icons/gmlIcon1.svg" width="35px"
+                                            height="35px">
+                                        </button>
+                                    </div>
+                                    <div class="contenedorR2">
+                                        <table class="tablaTallas mt-3">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID/N° Detalles</th>
+                                                    <th>Talla</th>
+                                                    <th>Cantidad actual</th>
+                                                    <th>Color actual</th>
+                                                    <th>Ingreso de Datos</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="bodyDetalleZapato">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Botones en el pie del modal -->
+                                <div class="modal-footer mt-5 d-flex justify-content-center align-items-center">
+                                    <div class="contenedorBotones3">
+                                        <!-- Botón para cancelar la operación -->
+                                        <button type="button" id="cancelarBtn3"
+                                            class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                            onclick="botonCancelar3()">
+                                            Regresar
+                                        </button>
+                                        <!-- Botón para actualizar el registro -->
+                                        <button type="button" id="actualizarBtn3"
+                                            class="btn btn3 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                            onclick="botonActualizar3()">
+                                            Actualizar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TODO ----------------------------AGREGAR TALLAS MODAL------------------------------------------>
+        <div class="modal fade" id="addNewDetalleWOF_MODAL" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Encabezado del modal -->
+                <div class="modal-header d-flex justify-content-center align-items-center">
+                    <h1 class="modal-title fs-5 text-center" id="modalTitle"></h1>
+                </div>
+                <!-- Formulario para crear o actualizar un registro -->
+                <form id="addNewDetalleWOF" name="addNewDetalleWOF">
+                    <div class="modal-body row g-3 d-flex flex-column align-items-center">
+                        <!-- Campo de nombres -->
+                        <div class="col-sm-6 col-md-6">
+                            <label for="addTalla_new" class="form-label">Ingresa la talla</label>
+                            <select class="form-select" aria-label="Default select example" id="addTalla_new"
+                                name="addTalla_new">
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <label for="Color_new" class="form-label">Ingresa un color</label>
+                            <select class="form-select" aria-label="Default select example" id="Color_new"
+                                name="Color_new">
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-md-6 mb-3">
+                            <label for="cantidad_new" class="form-label">Ingresa el stock para el
+                                color</label>
+                            <input type="number" class="form-control" id="cantidad_new" name="cantidad_new"
+                                min=0>
+                        </div>
+                        <div class="lineaS align-items-center mt-4"></div>
+                        <!-- Botones en el pie del modal -->
+                        <div class="modal-footer mt-5 d-flex justify-content-center align-items-center">
+                            <div class="contenedorBotones3">
+                                <!-- Botón para cancelar la operación -->
+                                <button type="button" id="cancelarBtn"
+                                    class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                    onclick="hideAddDetalleModal()">
+                                    Cancelar
+                                </button>
+                                <!-- Botón para actualizar el registro -->
+                                <button type="button" id="actualizarBtn"
+                                    class="btn btn3 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                    onclick="addDetalleZapato()">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </main>
+    <footer id="footer"></footer>
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--*Libreria de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- *Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controlador/utilidades/privado.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <script type="text/javascript" src="../../controlador/privado/zapatos.js"></script>
+</body>
+
+</html>

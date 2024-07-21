@@ -1,0 +1,160 @@
+/* Estilos para el contenedor del encabezado */
+.containerHeader {
+    /* Ancho del 100% */
+    width: 100%;
+    /* Altura mínima de 450px */
+    min-height: 450px;
+}
+
+/* Estilos para la línea horizontal en la parte inferior */
+.lineab1 {
+    /* Posicionamiento absoluto en la parte inferior */
+    position: absolute;
+    bottom: 0;
+    /* Altura de 2px */
+    height: 2px;
+    /* Color de fondo blanco */
+    background-color: white;
+}
+
+/* Estilos para el triángulo */
+.triangulo {
+    /* Ancho y altura del triángulo */
+    width: 0;
+    height: 0;
+    /* Borde izquierdo del triángulo */
+    border-left: 50vw solid #1A89BD;
+    /* Borde superior e inferior del triángulo */
+    border-top: 0;
+    border-bottom: 100vh solid transparent;
+}
+
+/* Estilos para el título */
+.titleWho {
+    /* Texto centrado */
+    text-align: center;
+}
+
+/* Estilos para el contenedor de Quiénes Somos */
+.containerHoWeAre {
+    /* Fondo blanco */
+    background-color: white;
+    /* Borde superior e inferior de color gris de 3px */
+    border-top: gray 3px solid;
+    border-bottom: gray 3px solid;
+}
+
+/* Estilos para el contenedor de los miembros */
+.containerMembers {
+    /* Altura ajustada al contenido */
+    height: fit-content;
+}
+
+/* Estilos para las imágenes de los usuarios */
+.imguser {
+    /* Ancho máximo de 200px */
+    max-width: 200px;
+    /* Altura máxima de 200px */
+    max-height: 200px;
+    /* La imagen se ajusta para cubrir el contenedor */
+    object-fit: cover;
+    /* Posición de la imagen en la parte inferior */
+    object-position: bottom;
+}
+
+/* Estilos para los contenedores de Misión, Visión, Valores y Comienzo */
+.containerMision,
+.containerVision,
+.containerValores,
+.containerComienzo {
+    /* Borde de 2px sólido gris */
+    border: 2px solid gray;
+    /* Altura ajustada al contenido */
+    flex: 1;
+    /* Relleno interior de 30px */
+    padding: 30px;
+}
+
+/* Estilos específicos para pantallas con un ancho mínimo de 768px */
+@media screen and (min-width: 763px) {
+    /* Estilos para el contenedor de Misión */
+    .containerMision {
+        /* Borde inferior derecho redondeado */
+        border-bottom-right-radius: 300px;
+    }
+
+    /* Estilos para el contenedor de Visión */
+    .containerVision {
+        /* Borde inferior izquierdo redondeado */
+        border-bottom-left-radius: 300px;
+    }
+
+    /* Estilos para el contenedor de Valores */
+    .containerValores {
+        /* Borde superior derecho redondeado */
+        border-top-right-radius: 300px;
+    }
+
+    /* Estilos para el contenedor de Comienzo */
+    .containerComienzo {
+        /* Borde superior izquierdo redondeado */
+        border-top-left-radius: 300px;
+    }
+
+    /* Estilos para el contenedor de texto */
+    .cntnrtxt {
+        /* Relleno interior de 60px */
+        padding: 60px;
+        /* Relleno derecho adicional de 70px */
+        padding-right: 70px;
+    }
+}
+
+/* Estilos específicos para pantallas con un ancho máximo de 767px */
+@media screen and (max-width: 767px) {
+    /* Estilos para el contenedor de Misión */
+    .containerMision {
+        /* Relleno superior de 30px */
+        padding-top: 30px;
+    }
+
+    /* Estilos para los contenedores de Visión, Valores y Comienzo */
+    .containerVision,
+    .containerValores,
+    .containerComienzo {
+        /* Margen superior de 35px */
+        margin-top: 35px;
+        /* Relleno superior de 30px */
+        padding-top: 30px;
+    }
+
+    /* Estilos para el elemento con la clase .r2 */
+    .r2 {
+        /* Margen superior de 0px */
+        margin-top: 0px;
+    }
+}
+
+/* Estilos para la línea vertical izquierda y derecha */
+.lineah1,
+.lineah2 {
+    /* Ancho de 3px */
+    width: 3px;
+    /* Altura del 100% */
+    height: 100%;
+    /* Color de fondo blanco */
+    background-color: white;
+    /* Posicionamiento absoluto en la parte superior izquierda */
+    position: absolute;
+    top: 0;
+    left: -5%;
+}
+
+/* Estilos específicos para pantallas con un ancho máximo de 991px */
+@media screen and (max-width: 991px) {
+    /* Estilos para la línea vertical derecha */
+    .lineah2 {
+        /* Ancho de 0px (oculto) */
+        width: 0px;
+    }
+}

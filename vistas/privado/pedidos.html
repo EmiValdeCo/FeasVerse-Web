@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- TODO Título del documento -->
+    <title></title>
+    <!-- Metadatos de la página web -->
+    <meta charset="UTF-8">
+    <meta name="author" content="FeasVerseCompany">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- TODO Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- *Llamada a las hojas de estilos del framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- *Llamada a las hojas de estilos propios de css -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/plantilla.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/pedidos.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header"></header>
+    <div id="slide"></div>
+    <main id="mainContent">
+        <!--Contenedor principal-->
+        <div class="ContenedorT">
+            <!--Contenedor del titulo y linea-->
+            <div class="ContenedorTitulo position-relative">
+                <!--titulo y linea-->
+                <h3 class="titillium-web-semibold textP"> Pedidos </h3>
+                <div class="linea1"></div>
+            </div>
+            <!--Contenedor de pestaña-->
+            <div class="ContenedorPestaña">
+                <ul class="nav nav-tabs ms-5">
+                    <!--Pedidos-->
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link boton-cambiar-color" data-bs-toggle="tab" id="pedidos-tab" type="button"
+                            data-bs-target="#pedidos" role="tab" aria-controls="pedidos" aria-selected="true"
+                            onclick="ShowPedidos(this)">
+                            Pedidos
+                        </button>
+                    </li>
+                    <!--Repartidor-->
+                    <li class="nav-item ms-3" role="presentation">
+                        <button class="nav-link boton-cambiar-color" data-bs-toggle="tab" id="repartidor-tab"
+                            type="button" data-bs-target="#repartidor" role="tab" aria-controls="repartidor"
+                            aria-selected="true" onclick="ShowRepartidor(this)">
+                            Repartidor
+                        </button>
+                    </li>
+                </ul>
+                <!--Contenedor del contenido del tab-->
+                <div class="tab-content contenidoP position-relative" id="">
+                    <div class="rectangle z-0"></div>
+                    <!-- TODO REPARTIDOR-->
+                    <!--Contenedor de repartidor-->
+                    <div class="tab-pane fade show z-3 d-none" role="tabpanel" id="repartidor"
+                        aria-labelledby="repartidor-tab">
+                        <div class="container mt-5">
+                            <div class="row g-3">
+                                <div class="col-lg-12">
+                                    <!-- Formulario de búsqueda -->
+                                    <form class="ms-2 col-lg-12 col-md-10 col mt-3 mb-4" id="searchForm">
+                                        <div class="row col-lg-12">
+                                            <div class="search-container">
+                                                <input type="search" class="form-control" name="search"
+                                                    placeholder="Buscar....." id="buscadorInputRepartidor">
+                                                <span class="search-icon"><i class="bi bi-search"></i></span>
+                                                <span class="clear-icon" onclick="clearSearch()"><i
+                                                        class="bi clear-icon"></i></span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!--Contenedor de cards-->
+                                    <div class="container" id="contenedorDeLasCardsDeRepatidor">
+                                        <!-- Detalles del CARDS de Pedido -->
+                                        <!--CARD 1 de pedido-->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- TODO PEDIDO -->
+                    <!--Contenedor de pedido-->
+                    <div class="tab-pane1 fade z-2 position-relative d-none" role="tabpanel" id="pedidos"
+                        aria-labelledby="pedidos-tab">
+                        <div class="container mt-5">
+                            <div class="row g-3">
+                                <div class="col-lg-12 contenedorTotal">
+                                    <!-- Formulario de búsqueda -->
+                                    <form class="ms-2 col-lg-10 col-md-10 col mt-3 mb-4" id="searchFormPedido">
+                                        <div class="row col-lg-12">
+                                            <div class="col-lg-10 col-md-8">
+                                                <div class="search-container me-5">
+                                                    <input type="search" class="form-control" name="search"
+                                                        placeholder="Buscar" id="buscadorInputPedidos">
+                                                    <span class="search-icon"><i class="bi bi-search"></i></span>
+                                                    <span class="clear-icon" onclick="clearSearch()"><i
+                                                            class="bi clear-icon"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-4">
+                                                <div class="custom-select">
+                                                    <select class="form-select" aria-label="Default select example"
+                                                        id="selectPedido">
+                                                        <option selected>Todos</option>
+                                                        <option value="1">Entregado</option>
+                                                        <option value="2">En camino</option>
+                                                        <option value="3">Pendiente</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <h1 class="d-flex justify-content-center text-white mb-4">Generar reportes</h1>
+                                    <div class="d-flex justify-content-center">
+
+                                        <button type="button" id="btnSeeReportPendiente"
+                                            class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                            onclick="openReportTodo()">
+                                            Todos los pedidos
+                                        </button>
+                                        <button type="button" id="btnSeeReportPendiente"
+                                            class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                            onclick="openReportPendiente()">
+                                            Pedidos pendientes
+                                        </button>
+                                        <button type="button" id="btnSeeReportPendiente"
+                                            class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                            onclick="openReportEnCamino()">
+                                            Pedidos en camino
+                                        </button>
+
+                                        <button type="button" id="btnSeeReportPendiente"
+                                            class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                            onclick="openReportEntregados()">
+                                            Pedidos entregados
+                                        </button>
+
+                                    </div>
+                                    <!--Contenedor de cards-->
+                                    <div class="container" id="contenedorDeLasCardsDePedido">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--*Libreria de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controlador/utilidades/privado.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <script type="text/javascript" src="../../controlador/privado/pedidos.js"></script>
+</body>
+
+</html>

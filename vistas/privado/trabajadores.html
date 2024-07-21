@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- TODO Título del documento -->
+    <title>FeasVerse Trabajadores</title>
+    <!-- Metadatos de la página web -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- TODO Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- *Llamada a las hojas de estilos del framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- *Llamada a las hojas de estilos propios de css -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/plantilla.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/trabajadores.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header"></header>
+    <div id="slide"></div>
+    <main id="mainContent">
+
+        <div class="ContenedorT gap-3">
+            <div class="ContenedorTitulo position-relative">
+                <h3 class="titillium-web-semibold textP"> Trabajadores </h3>
+                <div class="linea1"></div>
+            </div>
+
+            <div class="ContenedorPestaña">
+                <ul class="nav nav-tabs ms-lg-5 ms-md-4 ms-0">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link boton-cambiar-color" data-bs-toggle="tab" id="tabla-tab" type="button"
+                            data-bs-target="#tabla" role="tab" aria-controls="tabla" aria-selected="true"
+                            onclick="showTableDiv(this)">
+                            Tabla
+                        </button>
+                    </li>
+
+                    <li class="nav-item ms-3" role="presentation">
+                        <button class="nav-link boton-cambiar-color" data-bs-toggle="tab" id="agregar-tab" type="button"
+                            data-bs-target="#agregar" role="tab" aria-controls="agregar" aria-selected="true"
+                            onclick="showAddDiv(this)">
+                            Agregar
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content contenidoP position-relative" id="">
+                    <div class="rectangle z-0"></div>
+                    <div class="tab-pane fade show z-3 d-none" role="tabpanel" id="agregar"
+                        aria-labelledby="agregar-tab">
+                        <div class="ContenedorTotal z-3 position-relative pb-5 pb-lg-0 pb-md-3">
+                            <div class="ContenedorTituloA">
+                                <h1 class="titillium-web-regular text25 text-white mb-3 mt-1">Agregar Trabajador</h1>
+                            </div>
+                            <div class="ContenedorForm">
+                                <form class="row needs-validation form1" novalidate id="AddForm">
+                                    <div class="col-md-6">
+                                        <label for="nombreInput" class="form-label">Nombres</label>
+                                        <input type="text" class="form-control" id="nombreInput" name="nombreInput"
+                                            placeholder="Ingresa los nombres" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="apellidosInput" class="form-label ">Apellidos</label>
+                                        <input type="text" class="form-control" id="apellidosInput"
+                                            name="apellidosInput" placeholder="Ingresa los apellidos" required>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="duiInput" class="form-label ">DUI</label>
+                                        <input type="text" class="form-control" id="duiInput" name="duiInput"
+                                            placeholder="Ingresa el dui" required>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="telefonoInput" class="form-label ">Teléfono</label>
+                                        <input type="text" class="form-control" id="telefonoInput" name="telefonoInput"
+                                            placeholder="Ingresa el número telefonico" required>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="correoInput" class="form-label ">Correo electrónico</label>
+                                        <input type="email" class="form-control" id="correoInput" name="correoInput"
+                                            placeholder="Ingresa el correo electronico" required>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="fechanInput" class="form-label ">Fecha de Nacimiento</label>
+                                        <input type="date" class="form-control" id="fechanInput" name="fechanInput"
+                                            placeholder="Ingresa la fecha de nacimiento" required>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="fecharInput" class="form-label">Fecha de Registro</label>
+                                        <input type="date" class="form-control" id="fecharInput" name="fecharInput"
+                                            placeholder="21/2/2024" required>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="estadoInput" class="form-label">Estado del trabajador</label>
+                                        <select id="estadoInput" name="estadoInput" class="form-select" required>
+                                            <option selected>Seleccione una opción</option>
+                                            <option value="1">Activo</option>
+                                            <option value="2">Desactivo</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="nivelInput" class="form-label">Nivel de usuario</label>
+                                        <select id="nivelInput" name="nivelInput" class="form-select" required>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mt-3">
+                                        <label for="contraInput" class="form-label ">Contraseña</label>
+                                        <input type="password" class="form-control" id="contraInput" name="contraInput"
+                                            placeholder="Ingresa la contraseña" required>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="contenedorBotones2 d-flex flex-wrap">
+                                <button type="button" onclick="returnBack()"
+                                    class="btn btn2 btn-primary mx-3 my-2 shadow text18 titillium-web-regular">Cancelar</button>
+                                <button class="btn btn3 btn-primary shadow my-2 text18 titillium-web-regular"
+                                    onclick="addSave()">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane1 fade z-2 position-relative d-none pt-5 d-flex flex-column align-items-center"
+                        role="tabpanel" id="tabla" aria-labelledby="tabla-tab">
+
+                        <div class="search-container col-11">
+                            <input type="search" class="form-control" name="search" placeholder="Buscar....."
+                                id="inputBusqueda" required>
+                            <span class="search-icon"><i class="bi bi-search"></i></span>
+                            <span class="clear-icon" onclick="clearSearch()"><i class="bi clear-icon"></i></span>
+                        </div>
+
+                        <div class="Contenedor-tabla z-3 mt-4 table-responsive col-11">
+                            <table class="table table-hover table-bordered" id="tablaTrabajadores">
+                                <thead class="thead">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Apellidos</th>
+                                        <th scope="col">Nombres</th>
+                                        <th scope="col">Dui</th>
+                                        <th scope="col">Teléfono</th>
+                                        <th scope="col">Correo</th>
+                                        <th scope="col">Nivel</th>
+                                        <th scope="col">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody"></tbody>
+                            </table>
+                        </div>
+                        <div
+                            class="contenedorBotones col-11 z-0 d-flex flex-wrap justify-content-center justify-content-lg-start justify-content-md-start">
+                            <button type="button" class="btn btn3 btn-primary mx-4 my-2 shadow text18 titillium-web-regular" id="btnBloq" onclick="botonBloquear()"
+                            >Bloquear
+                            </button>
+                            <p id="textoInfo" class="text-white titillium-web-regular text-center d-flex justify-content-center align-items-center m-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="modalTitle" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <!-- Encabezado del modal -->
+                        <div class="modal-header d-flex justify-content-center">
+                            <h1 class="modal-title fs-5 text-center" id="modalTitle"></h1>
+                        </div>
+                        <!-- Formulario para crear o actualizar un registro -->
+                        <form id="updateFrom" name="updateFrom">
+                            <!-- Cuerpo del modal con un formulario en formato de rejilla (grid) -->
+                            <div class="modal-body row g-3">
+                                <!--Campo del nombre del trabajador-->
+                                <div class="col-sm-12 col-md-6">
+                                    <label for="nombreTrabajador" class="form-label">Nombres</label>
+                                    <input id="nombreTrabajador" type="text" name="nombreTrabajador"
+                                        class="form-control editableInput" required>
+                                </div>
+                                <!--Campo del apellidos del trabajador-->
+                                <div class="col-sm-12 col-md-6">
+                                    <label for="apellidosTrabajador" class="form-label">Apellidos</label>
+                                    <input id="apellidosTrabajador" type="text" name="apellidosTrabajador"
+                                        class="form-control editableInput" required>
+                                </div>
+                                <!--Campo del DUI del trabajador-->
+                                <div class="col-sm-12 col-md-6">
+                                    <label for="duiTrabajador" class="form-label">DUI</label>
+                                    <input id="duiTrabajador" type="text" name="duiTrabajador"
+                                        class="form-control editableInput" required>
+                                </div>
+                                <!--Campo del teléfono del trabajador-->
+                                <div class="col-sm-12 col-md-6">
+                                    <label for="telefonoTrabajador" class="form-label">Teléfono</label>
+                                    <input id="telefonoTrabajador" type="text" name="telefonoTrabajador"
+                                        class="form-control editableInput" required>
+                                </div>
+                                <!--Campo del correo electrónico del trabajador-->
+                                <div class="col-sm-12 col-md-6">
+                                    <label for="correoTrabajador" class="form-label">Correo electrónico</label>
+                                    <input id="correoTrabajador" type="email" name="correoTrabajador"
+                                        class="form-control editableInput" required>
+                                </div>
+                                <!--Campo del fecha de nacimietno del trabajador-->
+                                <div class="col-sm-12 col-md-6">
+                                    <label for="fechanTrabajador" class="form-label">Fecha de nacimiento</label>
+                                    <input id="fechanTrabajador" type="date" name="fechanTrabajador"
+                                        class="form-control editableInput" required>
+                                </div>
+                                <!--Campo del fecha de registro del trabajador-->
+                                <div class="col-sm-12 col-md-6">
+                                    <label for="fecharTrabajador" class="form-label">Fecha de registro</label>
+                                    <input id="fecharTrabajador" type="date" name="fecharTrabajador"
+                                        class="form-control editableInput" required>
+                                </div>
+                                <!--Campo del estado del trabajador-->
+                                <div class="col-md-6 mt-3">
+                                    <label for="estadoInputD" class="form-label">Estado del trabajador</label>
+                                    <select id="estadoInputD" name="estadoInputD" class="form-select" required>
+                                        <option selected>Seleccione una opción</option>
+                                        <option value="1">Activo</option>
+                                        <option value="2">Desactivo</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mt-3">
+                                    <label for="nivelInputD" class="form-label">Nivel de usuario</label>
+                                    <select id="nivelInputD" name="nivelInputD" class="form-select" required>
+                                    </select>
+                                </div>
+                                <!--Campo del contraseña del trabajador
+                                <div class="col-sm-12 col-md-6">
+                                    <label for="contraTrabajador" class="form-label">Contraseña</label>
+                                    <input id="contraTrabajador" type="password" name="contraTrabajador"
+                                        class="form-control editableInput" required>
+                                </div>-->
+                            </div>
+                            <!-- Pie de página del modal con margen superior -->
+                            <div class="modal-footer mt-5">
+                                <!-- Contenedor de botones dentro del pie de página -->
+                                <div class="contenedorBotones3">
+                                    <!-- Botón "Cancelar" -->
+                                    <button type="button" id="cancelarBtn"
+                                        class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                        onclick="botonCancelar()">
+                                        Cancelar
+                                    </button>
+                                    <!-- Botón "Actualizar" -->
+                                    <button type="button" id="actualizarBtn"
+                                        class="btn btn3 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                        onclick="botonActualizar()">
+                                        Actualizar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--*Libreria de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controlador/utilidades/privado.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <!-- *Llamada al controlador del sitio privado -->
+    <script type="text/javascript" src="../../controlador/privado/trabajadores.js"></script>
+</body>
+
+</html>

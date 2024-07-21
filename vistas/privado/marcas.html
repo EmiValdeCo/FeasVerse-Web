@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- TODO Título del documento -->
+    <title>FeasVerse Marcas</title>
+    <!-- Metadatos de la página web -->
+    <meta charset="UTF-8">
+    <meta name="author" content="FeasVerseCompany">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- TODO Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- *Llamada a las hojas de estilos del framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- *Llamada a las hojas de estilos propios de css -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/plantilla.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/marcas.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header"></header>
+    <div id="slide"></div>
+    <main id="mainContent">
+        <!--Contenedor principal-->
+        <div class="ContenedorT gap-3">
+            <!--Contenedor del titulo-->
+            <div class="ContenedorTitulo position-relative">
+                <h3 class="titillium-web-semibold textP"> Marcas </h3>
+                <div class="linea1"></div>
+            </div>
+            <!--Contenedor de las pestaña-->
+            <div class="ContenedorPestaña">
+                <!--Comienzo de las pestañas-->
+                <ul class="nav nav-tabs ms-lg-5 ms-md-4 ms-0 column-gap-3">
+                    <!--Etiqueta de marcas registradas-->
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link boton-cambiar-color" data-bs-toggle="tab" id="marcas-tab" type="button"
+                            data-bs-target="#marcas" role="tab" aria-controls="marcas" aria-selected="true"
+                            onclick="ShowMarcasDiv(this)">
+                            Marcas registradas
+                        </button>
+                    </li>
+                    <!--Etiqueta de agregar-->
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link boton-cambiar-color" data-bs-toggle="tab" id="agregar-tab" type="button"
+                            data-bs-target="#agregar" role="tab" aria-controls="agregar" aria-selected="true"
+                            onclick="showAddDiv(this)">
+                            Agregar
+                        </button>
+                    </li>
+                </ul>
+                <!-- Contenedor de las pestañas -->
+                <div class="tab-content contenidoP position-relative">
+                    <!-- Rectángulo del otro color -->
+                    <div class="rectangle z-0"></div>
+                    <!-- Contenedor de la pestaña de agregar -->
+                    <div class="tab-pane fade show z-3 d-none" role="tabpanel" id="agregar"
+                        aria-labelledby="agregar-tab">
+                        <!-- Contenedor total de ingreso de datos -->
+                        <form id="AddForm"
+                            class="ContenedorTotalA pt-4 d-flex flex-column justify-content-around align-items-center w-100">
+                            <!-- Contenedor de datos de la marca -->
+                            <div class="contenedorDatos d-flex flex-column align-items-center col-12">
+                                <h1 class="text-white titillium-web-regular text25 text-white mt-3 mb-3">Ingreso de
+                                    datos</h1>
+                                <!-- Campo de ingreso del nombre de la marca -->
+                                <div class="col-md-12 col-lg-12 col-sm-12 mb-4">
+                                    <label for="nombreMarca" class="form-label text-white text18">Nombre de la
+                                        marca</label>
+                                    <input type="text" class="form-control" id="nombreMarca" name="nombreMarca"
+                                        placeholder="Ingresa el nombre" required>
+                                </div>
+                                <!-- Campo de ingreso de la descripción de la marca -->
+                                <div class="input-group responsiveG">
+                                    <span class="input-group-text">Descripción de la marca</span>
+                                    <textarea class="form-control" aria-label="With textarea" id="descripcionMarca"
+                                        name="descripcionMarca" required></textarea>
+                                </div>
+                            </div>
+                            <!-- Contenedor de la imagen de la marca -->
+                            <div class="contenedorImagen d-flex flex-column align-items-center">
+                                <h1 class="text-white titillium-web-regular text25 text-white mt-3">Foto de la marca
+                                </h1>
+                                <!-- Imagen seleccionada y botón para elegir imagen -->
+                                <img id="selectedImage" class="sizeCard borderImage"
+                                    src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                    alt="example placeholder" />
+                                <div class="btn btn-primary btn-rounded mt-3">
+                                    <label class="form-label text-white m-1" for="customFile2">Seleccionar
+                                        imagen</label>
+                                    <input type="file" class="form-control d-none" id="customFile2" name="customFile2"
+                                        onchange="displaySelectedImage(event, 'selectedImage')" />
+                                </div>
+                            </div>
+                            <!-- Contenedor de botones para cancelar y guardar -->
+                            <div class="contenedorBotones z-0 mt-5 mb-5">
+                                <button type="button" onclick="returnBack()"
+                                    class="btn btn2 btn-primary ms-2 shadow text18 titillium-web-regular">Cancelar</button>
+                                <button class="btn btn3 btn-primary shadow ms-2 text18 titillium-web-regular"
+                                    id="btnUpdate" onclick="addSave()">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Pestaña de visualización de marcas -->
+                    <div class="tab-pane1 fade z-2 position-relative d-none" role="tabpanel" id="marcas"
+                        aria-labelledby="marcas-tab">
+                        <div class="search-container col-11 ms-auto me-auto pt-5">
+                            <input type="search" class="form-control" name="search" placeholder="Buscar....."
+                                id="inputBusqueda" required>
+                            <span class="search-icon"><i class="bi bi-search"></i></span>
+                            <span class="clear-icon" onclick="clearSearch()"><i class="bi clear-icon"></i></span>
+                        </div>
+                        <!-- Contenedor de tarjetas de marcas -->
+                        <div class="d-flex flex-column mb-3 justify-content-center">
+                            <div class="cardContainer m-5 d-flex flex-wrap gap-5 justify-content-lg-center
+                                justify-content-md-start justify-content-start" id="tableBody">
+                                <!-- Tarjetas de marcas con imágenes -->
+                                <div class="d-none" id="IdMarca"></div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para mostrar detalles o actualizar registros -->
+        <div class="modal fade" id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Encabezado del modal -->
+                    <div class="modal-header d-flex justify-content-center align-items-center">
+                        <h1 class="modal-title fs-5 text-center" id="modalTitle">Marcas</h1>
+                    </div>
+                    <!-- Formulario para crear o actualizar un registro -->
+                    <form id="updateFrom" name="updateFrom">
+                        <div class="modal-body row g-3 d-flex flex-column align-items-center">
+                            <!-- Campo de nombres -->
+                            <div class="col-sm-12 col-md-12">
+                                <label for="nombreMarcaD" class="form-label">Nombres</label>
+                                <input id="nombreMarcaD" type="text" name="nombreMarcaD"
+                                    class="form-control editableInput" required readonly>
+                            </div>
+
+                            <!-- Área de descripción de la marca -->
+                            <div class="input-group">
+                                <span class="input-group-text">Descripción de la marca</span>
+                                <textarea class="form-control" aria-label="With textarea" id="descripcionMarcaD" name="descripcionMarcaD"
+                                    readonly required></textarea>
+                            </div>
+
+                            <!-- Contenedor de la imagen de la marca -->
+                            <div class="contenedorImagen d-flex flex-column align-items-center">
+                                <h1 class="text-white titillium-web-regular text25 text-white mt-3">Foto de la marca
+                                </h1>
+                                <!-- Imagen seleccionada y botón para elegir imagen -->
+                                <img id="selectedImageD" class="sizeCard borderImage"
+                                    src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                    alt="example placeholder" />
+                                <div class="btn btn-primary btn-rounded mt-3">
+                                    <label class="form-label text-white m-1" for="customFile1">Seleccionar
+                                        imagen</label>
+                                    <input type="file" class="form-control d-none" id="customFile1" readonly name='customFile1'
+                                        onchange="displaySelectedImage(event, 'selectedImageD')" />
+                                </div>
+                            </div>
+
+                            <!-- Botones en el pie del modal -->
+                            <div class="modal-footer mt-5 d-flex justify-content-center align-items-center">
+                                <div
+                                    class="contenedorBotones3 gap-3 d-flex align-items-center justify-content-center flex-wrap">
+                                    <!-- Botón para cancelar la operación -->
+                                    <button type="button" id="cancelarBtn"
+                                        class="btn btn2 btn-primary mx-2 my-0 shadow text18 titillium-web-regular"
+                                        onclick="botonCancelar()">
+                                        Cancelar
+                                    </button>
+                                    <!-- Botón para actualizar el registro -->
+                                    <button type="button" id="actualizarBtn"
+                                        class="btn btn3 btn-primary mx-2 my-0 shadow text18 titillium-web-regular"
+                                        onclick="botonActualizar()">
+                                        Actualizar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--*Libreria de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controlador/utilidades/privado.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <!-- *Llamada al controlador del sitio privado -->
+    <script type="text/javascript" src="../../controlador/privado/marcas.js"></script>
+</body>
+
+</html>

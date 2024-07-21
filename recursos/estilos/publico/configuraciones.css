@@ -1,0 +1,195 @@
+.ContenedorT {
+    min-height: 100%;
+    max-height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 30px;
+}
+
+
+.ContenedorTitulo {
+    max-height: fit-content;
+    /* Altura máxima ajustada al contenido */
+    width: fit-content;
+    /* Ancho ajustado al contenido */
+    display: flex;
+    /* Contenedor de estilo flex */
+    flex-direction: column;
+    /* Dirección de los elementos hijos en columna */
+    align-self: start;
+}
+
+.contenedor {
+    max-width: fit-content;
+    /* Ancho máximo ajustado al contenido */
+    min-width: fit-content;
+    /* Ancho mínimo ajustado al contenido */
+    padding: 20px;
+    /* Relleno interno de 20 píxeles en todos los lados del contenedor */
+    background-color: #EDEDED;
+    /* Color de fondo del contenedor en tono gris claro */
+    border-radius: 10px;
+    /* Radio de borde de 10 píxeles, proporcionando esquinas redondeadas */
+
+    /* Transiciones */
+    transition-property: transform;
+    /* Propiedad que sufre transición */
+    transition-duration: 0.5s;
+    /* Duración de la transición de 0.5 segundos */
+    transition-timing-function: ease;
+    /* Función de temporización (transición suave) */
+    transition-delay: 0s;
+    /* Retraso antes de que comience la transición */
+}
+
+/* Estilos para la clase .contenedor cuando está en estado :hover */
+.contenedor:hover {
+    transform: translateY(-10px);
+    /* Desplaza el contenedor hacia arriba 10 píxeles al pasar el ratón sobre él */
+}
+
+.linea1 {
+    width: 100%;
+    /* Ancho del 100% del contenedor padre */
+    height: 2px;
+    /* Altura de 2 píxeles */
+    background-color: #146A93;
+    /* Color de fondo de la línea */
+    position: absolute;
+    /* Posición absoluta respecto al contenedor padre más cercano con posición no estática */
+    bottom: 0;
+    /* Distancia del borde inferior al 0 del contenedor padre */
+    border-radius: 10px;
+    /* Radio de borde de 10 píxeles */
+    margin-top: 10px;
+    /* Margen superior de 10 píxeles */
+}
+
+.contenedor1 {
+    cursor: pointer;
+    /* Relleno interno de 20 píxeles en todos los lados del contenedor */
+    background-color: #EDEDED;
+    /* Color de fondo del contenedor en tono gris claro */
+    border-radius: 10px;
+    /* Radio de borde de 10 píxeles, proporcionando esquinas redondeadas */
+    /* Transiciones */
+    transition-property: transform;
+    /* Propiedad que sufre transición */
+    transition-duration: 0.5s;
+    /* Duración de la transición de 0.5 segundos */
+    transition-timing-function: ease;
+    /* Función de temporización (transición suave) */
+    transition-delay: 0s;
+    /* Retraso antes de que comience la transición */
+}
+
+/* Estilos para la clase .contenedor cuando está en estado :hover */
+.contenedor1:hover,
+.contenedor2:hover {
+    transform: translateY(-10px);
+    /* Desplaza el contenedor hacia arriba 10 píxeles al pasar el ratón sobre él */
+}
+
+.textoD {
+    color: #0D4560;
+}
+
+.contenedor2 {
+    cursor: pointer;
+    background-color: #EDEDED;
+    border-radius: 10px;
+
+    /* Transiciones */
+    transition-property: transform;
+    /* Propiedad que sufre transición */
+    transition-duration: 0.5s;
+    /* Duración de la transición de 0.5 segundos */
+    transition-timing-function: ease;
+    /* Función de temporización (transición suave) */
+    transition-delay: 0s;
+}
+
+.contenedorBotones2 {
+    width: 100%;
+    /* Ancho del 100% */
+    min-height: fit-content;
+    /* Altura mínima ajustada al contenido */
+    max-height: fit-content;
+    /* Altura máxima ajustada al contenido */
+    position: absolute;
+    /* Posición absoluta en relación con el elemento padre */
+    bottom: 0;
+    /* Alineación en la parte inferior */
+    left: 0;
+    /* Alineación en la parte izquierda */
+    display: flex;
+    /* Establecer como contenedor flexible */
+    flex-direction: row;
+    /* Dirección de diseño flexible en fila */
+    justify-content: center;
+    /* Alineación central del contenido */
+    max-height: 80vh;
+    /* Establece una altura máxima del 80% del viewport height */
+    overflow-y: auto;
+}
+
+/* Estilo para los botones con clase btn3 y btn2 */
+.btn3,
+.btn2 {
+    padding-left: 70px;
+    /* Espaciado interno a la izquierda */
+    padding-right: 70px;
+    /* Espaciado interno a la derecha */
+    padding-top: 10px;
+    /* Espaciado interno en la parte superior */
+    padding-bottom: 10px;
+    /* Espaciado interno en la parte inferior */
+    background-color: #0D4560;
+    /* Color de fondo para btn3 */
+    border: solid 0px;
+    /* Borde sólido con grosor 0px (sin borde) */
+}
+
+/* Estilo específico para los botones con clase btn2 */
+.btn2 {
+    background-color: white;
+    /* Color de fondo para btn2 (blanco) */
+    border: solid 1px #8F8F8F;
+    color: #0D4560;
+    /* Borde sólido con grosor 1px y color #8F8F8F para btn2 */
+}
+
+.text19{
+    color: black;
+}
+
+.contenedorForm {
+    width: 60vw;
+    /* Ancho del 60% del ancho visible */
+    height: 100%;
+    /* Altura del 100% */
+}
+
+/* Estilo para el formulario con un espacio de relleno en la parte inferior */
+.form1 {
+    padding-bottom: 100px;
+    /* Espacio de relleno en la parte inferior del formulario */
+}
+
+/* Estilo para los controles de formulario con borde sólido de color #1A89BD */
+.form-control {
+    border: #1A89BD solid 1px;
+    /* Borde sólido con color #1A89BD y grosor de 1px */
+}
+
+/* Estilo para el contenido del modal */
+.modal-content {
+    background-color: #1A89BD;
+    color: white;
+}
+
+#cancelarBtn, #agregarBtn{
+    width: 100%;
+}

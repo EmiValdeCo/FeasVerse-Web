@@ -1,0 +1,761 @@
+/* Estilos para el contenedor principal */
+.ContenedorT {
+    min-height: 100%;
+    max-height: 100%;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    overflow-x: none;
+}
+
+/* Estilos para un contenedor de título */
+.ContenedorTitulo {
+    max-height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+/* Estilos para un contenedor de pestañas */
+.ContenedorPestaña {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Estilos para la barra de navegación */
+.nav-item {
+    background-color: #146A93;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: -5px;
+    color: white;
+}
+
+/* Estilos para los enlaces de la barra de navegación */
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* Estilos para el contenido principal */
+.contenidoP {
+    background-color: #1591CC;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+/* Estilos para un tab control */
+#myTabControl {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+/* Estilos para un rectángulo con bordes redondeados */
+.rectangle {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #1A89BD;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+/* Estilos para una línea horizontal */
+.linea1 {
+    width: 100%;
+    height: 2px;
+    background-color: #146A93;
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Estilos para un texto con color específico */
+.textP {
+    color: #146A93;
+}
+
+/* Estilos para un panel de pestaña */
+.tab-pane1 {
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+/* Estilos específicos para un detalle de información dentro de un acordeón */
+.detalleInformacion .accordion-item {
+    background-color: transparent;
+    border: none;
+}
+
+/* Estilos generales para un acordeón */
+.accordion-item {
+    border: none;
+}
+
+/* Estilos para un botón de acordeón enfocado */
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+#contenedorDeLasCardsDeRepatidor {
+    overflow-x: none;
+}
+
+/* Estilos para la información de los pedidos de la info del repartidor */
+.infoDeRepartidor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoDelClienteParaRepartidor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para la información del repartidor */
+#infoDeRepartidorDelApartadoDelRepartidor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Estilos para la imagen de un repartidor */
+#infoDeRepartidor img {
+    max-width: 100%;
+    /* Ajusta el tamaño máximo de la imagen al 100% del contenedor */
+}
+
+/* Estilos para un contenedor de acordeón con solo encabezado y cuerpo */
+#contenedorDelAcordionSoloHeaderAndBody {
+    border-top: 1px solid #0D4560;
+    border-left: 1px solid #0D4560;
+    border-right: 1px solid #0D4560;
+    border-bottom: 1px solid #0D4560;
+    background-color: white;
+    position: relative;
+    z-index: 0;
+}
+
+#contenedorDelAcordionSoloHeaderAndBody2 {
+    border-top: 1px solid #0D4560;
+    border-left: 1px solid #0D4560;
+    border-right: 1px solid #0D4560;
+    border-bottom: 1px solid #0D4560;
+    background-color: #EDEDED;
+    position: relative;
+    z-index: 0;
+}
+
+#contenedorDelAcordionSoloHeaderAndBody3 {
+    border-top: 1px solid #0D4560;
+    border-left: 1px solid #0D4560;
+    border-right: 1px solid #0D4560;
+    border-bottom: 1px solid #0D4560;
+    background-color: white;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: wrap;
+}
+
+/* Estilos para un botón de acordeón */
+.accordion-button {
+    border-left: 1px solid #0D4560;
+    border-right: 1px solid #0D4560;
+    border-bottom: 1px solid #0D4560;
+    margin-top: -1px;
+    z-index: 2;
+    position: relative;
+    background-color: white;
+}
+
+.accordionButtonRepartidor {
+    border-left: 1px solid #0D4560;
+    border-right: 1px solid #0D4560;
+    border-bottom: 1px solid #0D4560;
+    margin-top: -1px;
+    z-index: 2;
+    position: relative;
+    background-color: #EDEDED;
+}
+
+/* Estilos el div de numero de pedido */
+#idPedidoNum {
+    border-left: 1px solid #0D4560;
+    border-right: 1px solid #0D4560;
+    border-top: 1px solid #0D4560;
+    margin-bottom: -1px;
+    z-index: 2;
+    position: relative;
+    background-color: white;
+}
+
+#idPedidoNum2 {
+    border-left: 1px solid #0D4560;
+    border-right: 1px solid #0D4560;
+    border-top: 1px solid #0D4560;
+    margin-bottom: -1px;
+    z-index: 2;
+    position: relative;
+    background-color: #EDEDED;
+}
+
+/* Estilos para un contenedor de tarjetas de pedido con scroll */
+#contenedorDeLasCardsDePedido {
+    max-height: 500px;
+    margin-top: 10px;
+    overflow-y: auto;
+    scrollbar-width: auto;
+    /* para navegadores que no son WebKit */
+    scrollbar-color: #146A93 #1591CC;
+    /* color del scrollbar */
+    overflow-x: hidden;
+}
+
+/* Estilos para el scrollbar del contenedor de tarjetas de pedido en navegadores WebKit */
+#contenedorDeLasCardsDePedido::-webkit-scrollbar {
+    width: 12px;
+    /* ancho del scrollbar */
+}
+
+/* Estilos para el thumb (barra deslizante) del scrollbar en navegadores WebKit */
+#contenedorDeLasCardsDePedido::-webkit-scrollbar-thumb {
+    background-color: #146A93;
+    /* color del thumb (barra deslizante) */
+    border-radius: 6px;
+    /* esquinas redondeadas */
+}
+
+/* Estilos para el track (fondo del scrollbar) del scrollbar en navegadores WebKit */
+#contenedorDeLasCardsDePedido::-webkit-scrollbar-track {
+    background-color: #1591CC;
+    /* color del track (fondo del scrollbar) */
+}
+
+/* Estilos para los ítems de acordeón dentro del contenedor de tarjetas de pedido */
+#contenedorDeLasCardsDePedido .accordion-item {
+    margin-bottom: 10px;
+}
+
+/* Estilos para un input de formulario */
+.form-control {
+    height: 46px;
+}
+
+/* Estilos para un contenedor de búsqueda */
+.search-container {
+    position: relative;
+}
+
+/* Estilos para el ícono de búsqueda y limpieza en el contenedor de búsqueda */
+.search-icon,
+.clear-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Estilos específicos para el ícono de búsqueda */
+.search-icon {
+    right: 35px;
+    /* Ajusta la posición del icono de búsqueda según tus necesidades */
+}
+
+/* Estilos específicos para el ícono de limpieza */
+.clear-icon {
+    right: 10px;
+    /* Ajusta la posición del icono de limpiar según tus necesidades */
+    display: none;
+}
+
+/* Estilos para un select personalizado */
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilos para el select de la imagen */
+.custom-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 275%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: url('../../imagenes/icons/selector.svg');
+    /* Ruta de tu imagen */
+    background-position: right 10px center;
+    /* Ajusta la posición de la imagen */
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    /* Ajusta el tamaño de la imagen según tus necesidades */
+}
+
+/* Estilos específicos para el contenedor de tarjetas de pedido en dispositivos más grandes */
+.col-lg-2.col-md-4 {
+    float: left;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para un contenedor de tarjetas flexibles */
+.containerCards {
+    overflow-x: auto;
+    /* Establece el desplazamiento horizontal automático */
+    white-space: nowrap;
+    /* Evita el salto de línea dentro del contenedor */
+    display: flex;
+    /* Utiliza un contenedor flexible para mantener los elementos en línea */
+}
+
+/* Estilos para el scrollbar del contenedor de tarjetas flexibles en navegadores WebKit */
+.containerCards::-webkit-scrollbar {
+    height: 12px;
+    /* Ajusta el tamaño del scrollbar según tus preferencias */
+}
+
+/* Estilos para el thumb del scrollbar del contenedor de tarjetas flexibles en navegadores WebKit */
+.containerCards::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Color del thumb (la barra deslizadora) */
+    border-radius: 6px;
+    /* Ajusta el radio de la esquina del thumb */
+}
+
+/* Estilos para el cuerpo de una tarjeta */
+.card-body {
+    max-width: 100%;
+}
+
+/* Estilos para el nombre de un zapato */
+#nombreZapato {
+    border-bottom: 4px solid #0D4560;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Estilos para el color de un zapato */
+#color {
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: red;
+}
+
+/* Estilos para la talla de un pedido */
+#tallaPedido {
+    background-color: #EDEDED;
+    padding: 5px;
+    border: 1px solid #5F5F5F;
+    border-radius: 10px;
+
+}
+
+/* Estilos para el precio de un zapato */
+#precioZapato {
+    left: 0;
+}
+
+/* Estilos para la cantidad total de un pedido */
+#cantidadTotal {
+    right: 0;
+}
+
+/* Estilos para un botón de pedido */
+#botonDePedido {
+    height: 70px;
+}
+
+/* Estilos para imagen*/
+.img1 {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-self: center;
+}
+
+.img2 {
+    margin-top: 20%;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-self: center;
+    width: 100px;
+    height: 100px;
+}
+
+.img3 {
+    margin-top: 20%;
+    margin-left: 15px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-self: center;
+    width: 100px;
+    height: 100px;
+}
+
+.img4 {
+    margin-top: 20%;
+    margin-left: 20px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-self: center;
+    width: 100px;
+    height: 100px;
+}
+
+#contenedorCategoriaPedido {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    justify-self: center;
+    justify-content: center;
+}
+
+
+#contenedorCategoriaPedido .col-lg-3 {
+    margin-right: 15px;
+    /* Ajusta el valor según el espacio que desees entre los contenedores */
+}
+
+#contenedorCategoriaPedido .col-lg-3:last-child {
+    margin-right: 0;
+    /* Elimina el margen derecho del último contenedor para evitar espacio adicional */
+}
+
+#contenedorCategoriaPedido {
+    margin-right: 15px;
+    /* Ajusta el valor según el espacio que desees entre los contenedores */
+}
+
+#contenedorCategoriaPedido :last-child {
+    margin-right: 0;
+    /* Elimina el margen derecho del último contenedor para evitar espacio adicional */
+}
+
+/*Hover de los divs*/
+#divPedidosEntregados:hover {
+    background-color: #12678f;
+}
+
+#divPedidosProgreso:hover {
+    background-color: #12678f;
+}
+
+#divPedidosPendientes:hover {
+    background-color: #12678f;
+}
+
+
+/* Responsive */
+/* Estilos para dispositivos con pantalla menor o igual a 991px */
+@media screen and (max-width: 991px) {
+    .skew-div {
+        width: 100%;
+    }
+
+    #infoDeRepartidorDelApartadoDelRepartidor {
+        flex-direction: column;
+    }
+
+    #infoDelClienteParaRepartidor {
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+    }
+
+    #infoDeRepartidor {
+        flex-direction: column;
+    }
+
+    #infoDeRepartidor2 {
+        flex-direction: column;
+    }
+
+    #infoDeRepartidor3 {
+        flex-direction: column;
+    }
+
+    .img1 {
+        margin-bottom: 30px;
+    }
+
+    #detallesDeMasPedidoRepartidor {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #containerTotales {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-self: center;
+        justify-items: center;
+        align-items: center;
+    }
+
+}
+
+/* Estilos para dispositivos con pantalla menor o igual a 767px */
+@media screen and (max-width: 767px) {
+    .custom-select select {
+        margin-top: 20px;
+    }
+
+    #containerTotales {
+        margin-top: 20px;
+    }
+
+    .img2 img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .img3 img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .img4 img {
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+@media screen and (max-width: 563px) {
+    #contenedorCategoriaPedido {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img2 img {
+        margin-left: 30px;
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+    }
+
+    .nuevosPedidos {
+        margin-bottom: 20px;
+    }
+
+    .img3 img {
+        margin-left: 30px;
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+    }
+
+    .pedidosProgreso {
+        margin-bottom: 20px;
+    }
+
+    .img4 img {
+        margin-left: 30px;
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    #contenedorDelAcordionSoloHeaderAndBody3 {
+        overflow-x: auto;
+    }
+
+    #collapseOneRepartidor {
+        overflow-x: auto;
+    }
+
+    #collapseTwoRepartidor {
+        overflow-x: auto;
+    }
+
+    #collapseThreeRepartidor {
+        overflow-x: auto;
+    }
+
+    .contenedorDeNuevosPedidosImagenTexto {
+        overflow-x: auto;
+    }
+
+    #detallesDelPedidoRepartidor {
+        overflow-x: auto;
+    }
+}
+
+/* Estilos para dispositivos con pantalla menor o igual a 480px */
+@media screen and (max-width: 480px) {
+
+    .custom-select select {
+        margin-top: 20px;
+        width: 250%;
+    }
+
+    #containerTotales {
+        margin-top: 20px;
+    }
+
+    #infoDeRepartidorDelApartadoDelRepartidor h6 {
+        font-size: 12px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+
+    #infoDeRepartidor h6 {
+        font-size: 12px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+
+    #infoDeRepartidor2 h6 {
+        font-size: 12px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+
+    #infoDeRepartidor3 h6 {
+        font-size: 12px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+}
+
+/* Estilos para dispositivos con pantalla menor o igual a 372px */
+@media screen and (max-width: 372px) {
+    .custom-select select {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .img2 img {
+        margin-left: 25px;
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+    }
+
+    .img3 img {
+        margin-left: 20px;
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+    }
+
+    .img4 img {
+        margin-left: 20px;
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Estilos para dispositivos con pantalla menor o igual a 344px */
+@media screen and (max-width: 344px) {
+    #infoDeRepartidorDelApartadoDelRepartidor h6 {
+        font-size: 8px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+
+    #infoDeRepartidor h6 {
+        font-size: 8px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+
+    #infoDeRepartidor2 h6 {
+        font-size: 8px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+
+    #infoDeRepartidor3 h6 {
+        font-size: 8px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+}
+
+/* Estilos para dispositivos con pantalla menor o igual a 280px */
+@media screen and (max-width: 280px) {
+    #infoDeRepartidorDelApartadoDelRepartidor h6 {
+        font-size: 6px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+
+    #infoDeRepartidor h6 {
+        font-size: 6px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+
+    #infoDeRepartidor2 h6 {
+        font-size: 6px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+
+    #infoDeRepartidor3 h6 {
+        font-size: 6px;
+        /* Tamaño de letra más pequeño para pantallas pequeñas */
+    }
+
+    .img4 img {
+        margin-left: 20px;
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+    }
+
+    .pedidosEntregados {
+        width: 110px;
+    }
+}

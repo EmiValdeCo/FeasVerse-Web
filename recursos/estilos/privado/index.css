@@ -1,0 +1,42 @@
+/** Fondo de pantalla */
+body {
+    background-image: url('../../imagenes/fondoprivado.svg'); /* Imagen de fondo */
+    background-color: #04151d; /* Color de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-repeat: no-repeat; /* No se repite la imagen de fondo */
+    background-attachment: fixed; /* Fija la imagen de fondo al desplazarse */
+}
+
+/** Estilo para el título principal (h2) */
+#mainTitle {
+    color: white; /* Cambia el color del texto a blanco */
+    text-align: center; /* Centra el texto */
+}
+
+/** Clase donde se pondrá la animación */
+.container {
+    animation: transitionIn 1s; /* Aplica la animación 'transitionIn' con una duración de 1 segundo */
+}
+
+/**Estilo para bordes*/
+.bordesAzul{
+    border-color: #146A93;
+}
+
+.botonAzul{
+    background-color: #146A93; 
+    width: 100%;
+}
+
+/** Animación de entrada a la página */
+@keyframes transitionIn {
+    from {
+        opacity: 0; /* Inicialmente invisible */
+        transform: rotateX(-10deg); /* Rotación en el eje X */
+    }
+    to  {
+        opacity: 1; /* Se vuelve completamente visible */
+        transform: rotateX(0); /* Sin rotación */
+    }
+}
+

@@ -1,0 +1,161 @@
+/* Estilos para un contenedor principal */
+.ContenedorT {
+    min-height: 100%;  /* Altura mínima del contenedor al 100% del viewport */
+    max-height: 100%;  /* Altura máxima del contenedor al 100% del viewport */
+    width: 100%;  /* Ancho del contenedor al 100% del contenedor padre */
+    flex: 1;  /* Toma todo el espacio disponible dentro del contenedor padre */
+    display: flex;  /* Utiliza un modelo de diseño flexible (flexbox) */
+    flex-direction: column;  /* Distribuye los elementos en columna dentro del contenedor */
+    align-items: center;  /* Centra los elementos horizontalmente en el contenedor */
+    justify-items: center;  /* Justifica los elementos verticalmente en el contenedor */
+    padding-top: 30px;  /* Espaciado superior de 30 píxeles */
+    padding-bottom: 30px;  /* Espaciado inferior de 30 píxeles */
+}
+
+/* Estilos para un contenedor de título dentro del contenedor principal */
+.ContenedorTitulo {
+    max-height: fit-content;  /* Altura máxima ajustada al contenido */
+    width: fit-content;  /* Ancho ajustado al contenido */
+    display: flex;  /* Utiliza un modelo de diseño flexible (flexbox) */
+    flex-direction: column;  /* Distribuye los elementos en columna dentro del contenedor */
+    background-color: white;  /* Fondo blanco para el contenedor de título */
+}
+
+/* Estilos para una línea decorativa */
+.linea1 {
+    width: 100%;  /* Ancho del 100% del contenedor padre */
+    height: 2px;  /* Altura de 2 píxeles */
+    background-color: #146A93;  /* Color de fondo azul */
+    position: absolute;  /* Posicionamiento absoluto con respecto al contenedor padre más cercano */
+    bottom: 0;  /* Colocar la línea en la parte inferior del contenedor padre */
+    border-radius: 10px;  /* Borde redondeado con radio de 10 píxeles */
+    margin-top: 10px;  /* Margen superior de 10 píxeles */
+}
+
+/* Estilos para un contenedor de pestañas */
+.ContenedorPestaña {
+    height: 100%;  /* Altura del 100% del contenedor padre */
+    flex: 1;  /* Toma todo el espacio disponible dentro del contenedor padre con flexbox */
+    display: flex;  /* Utiliza un modelo de diseño flexible (flexbox) */
+    flex-direction: column;  /* Distribuye los elementos en columna dentro del contenedor */
+    width: 100%;  /* Ancho del 100% del contenedor padre */
+}
+
+/* Estilos para el contenido de un contenedor de pestañas */
+.contenidoP {
+    background-color: #1591CC;  /* Color de fondo azul claro */
+    height: 100%;  /* Altura del 100% del contenedor padre */
+    flex: 1;  /* Toma todo el espacio disponible dentro del contenedor padre con flexbox */
+    display: flex;  /* Utiliza un modelo de diseño flexible (flexbox) */
+    width: 100%;  /* Ancho del 100% del contenedor padre */
+    flex-direction: column;  /* Distribuye los elementos en columna dentro del contenedor */
+}
+
+/* Estilos para un rectángulo */
+.rectangle {
+    position: absolute;  /* Posicionamiento absoluto */
+    left: 0;  /* Alineación a la izquierda del contenedor padre */
+    width: 50%;  /* Ancho del 50% del contenedor padre */
+    height: 100%;  /* Altura del 100% del contenedor padre */
+    background-color: #1A89BD;  /* Color de fondo azul */
+    border-top-right-radius: 50px;  /* Radio de borde superior derecho */
+    border-bottom-right-radius: 50px;  /* Radio de borde inferior derecho */
+}
+
+/* Estilos para un contenedor total */
+.ContenedorTotal {
+    display: flex;  /* Utiliza un modelo de diseño flexible (flexbox) */
+    flex: 1;  /* Toma todo el espacio disponible dentro del contenedor padre con flexbox */
+    flex-direction: column;  /* Distribuye los elementos en columna dentro del contenedor */
+    width: 100%;  /* Ancho del 100% del contenedor padre */
+    height: 100%;  /* Altura del 100% del contenedor padre */
+}
+
+/* Estilos para un ítem de navegación */
+.nav-item {
+    border-top-left-radius: 10px;  /* Radio de borde superior izquierdo */
+    background-color: #146A93;  /* Color de fondo del ítem de navegación */
+    border-top-right-radius: 10px;  /* Radio de borde superior derecho */
+    margin-bottom: -5px;  /* Margen negativo para superponer ligeramente el siguiente ítem */
+}
+
+/* Estilos para un enlace de navegación */
+.nav-link {
+    text-decoration: none;  /* Sin decoración de texto en los enlaces de navegación */
+}
+
+/* Estilos para la pestaña de tabla */
+#tabla-tab {
+    font-size: 20px;  /* Tamaño de fuente para la pestaña de tabla */
+}
+
+/* Estilos para las celdas de encabezado de la tabla */
+.table thead th {
+    background-color: #0D4560;  /* Color de fondo del encabezado de la tabla */
+    color: white;  /* Color del texto en el encabezado de la tabla */
+    border: 0;  /* Sin bordes en las celdas del encabezado */
+    text-align: center;  /* Alineación del texto al centro en el encabezado de la tabla */
+}
+
+/* Estilos para la fila de encabezado de una tabla (posiblemente) */
+.thead {
+    border-top: #0D4560 solid 0px;  /* Borde superior de color #0D4560 con ancho 0px */
+}
+
+/* Estilos para un botón con clase "btn2" */
+.btn2 {
+    padding-left: 20px;  /* Relleno izquierdo de 20px */
+    padding-right: 20px;  /* Relleno derecho de 20px */
+    background-color: #146A93;  /* Color de fondo del botón */
+}
+
+/* Estilos para un botón con clase "btn3" */
+.btn3 {
+    padding-left: 20px;  /* Relleno izquierdo de 20px */
+    padding-right: 20px;  /* Relleno derecho de 20px */
+    background-color: white;  /* Color de fondo del botón */
+    color: black;  /* Color del texto del botón */
+    border: #8F8F8F solid 1px;  /* Borde de color #8F8F8F con ancho de 1px */
+}
+
+/* Estilos para un contenedor de botones */
+.contenedorBotones2 {
+    width: 100%;  /* Ancho del contenedor al 100% */
+    min-height: fit-content;  /* Altura mínima ajustada al contenido */
+    max-height: fit-content;  /* Altura máxima ajustada al contenido */
+    position: absolute;  /* Posición absoluta con respecto al contenedor padre más cercano con posición no estática */
+    bottom: 2%;  /* Distancia del borde inferior al 2% del contenedor padre */
+    left: 0;  /* Distancia del borde izquierdo al 0 del contenedor padre */
+    display: flex;  /* Contenedor de estilo flex */
+    flex-direction: row;  /* Dirección de los elementos hijos en fila */
+    justify-content: center;  /* Alineación de los elementos hijos al centro en el eje principal */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: #1A89BD;  /* Color de fondo del contenido del modal */
+    color: white;  /* Color del texto del contenido del modal */
+}
+
+/* Personalización del scrollbar dentro de .Contenedor-tabla */
+.Contenedor-tabla {
+    margin-bottom: 20px;
+    height: 48vh;
+    overflow-y: auto; /* Asegura que el scrollbar solo aparezca cuando sea necesario */
+}
+
+/* Estilo del track del scrollbar */
+.Contenedor-tabla::-webkit-scrollbar-track {
+    background-color: #1A89BD; /* Cambia el color de fondo del track del scrollbar */
+}
+
+/* Estilo del thumb (barra) del scrollbar */
+.Contenedor-tabla::-webkit-scrollbar-thumb {
+    background-color: #1A89BD; /* Cambia el color de la barra del scrollbar */
+    border-radius: 5px; /* Añade bordes redondeados al thumb */
+}
+
+/* Estilo del thumb (barra) del scrollbar cuando se desplaza */
+.Contenedor-tabla::-webkit-scrollbar-thumb:hover {
+    background-color: #1A89BD; /* Cambia el color de la barra del scrollbar al pasar el mouse */
+}

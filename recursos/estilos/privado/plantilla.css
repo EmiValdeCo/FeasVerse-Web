@@ -1,0 +1,290 @@
+@media screen and (max-width: 430px) {
+    /** Estilos para tamaños de pantalla menores o iguales a 430px */
+    
+    .collapseFea {
+        font-size: 17px; /* Tamaño de fuente */
+        margin: 0px; /* Margen */
+        text-align: center; /* Alineación del texto al centro */
+        color: white; /* Color de texto */
+        font-family: "Titillium Web", sans-serif; /* Fuente */
+        font-weight: 900; /* Grosor de la fuente */
+        font-style: normal; /* Estilo de la fuente */
+    }
+
+    .collapseAdmin {
+        font-size: 15px; /* Tamaño de fuente */
+        margin: 0px; /* Margen */
+        text-align: center; /* Alineación del texto al centro */
+        color: white; /* Color de texto */
+        font-family: "Titillium Web", sans-serif; /* Fuente */
+        font-weight: 400; /* Grosor de la fuente */
+        font-style: normal; /* Estilo de la fuente */
+        margin-left: 5px; /* Margen izquierdo */
+    }
+
+    .collapse-div {
+        margin-bottom: 15px; /* Margen inferior */
+    }
+}
+
+@media screen and (min-width: 431px) {
+    /** Estilos para tamaños de pantalla mayores o iguales a 431px */
+    
+    .collapseFea {
+        font-size: 20px; /* Tamaño de fuente */
+        margin: 0px; /* Margen */
+        text-align: center; /* Alineación del texto al centro */
+        color: white; /* Color de texto */
+        font-family: "Titillium Web", sans-serif; /* Fuente */
+        font-weight: 900; /* Grosor de la fuente */
+        font-style: normal; /* Estilo de la fuente */
+    }
+
+    .collapseAdmin {
+        font-size: 20px; /* Tamaño de fuente */
+        margin: 0px; /* Margen */
+        text-align: center; /* Alineación del texto al centro */
+        color: white; /* Color de texto */
+        font-family: "Titillium Web", sans-serif; /* Fuente */
+        font-weight: 400; /* Grosor de la fuente */
+        font-style: normal; /* Estilo de la fuente */
+        margin-left: 10px; /* Margen izquierdo */
+    }
+
+    .collapse-div {
+        margin-bottom: 0px; /* Margen inferior */
+    }
+}
+
+
+.margin-user {
+    margin: 0px; /* Elimina el margen para el elemento con la clase margin-user */
+}
+
+.linea {
+    width: 20vw; /* Ancho del elemento */
+    height: 9px; /* Altura del elemento */
+    background-color: #146A93; /* Color de fondo */
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: 5%; /* Distancia desde la parte inferior */
+    left: 0; /* Distancia desde la izquierda */
+    border-radius: 10px; /* Radio de borde para esquinas redondeadas */
+}
+
+/* SIDEBAR */
+
+body, html {
+    max-height: 100vh; /* Altura máxima del cuerpo y la página */
+    min-height: 100vh; /* Altura mínima del cuerpo y la página */
+    width: 100vw; /* Ancho máximo de la ventana de visualización */
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch; /* Estirar el contenido para llenar la altura */
+}
+
+#mainContent {
+    max-height: 100%; /* Altura máxima del contenido principal */
+    min-height: 100%; /* Altura mínima del contenido principal */
+    width: 100%; /* Ancho máximo del contenido principal */
+    display: flex;
+    flex-direction: column;
+}
+
+.img {
+    margin-left: 25px; /* Margen izquierdo para elementos con la clase img */
+}
+
+#slide {
+    flex: 1; /* Toma el espacio disponible restante en el contenedor padre */
+    display: flex;
+    width: 100%; /* Ancho máximo del elemento slide */
+    min-height: 100%; /* Altura mínima del elemento slide */
+    justify-content: stretch; /* Estirar el contenido para llenar la altura */
+}
+
+.text-nav {
+    padding-left: 15px; /* Espaciado a la izquierda para elementos con la clase text-nav */
+    border-top: 20px; /* Altura del borde superior */
+}
+
+.contenedorItemNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: start; /* Justificar contenido al inicio del contenedor */
+    justify-items: center; /* Justificar elementos al centro del contenedor */
+    padding-bottom: 10px; /* Espaciado inferior */
+}
+
+li {
+    list-style: none; /* Eliminar el estilo de la lista para elementos li */
+}
+
+.wrapper {
+    width: 100vw; /* Ancho del 100% del viewport width */
+    height: 100%; /* Altura del 100% del contenedor padre */
+    display: flex;
+    justify-content: stretch; /* Justificar contenido para llenar el contenedor */
+}
+
+#contenedorMAIN {
+    height: 100%; /* Altura del 100% del contenedor padre */
+    width: 100%; /* Ancho del 100% del contenedor padre */
+    transition: all 0.35s ease-in-out; /* Transición suave de 0.35 segundos */
+    overflow: scroll; /* Agregar barra de desplazamiento cuando sea necesario */
+}
+
+#sidebar {
+    width: 100px; /* Ancho del sidebar */
+    min-width: 100px; /* Ancho mínimo del sidebar */
+    z-index: 1000; /* Índice de apilamiento */
+    transition: all 0.3s ease-in-out; /* Transición suave de 0.3 segundos */
+    background-color: #0D4560; /* Color de fondo del sidebar */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Agregar barra de desplazamiento vertical cuando sea necesario */
+    overflow-x: hidden; /* Ocultar barra de desplazamiento horizontal */
+}
+
+.triangleimg {
+    position: absolute; /* Posición absoluta en relación con su contenedor más cercano con posición relativa */
+    bottom: 0; /* Establecer en la parte inferior del contenedor */
+    width: 100%; /* Ancho del 100% para llenar completamente el contenedor */
+}
+
+.lineah {
+    width: 70%; /* Ancho de la línea */
+    height: 3px; /* Altura de la línea */
+    background-color: #146A93; /* Color de fondo de la línea */
+    position: absolute; /* Posición absoluta en relación con su contenedor más cercano con posición relativa */
+    top: 100%; /* Posiciona la línea en la parte inferior del contenedor */
+    border-radius: 10px; /* Borde redondeado */
+    margin-top: 10px; /* Margen superior */
+}
+
+.lineah:nth-child(2) {
+    margin-top: 25px; /* Margen superior diferente para la segunda línea */
+    right: 0%; /* Posición a la derecha del contenedor */
+}
+
+.marg1 {
+    margin-top: 65px; /* Margen superior */
+}
+
+#sidebar.expand {
+    width: 250px; /* Ancho expandido del sidebar */
+    min-width: 250px; /* Ancho mínimo expandido del sidebar */
+}
+
+.toggle-btn {
+    background-color: transparent; /* Fondo transparente */
+    cursor: pointer; /* Cursor de puntero */
+    border: 0; /* Borde cero */
+    padding: 1rem 1.5rem; /* Relleno interno */
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none; /* Ocultar elementos cuando el sidebar no está expandido */
+}
+
+.sidebar-nav {
+    padding-top: 2rem 0; /* Relleno superior */
+    flex: 1 1 auto; /* Propiedades de flexbox */
+    padding-left: 0; /* Relleno izquierdo */
+    padding-bottom: 0; /* Relleno inferior */
+    padding-right: 0; /* Relleno derecho */
+}
+
+a.sidebar-link {
+    margin-bottom: 1.5rem; /* Margen inferior */
+    color: #ffffff; /* Color del texto */
+    display: block; /* Mostrar como bloque */
+    font-size: 0.9rem; /* Tamaño de fuente */
+    white-space: nowrap; /* No envolver texto */
+    border-left: 3px solid transparent; /* Borde izquierdo transparente */
+}
+
+.sidebar-link i {
+    margin-right: 0; /* Margen derecho */
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075); /* Color de fondo al pasar el mouse */
+    border-left: 3px solid #3b7ddd; /* Borde izquierdo al pasar el mouse */
+}
+
+.sidebar-item {
+    position: relative; /* Posición relativa */
+    width: 100%; /* Ancho del 100% */
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute; /* Posición absoluta */
+    top: 0; /* Desde la parte superior */
+    left: 70px; /* Desde la izquierda */
+    background-color: #0e2238; /* Color de fondo */
+    padding: 0; /* Relleno */
+    min-width: 15rem; /* Ancho mínimo */
+    display: none; /* No visible por defecto */
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block; /* Muestra el menú desplegable al pasar el ratón */
+    max-height: 15em; /* Altura máxima del menú desplegable */
+    width: 100%; /* Ancho del 100% */
+    opacity: 1; /* Opacidad completa */
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid; /* Borde sólido */
+    border-width: 0 .075rem .075rem 0; /* Ancho del borde */
+    content: ""; /* Contenido vacío */
+    display: inline-block; /* Bloque en línea */
+    padding: 2px; /* Relleno */
+    position: absolute; /* Posición absoluta */
+    right: 1.5rem; /* Distancia desde la derecha */
+    top: 1.4rem; /* Distancia desde la parte superior */
+    transform: rotate(-135deg); /* Rotación en sentido antihorario */
+    transition: all .2s ease-out; /* Transición suave */
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg); /* Rotación de la flecha cuando está colapsado */
+    transition: all .2s ease-out; /* Transición suave */
+}
+
+#sidebar::-webkit-scrollbar {
+    width: 12px; /* Ancho del scrollbar */
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+    background-color: #146A93; /* Color del scrollbar thumb */
+    border-radius: 10px; /* Borde redondeado del thumb */
+}
+
+#sidebar::-webkit-scrollbar-track {
+    background-color: #0D4560; /* Color de fondo del track */
+}
+
+a {
+    text-decoration: none; /* Quitar subrayado del enlace */
+    color: black; /* Color del texto del enlace */
+}
+
+/* Sweet alert */
+.swal2-popup {
+    font-family: "Titillium Web", sans-serif; /* Estilo de fuente para el popup de SweetAlert */
+}
+
+.swal2-title {
+    font-family: "Titillium Web", sans-serif; /* Estilo de fuente para el título de SweetAlert */
+}
+
+.swal2-content {
+    font-family: "Titillium Web", sans-serif; /* Estilo de fuente para el contenido de SweetAlert */
+}
+
+.swal2-actions button {
+    margin: 10px; /* Margen alrededor de los botones de SweetAlert */
+    width: 100px; /* Ancho de los botones de SweetAlert */
+}

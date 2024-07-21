@@ -1,0 +1,222 @@
+<!DOCTYPE html> <!-- Declaración del tipo de documento -->
+<html lang="es"> <!-- Declaración del idioma para el documento -->
+
+<head>
+    <!-- TODO Título del documento -->
+    <title>Configuraciones - FeasVerse</title>
+    <!-- Metadatos de la página web -->
+    <meta charset="utf-8">
+    <meta name="author" content="FeasVerseCompany">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- TODO Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- *Llamada a las hojas de estilos del framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- *Llamada a las hojas de estilos propios de css -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/publico/plantilla.css" rel="stylesheet">
+    <link href="../../recursos/estilos/publico/configuraciones.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="ContenedorT col-12 mb-5 pb-5
+        " id="ContenedorMain">
+            <!-- Contenedor principal con título -->
+            <div class="ContenedorTitulo position-relative mb-5">
+                <h2 class="titillium-web-semibold textTitulo"> Tu cuenta </h2>
+                <div class="linea1"></div>
+            </div>
+            <div class="px-0 col-12 d-flex flex-row flex-wrap align-items-center justify-content-around mt-5">
+                <!--Contenedor de informacion del perfil para que eedite y que funcinoa como un redirreccionar-->
+                <div class="contenedor1 d-flex flex-sm-column flex-lg-row flex-md-row flex-column align-items-center col-lg-5 col-md-8 col-sm-11 col-11 shadow align-self-stretch p-3 mb-5
+                " onclick="showPedidos()">
+                    <img src="../../recursos/imagenes/Quick delivery.svg" width="130px" height="130px" class="me-2">
+                    <!--Contenedor de perfil y descripcion-->
+                    <div class="d-flex flex-column mt-3 ms-4">
+                        <div class="ContenedorTitulo position-relative">
+                            <h3 class="titillium-web-regular "> Tus pedidos </h3>
+                            <div class="linea1"></div>
+                        </div>
+                        <p class="textoD titillium-web-bold mt-2">En este aparatado podras visualizar los datos de todos
+                            los pedidos
+                            que has hechos e igualmente podras visiualizar el estado del pedido</p>
+                    </div>
+                </div>
+                <!--Contenedor de informacion del perfil para que eedite y que funcinoa como un redirreccionar-->
+                <div class="contenedor2 d-flex flex-sm-column flex-lg-row flex-md-row flex-column align-items-center col-lg-5 col-md-8 col-sm-11 col-11 shadow align-self-stretch p-3 mt-5 mt-sm-5 mt-lg-0 mb-5 mt-md-0
+                " onclick="showFormUser()">
+                    <img src="../../recursos/imagenes/icons/UserIconG.svg" width="100px" height="100px" class="ms-3">
+                    <!--Contenedor de perfil y descripcion-->
+                    <div class="d-flex flex-column mt-3 ms-4">
+                        <div class="ContenedorTitulo position-relative">
+                            <h3 class="titillium-web-regular ">Tu perfil</h3>
+                            <div class="linea1"></div>
+                        </div>
+                        <p class="textoD titillium-web-bold mt-2">En este aparatado podras visualizar tu información y
+                            podras modificarla por si un dato esta incorrecto o si requiere un actualización</p>
+                    </div>
+                </div>
+                <div class="contenedor2 d-flex flex-sm-column flex-lg-row flex-md-row flex-column align-items-center col-lg-5 col-md-8 col-sm-11 col-11 shadow align-self-stretch p-3 mt-5 mt-sm-5 mt-lg-0 mt-md-0
+                " onclick="openDetails()">
+                    <img src="../../recursos/imagenes/Vector (1).svg" width="100px" height="100px" class="ms-3">
+                    <!--Contenedor de perfil y descripcion-->
+                    <div class="d-flex flex-column mt-3 ms-4">
+                        <div class="ContenedorTitulo position-relative">
+                            <h3 class="titillium-web-regular ">Restablecer contraseña</h3>
+                            <div class="linea1"></div>
+                        </div>
+                        <p class="textoD titillium-web-bold mt-2">
+                            En este aparatado podras restablecer tu contraseña si te has olvidado de ella</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-none" id="formDiv">
+            <div class="contenedorTotalForm d-flex flex-column justify-content-center align-items-center flex-wrap p-5">
+                <!--Contenedor de la informacion del usuario, nombres y correo-->
+                <div class="contenedorCabecera d-flex flex-row align-items-center flex-wrap mb-2">
+                    <div class="contenedorImg">
+                        <!-- Contenedor para la imagen del usuario -->
+                        <img src="../../recursos/imagenes/icons/Account.svg" width="150px" height="150px">
+                    </div>
+                    <div class="contenedorInfo d-flex flex-column ms-4">
+                        <!-- Contenedor de información del usuario -->
+                        <div class="contenedorNombre">
+                            <!-- Contenedor para el nombre del usuario -->
+                            <h3 class="titillium-web-regular" id="nombreDeUsuario"></h3>
+                        </div>
+                        <div class="contenedorCorreo position-relative">
+                            <!-- Contenedor para la dirección de correo del usuario -->
+                            <h6 class="titillium-web-extralight" id="correoDeUsuario"></h6>
+                            <!-- Línea decorativa debajo del correo -->
+                            <div class="linea1"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--Contenedor del formulario para cambiar-->
+                <div class="contenedorForm d-flex flex-column">
+                    <form class="row needs-validation form1 position-relative" novalidate id="infoForm">
+                        <!--Formulario de nombre-->
+                        <div class="col-md-6">
+                            <label for="nombreInput" class="form-label">Nombres</label>
+                            <input type="text" class="form-control" id="nombreInput" required readonly
+                                name="nombreInput">
+                        </div>
+                        <!--Formulario de apellido-->
+                        <div class="col-md-6">
+                            <label for="apellidosInput" class="form-label ">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidosInput" required readonly
+                                name="apellidosInput">
+                        </div>
+                        <!--Formulario de DUI-->
+                        <div class="col-md-6 mt-3">
+                            <label for="duiInput" class="form-label ">DUI</label>
+                            <input type="text" class="form-control" id="duiInput" required readonly name="duiInput">
+                        </div>
+                        <!--Formulario de telefono-->
+                        <div class="col-md-6 mt-3">
+                            <label for="telefonoInput" class="form-label ">Teléfono</label>
+                            <input type="text" class="form-control" id="telefonoInput" required readonly
+                                name="telefonoInput">
+                        </div>
+                        <!--Formulario de correo electronico-->
+                        <div class="col-md-6 mt-3">
+                            <label for="correoInput" class="form-label ">Correo Electrónico</label>
+                            <input type="text" class="form-control" id="correoInput" required readonly
+                                name="correoInput">
+                        </div>
+                        <!--Formulario de fecha de nacimento-->
+                        <div class="col-md-6 mt-3">
+                            <label for="fechanInput" class="form-label ">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="fechanInput" required readonly
+                                name="fechanInput">
+                        </div>
+                        <!--Formulario de contraseña-->
+                        <div class="col-md-6 mt-3">
+                            <label for="direccion" class="form-label ">Dirección</label>
+                            <input type="text" class="form-control" id="direccion" required readonly name="direccion">
+                        </div>
+                        <!--contenedores de los botones-->
+                        <div class="contenedorBotones2">
+                            <!--boton de regresar-->
+                            <button type="button" onclick="returnBack()"
+                                class="btn btn2 btn-primary ms-2 shadow text19 titillium-web-regular">Regresar</button>
+                            <!--boton de guardar-->
+                            <button class="btn btn3 btn-primary shadow ms-5 text18 titillium-web-regular" id="btnUpdate"
+                                onclick="addSave()" type="button">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal para actualizar contraseña-->
+        <div class="modal fade" id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Encabezado del modal -->
+                    <div class="modal-header d-flex justify-content-center align-items-center">
+                        <h1 class="modal-title fs-5 text-center" id="modalTitle">Restablecer contraseña</h1>
+                    </div>
+                    <!-- Formulario para actualizar contraseña -->
+                    <form id="passwordForm" name="passwordForm">
+                        <div class="modal-body row g-3 d-flex flex-column align-items-center">
+                            <div class="offset-col-1 col-10">
+                                <!-- Campos -->
+                                <div class="col-sm-12 col-md-12">
+                                    <label for="contraActual" class="form-label">Contraseña actual:</label>
+                                    <input id="contraActual" type="password" name="contraActual"
+                                        class="form-control editableInput" required>
+                                </div>
+                                <div class="col-sm-12 col-md-12">
+                                    <label for="newContra" class="form-label">Nueva contraseña:</label>
+                                    <input id="newContra" type="password" name="newContra"
+                                        class="form-control editableInput" required>
+                                </div>
+                                <div class="col-sm-12 col-md-12">
+                                    <label for="confirContra" class="form-label">Confirmar contraseña:</label>
+                                    <input id="confirContra" type="password" name="confirContra"
+                                        class="form-control editableInput" required>
+                                </div>
+                            </div>
+                            <!-- Botones en el pie del modal -->
+                            <div class="modal-footer mt-5 d-flex justify-content-center align-items-center">
+                                <div class="contenedorBotones3 offset-lg-3 col-6">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <!-- Botón para cancelar la operación -->
+                                        <button type="button" id="cancelarBtn"
+                                            class="btn btn2 btn-primary me-2 shadow text18 titillium-web-regular col-4"
+                                            onclick="botonCancelar()">
+                                            Cancelar
+                                        </button>
+                                        <!-- Botón para actualizar el registro -->
+                                        <button type="button" id="agregarBtn"
+                                            class="btn btn3 btn-primary shadow text18 titillium-web-regular col-4"
+                                            onclick="botonActualizar()">
+                                            Restablecer
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--*Libreria de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *Llamada al controlador del sitio publico -->
+    <script type="text/javascript" src="../../controlador/utilidades/publico.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <!-- *Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controlador/publico/configuraciones.js"></script>
+</body>
+
+</html>

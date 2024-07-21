@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Título del documento -->
+    <title></title>
+    <!-- Metadatos de la página web -->
+    <meta charset="UTF-8">
+    <meta name="author" content="FeasVerseCompany">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- Llamada a las hojas de estilos del framework Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- Llamada a las hojas de estilos propios de CSS -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/plantilla.css" rel="stylesheet">
+    <link href="../../recursos/estilos/privado/clientes.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sección del encabezado -->
+    <header id="header"></header>
+    <!-- Sección del carrusel -->
+    <div id="slide"></div>
+    <!-- Sección principal del contenido -->
+    <main id="mainContent">
+        <!-- Contenedor principal -->
+        <div class="ContenedorT">
+            <!-- Contenedor del título -->
+            <div class="ContenedorTitulo position-relative">
+                <h3 class="titillium-web-semibold color-3blue">Clientes</h3>
+                <div class="linea1"></div>
+            </div>
+            <!-- Contenedor de pestañas -->
+            <div class="ContenedorPestaña">
+                <!-- Lista de pestañas -->
+                <ul class="nav nav-tabs ms-5">
+                    <li class="nav-item" role="presentation">
+                        <!-- Botón de pestaña Tabla -->
+                        <button class="nav-link text-white titillium-web-regular" data-bs-toggle="tab" id="tabla-tab"
+                            type="button" data-bs-target="#tabla" role="tab" aria-controls="tabla" aria-selected="true"
+                            onclick="showTableDiv(this)">
+                            Tabla
+                        </button>
+                    </li>
+                </ul>
+                <!-- Contenido de las pestañas -->
+                <div class="tab-content contenidoP position-relative" id="">
+                    <!-- Rectángulo de fondo -->
+                    <div class="rectangle z-0"></div>
+                    <!-- Contenido de la pestaña "Tabla" -->
+                    <div class="tab-pane fade show z-3" role="tabpanel" id="tabla" aria-labelledby="tabla-tab">
+                        <!-- Contenedor total de la tabla -->
+                        <div class="ContenedorTotal z-3 position-relative flex-column">
+                            <div class="d-flex flex-column align-items-center">
+                                <div class="search-container col-11 mt-4">
+                                    <input type="search" class="form-control" name="search" placeholder="Buscar....."
+                                        id="buscadorInputClientes" required>
+                                    <span class="search-icon"><i class="bi bi-search"></i></span>
+                                    <span class="clear-icon" onclick="clearSearch()"><i
+                                            class="bi clear-icon"></i></span>
+                                </div>
+                                <!-- Contenedor de la tabla -->
+                                <div class="col-lg-11">
+                                    <div class="Contenedor-tabla z-3 mt-4 table-responsive col-12">
+                                        <!-- Tabla de clientes -->
+                                        <table class="table table-hover table-bordered" id="tablaClientes">
+                                            <!-- Cabecera de la tabla -->
+                                            <thead class="thead">
+                                                <tr>
+                                                    <th scope="col" class="cabecera-color text-white text-center">ID
+                                                    </th>
+                                                    <th scope="col" class="cabecera-color text-white text-center">
+                                                        Apellidos
+                                                    </th>
+                                                    <th scope="col" class="cabecera-color text-white text-center">
+                                                        Nombres
+                                                    </th>
+                                                    <th scope="col" class="cabecera-color text-white text-center">DUI
+                                                    </th>
+                                                    <th scope="col" class="cabecera-color text-white text-center">
+                                                        Teléfono
+                                                    </th>
+                                                    <th scope="col" class="cabecera-color text-white text-center">Correo
+                                                    </th>
+                                                    <th scope="col" class="cabecera-color text-white text-center">Estado
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <!-- Cuerpo de la tabla -->
+                                            <tbody class="text-center" id="tableBody">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Contenedor de botones -->
+                            <div
+                                class="contenedorBotones col-11 mb-4 z-0 d-flex flex-wrap justify-content-center justify-content-lg-start justify-content-md-start">
+                                <button type="button"
+                                    class="btn btn2 btn-primary mx-4 shadow text18 titillium-web-regular" id="btnBloq"
+                                    onclick="botonBloquear()">Bloquear
+                                </button>
+                                <p id="textoInfo"
+                                    class="text-white titillium-web-regular text-center d-flex justify-content-center align-items-center m-0">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Componente Modal para ver detalle y actualizar de un registro -->
+        <div class="modal fade" id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="modalTitle" aria-hidden="true">
+            <!-- Contenedor del modal -->
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Encabezado del modal -->
+                    <div class="modal-header d-flex justify-content-center">
+                        <h1 class="modal-title fs-5 text-center" id="modalTitle"></h1>
+                    </div>
+                    <!-- Formulario para detalles o actualizar de un registro cliente -->
+                    <form id="detailUpdateForm" name="detailUpdateForm">
+                        <div class="modal-body row g-3">
+                            <!-- Campos del formulario -->
+                            <!-- Campo oculto para asignar el id del registro al momento de modificar -->
+                            <input type="number" class="d-none" id="idCliente" name="idCliente">
+                            <!-- Campo de nombre -->
+                            <div class="col-sm-12 col-md-6">
+                                <label for="nombreCliente" class="form-label">Nombres</label>
+                                <input id="nombreCliente" type="text" name="nombreCliente" class="form-control"
+                                    required>
+                            </div>
+                            <!-- Campo de apellido -->
+                            <div class="col-sm-12 col-md-6">
+                                <label for="apellidosCliente" class="form-label">Apellidos</label>
+                                <input id="apellidosCliente" type="text" name="apellidosCliente" class="form-control"
+                                    required>
+                            </div>
+                            <!-- Campo de DUI-->
+                            <div class="col-sm-12 col-md-6">
+                                <label for="duiCliente" class="form-label">DUI</label>
+                                <input id="duiCliente" type="text" name="duiCliente" class="form-control" required>
+                            </div>
+                            <!-- Campo de telefono -->
+                            <div class="col-sm-12 col-md-6">
+                                <label for="telefonoCliente" class="form-label">Teléfono</label>
+                                <input id="telefonoCliente" type="text" name="telefonoCliente" class="form-control"
+                                    required>
+                            </div>
+                            <!-- Campo de correo electronico -->
+                            <div class="col-sm-12 col-md-6">
+                                <label for="correoCliente" class="form-label">Correo electrónico</label>
+                                <input id="correoCliente" type="email" name="correoCliente" class="form-control"
+                                    required>
+                            </div>
+                            <!-- Campo de fecha de nacimiento -->
+                            <div class="col-sm-12 col-md-6">
+                                <label for="fechaDeNacimientoCliente" class="form-label">Fecha de nacimiento</label>
+                                <input id="fechaDeNacimientoCliente" type="date" name="fechaDeNacimientoCliente"
+                                    class="form-control" required>
+                            </div>
+                            <!-- Campo de fecha de registro -->
+                            <div class="col-sm-12 col-md-6">
+                                <label for="fechaDeRegistroCliente" class="form-label">Fecha de registro</label>
+                                <input id="fechaDeRegistroCliente" type="date" name="fechaDeRegistroCliente"
+                                    class="form-control" required>
+                            </div>
+                            <!-- Campo de estado -->
+                            <div class="col-sm-12 col-md-6">
+                                <label for="estadoCliente" class="form-label">Estado</label>
+                                <select class="form-label form-select form-control" id="estadoCliente"
+                                    aria-label="Estado cliente" required>
+                                    <option value="" disabled>Selecciona un estado</option>
+                                    <option value="1">Activo</option>
+                                    <option value="2">Desactivado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--Footer del modal-->
+                        <div class="modal-footer d-flex justify-content-center">
+                            <!-- boton de cancelar -->
+                            <button type="button" id="cancelarBtn"
+                                class="btn btn3 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                onclick="botonCancelar()">
+                                Cancelar
+                            </button>
+                            <!-- boton de actualizar -->
+                            <button type="submit" id="actualizarBtn"
+                                class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular">
+                                Actualizar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--*Libreria de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controlador/utilidades/privado.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <script type="text/javascript" src="../../controlador/privado/cliente.js"></script>
+</body>
+
+</html>

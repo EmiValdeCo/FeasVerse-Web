@@ -1,0 +1,119 @@
+/* Estilos para el tamaño mínimo del documento HTML, cuerpo y el elemento principal */
+html,
+body,
+main {
+    /* Ancho mínimo del 100% */
+    min-width: 100%;
+}
+
+/* Estilos para el elemento principal */
+main {
+    /* Altura mínima del 50% del viewport height */
+    min-height: 50vh;
+}
+
+/* Estilos para el espacio */
+.space {
+    /* Los elementos hijos se muestran en una fila */
+    display: flex;
+    /* Dirección de la fila */
+    flex-direction: row;
+    /* Los elementos hijos se alinean verticalmente en el centro */
+    align-items: center;
+}
+
+/* Estilos para los elementos del menú desplegable en el hover */
+.nav-item.dropdown:hover .dropdown-menu .dropdown-item:hover {
+    /* Fondo en #0D4560 */
+    background-color: #0D4560;
+    /* Bordes redondeados de 10px */
+    border-radius: 10px;
+}
+
+/* Estilos para los encabezados de nivel 6 */
+h6 {
+    /* Tamaño de fuente de 18px */
+    font-size: 18px;
+}
+
+/* Estilos para el contenedor de marcas */
+.contenedorMarcas {
+    /* Ancho mínimo de 528px */
+    min-width: 528px;
+    /* Ancho máximo ajustado al contenido */
+    max-width: max-content;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+/* Media query para pantallas con un ancho máximo de 1180px */
+@media screen and (max-width: 1180px) {
+    .contenedorMarcas {
+        /* Ancho mínimo de 400px */
+        min-width: 400px;
+        /* Ancho máximo ajustado al contenido */
+        max-width: max-content;
+    }
+}
+
+/* Media query para pantallas con un ancho máximo de 1045px */
+@media screen and (max-width: 1045px) {
+    .contenedorMarcas {
+        /* Ancho mínimo de 265px */
+        min-width: 265px;
+        /* Ancho máximo ajustado al contenido */
+        max-width: max-content;
+    }
+}
+
+/* Media query para pantallas con un ancho máximo de 970px */
+@media screen and (max-width: 970px) {
+    .contenedorMarcas {
+        /* Ancho mínimo ajustado al contenido */
+        min-width: fit-content;
+        /* Ancho máximo ajustado al contenido */
+        max-width: max-content;
+    }
+}
+
+/* Estilos para el pie de página inferior */
+.btmFooter {
+    /* Fondo semitransparente en negro */
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el pie de página superior */
+.topFooter {
+    /* Fondo en #1591CC */
+    background-color: #1591CC;
+    /* Altura de 30px */
+    height: 30px;
+}
+
+/*! Estilos para los popups de SweetAlert */
+/* Estilos para los popups de SweetAlert */
+.swal2-popup {
+    /* Estilo de fuente "Titillium Web" para el popup de SweetAlert */
+    font-family: "Titillium Web", sans-serif;
+}
+
+/* Estilos para el título de los popups de SweetAlert */
+.swal2-title {
+    /* Estilo de fuente "Titillium Web" para el título de SweetAlert */
+    font-family: "Titillium Web", sans-serif;
+}
+
+/* Estilos para el contenido de los popups de SweetAlert */
+.swal2-content {
+    /* Estilo de fuente "Titillium Web" para el contenido de SweetAlert */
+    font-family: "Titillium Web", sans-serif;
+}
+
+/* Estilos para los botones de los popups de SweetAlert */
+.swal2-actions button {
+    /* Margen de 10px alrededor de los botones de SweetAlert */
+    margin: 10px;
+    /* Ancho de 100px para los botones de SweetAlert */
+    width: 100px;
+}

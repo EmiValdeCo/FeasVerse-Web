@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<!-- ESTILOS DE DOCUMENTACIÓN DEL CODIGO
+* Comentario claro
+! Alerta
+? Pregunta
+TODO importante // realtando algo
+// Comentario tachado
+-->
+
+<head>
+    <!-- TODO Título del documento -->
+    <title>Historial de pedidos - FeasVerse</title>
+    <!-- Metadatos de la página web -->
+    <meta charset="utf-8">
+    <meta name="author" content="FeasVerseCompany">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- TODO Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- *Llamada a las hojas de estilos del framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- *Llamada a las hojas de estilos propios de css -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/publico/plantilla.css" rel="stylesheet">
+    <link href="../../recursos/estilos/publico/tus_pedidos.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- *Contenido principal del documento -->
+    <main>
+        <!--Contenedor Principal-->
+        <div class="col-lg-12 d-flex flex-column">
+            <div class="col-lg-12 mt-4">
+                <div class="titleReseñas ps-5 pt-2 rounded-end-4 bg-color-4blue col-12 col-sm-6 col-md-5 col-lg-4">
+                    <!-- *Contenedor del titulo de historial -->
+                    <div class="d-flex justify-content-end">
+                        <h3 class="titillium-web-semibold text-white pe-4 mx-5">Historial de pedidos</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mb-4 mt-4">
+                <!--CONTENEDOR DE TEXTO DE TUS PEDiDOS TITULO Y SELECT DE PEDIDOS-->
+                <div class="col-lg-10 offset-lg-1 d-flex flex-column">
+                    <h3 class="titillium-web">
+                        Tus pedidos
+                    </h3>
+                    <!--CONTENDOR DEL SELECT-->
+                    <div class="col-lg-12 d-flex">
+                        <!--TExTo CON CANTIDAD DE PEDIDOS REALIZADOS-->
+                        <div class="col-lg-6">
+                            <h5 class="titillium-web-extralight" id="pedidosHechos">
+                                Pedidos realizados hasta el momento
+                            </h5>
+                        </div>
+                        <!--SELECT-->
+                        <div class="col-lg-4 ms-4">
+                            <div class="col-11 d-flex justify-content-end">
+                                <select class="form-select rounded-3 text-center text-white bg-color-1gray"
+                                    id="buscadorInput" required>
+                                    <option value="0">Todos</option>
+                                    <option value="3">Pendiente</option>
+                                    <option value="2">En camino</option>
+                                    <option value="1">Entregado</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offset-lg-1 col-lg-10">
+                    <div class="cuadradox"></div>
+                </div>
+            </div>
+            <!--Contenedor para visualizar los pedidos realizados-->
+            <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                <div class="col-lg-10" id="contenedorDePedidos">
+                    <!--Comienzo de cards de zapatos-->
+
+                </div>
+            </div>
+            <div class="offset-lg-1 col-lg-10 mb-4">
+                <div class="cuadradox"></div>
+            </div>
+            <div class="offset-lg-3 col-lg-6 mb-4">
+                <div class="col-12">
+                    <button type="button"
+                        class="btn btn-primary titillium-web-regular bg-color-1gray text-white text-center"
+                        id="botonAgregarComentario" onclick="openDetails()">
+                        Agregar comentario
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal para agregar un comentario-->
+        <div class="modal fade" id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Encabezado del modal -->
+                    <div class="modal-header d-flex justify-content-center align-items-center">
+                        <h1 class="modal-title fs-5 text-center" id="modalTitle">Agregar comentario</h1>
+                    </div>
+                    <!-- Formulario para crear o actualizar un registro -->
+                    <form id="comentarioForm" name="comentarioForm">
+                        <div class="modal-body row g-3 d-flex flex-column align-items-center">
+                            <!-- Campo de titulo -->
+                            <div class="col-sm-12 col-md-12">
+                                <label for="tituloComentario" class="form-label">Títutlo del comentario:</label>
+                                <input id="tituloComentario" type="text" name="tituloComentario"
+                                    class="form-control editableInput" required>
+                            </div>
+
+                            <!-- Área de comentario -->
+                            <div class="input-group">
+                                <span class="input-group-text">Comentario:</span>
+                                <textarea class="form-control" aria-label="With textarea" id="descripcionComentario" name="descripcionComentario"
+                                    required></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <select class="form-select rounded-3 text-center text-white bg-color-1gray" id="idDetalleZapato" name="idDetalleZapato"
+                                    required>
+                                </select>
+                            </div>
+
+                            <!-- Campo de calificacion -->
+                            <div class="col-12 d-flex flex-column justify-content-center">
+                                <label for="calificacion"
+                                    class="form-label col-12 d-flex justify-content-center mb-0 mt-2">
+                                    <h3 class="titillium-web text20">Calificación</h3>
+                                </label>
+                                <div class="col-12 container1 d-flex justify-content-center">
+                                    <div class="star">
+                                        <a href="#" class="bi-star-fill estrella" data-value="1"></a>
+                                        <a href="#" class="bi-star-fill estrella" data-value="2"></a>
+                                        <a href="#" class="bi-star-fill estrella" data-value="3"></a>
+                                        <a href="#" class="bi-star-fill estrella" data-value="4"></a>
+                                        <a href="#" class="bi-star-fill estrella" data-value="5"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Botones en el pie del modal -->
+                            <div class="modal-footer mt-5 d-flex justify-content-center align-items-center">
+                                <div class="contenedorBotones3 offset-lg-3 col-6">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <!-- Botón para cancelar la operación -->
+                                        <button type="button" id="cancelarBtn"
+                                            class="btn btn2 btn-primary me-2 shadow text18 titillium-web-regular col-4"
+                                            onclick="botonCancelar()">
+                                            Cancelar
+                                        </button>
+                                        <!-- Botón para actualizar el registro -->
+                                        <button type="button" id="agregarBtn"
+                                            class="btn btn3 btn-primary shadow text18 titillium-web-regular col-4"
+                                            onclick="botonAgregar()">
+                                            Agregar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--*Libreria de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *Llamada al controlador del sitio publico -->
+    <script type="text/javascript" src="../../controlador/utilidades/publico.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <!-- *Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controlador/publico/tus_pedidos.js"></script>
+</body>
+
+</html>

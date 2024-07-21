@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<!-- ESTILOS DE DOCUMENTACIÓN DEL CODIGO
+* Comentario claro
+! Alerta
+? Pregunta
+TODO importante // realtando algo
+// Comentario tachado
+-->
+
+<head>
+    <!-- TODO Título del documento -->
+    <title>Inicio - FeasVerse</title>
+    <!-- Metadatos de la página web -->
+    <meta charset="utf-8">
+    <meta name="author" content="FeasVerseCompany">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- TODO Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- *Llamada a las hojas de estilos del framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- *Llamada a las hojas de estilos propios de css -->
+    <link href="../../recursos/estilos/publico/index.css" rel="stylesheet">
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/publico/plantilla.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- *Contenido principal del documento -->
+    <main> <!-- *Carrusel principal -->
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner carrusel position-relative">
+                <!-- Esta div contiene el contenido del carrusel -->
+                <div class="z-2 position-absolute">
+                    <!-- Esta div se utiliza para posicionar el texto sobre las imágenes -->
+                    <div>
+                        <h1 class="text-white titillium-web-bold ">
+                            ¡Bienvenido a FEASVERSE!
+                        </h1>
+                        <!-- Encabezado principal del carrusel -->
+                        <h2 class="text-white titillium-web-light">
+                            Descubre el mundo del auténtico estilo en zapatillas
+                        </h2>
+                        <!-- Subtítulo del carrusel -->
+                    </div>
+                </div>
+                <!-- Aquí comienza la sección del carrusel de imágenes -->
+                <div class="carruselA">
+                    <!-- Esta div contiene cada imagen del carrusel -->
+                    <div class="carousel-item active">
+                        <!-- La clase "active" indica que esta es la primera imagen visible -->
+                        <img src="../../recursos/imagenes/carrusel/sneakers1.svg"
+                            class="d-block w-100 opacity-50 imgC1">
+                        <!-- Imagen 1 del carrusel -->
+                    </div>
+                    <div class="carousel-item">
+                        <!-- Esta div contiene la segunda imagen del carrusel -->
+                        <img src="../../recursos/imagenes/carrusel/sneakers2.svg"
+                            class="d-block w-100 opacity-50 imgC1">
+                        <!-- Imagen 2 del carrusel -->
+                    </div>
+                    <div class="carousel-item">
+                        <!-- Esta div contiene la tercera imagen del carrusel -->
+                        <img src="../../recursos/imagenes/carrusel/sneakers3.svg"
+                            class="d-block w-100 opacity-50 imgC1">
+                        <!-- Imagen 3 del carrusel -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--*Carrusel de marcas-->
+        <div class="linea mt-5"></div>
+        <!-- Divisor de línea superior con espacio superior -->
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <!-- Contenedor del carrusel -->
+            <div class="carousel-inner" id="carousel_inner">
+            </div>
+            <!-- Botón para retroceder en el carrusel -->
+            <button class="carousel-control-prev a" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-previous" aria-hidden="true">
+                    <!-- Icono de flecha izquierda -->
+                    <img src="../../recursos/imagenes/icons/slideizq.svg" alt="">
+                </span>
+            </button>
+            <!-- Botón para avanzar en el carrusel -->
+            <button class="carousel-control-next a" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-" aria-hidden="true">
+                    <!-- Icono de flecha derecha -->
+                    <img src="../../recursos/imagenes/icons/slidedrch.svg" alt="">
+                </span>
+            </button>
+        </div>
+        <!-- Divisor de línea inferior con espacio inferior -->
+        <div class="linea mb-5"></div>
+
+        <!--*Slider de colección más reciente-->
+        <!-- Encabezado de la sección: Nuestra colección más reciente -->
+        <h1 class="titillium-web-regular text35 mx-5 text-black mt-3">Nuestra colección más reciente</h1>
+
+        <!-- Contenedor de las tarjetas de la colección -->
+        <div class="containerCards d-flex flex-nowrap" id="container_coleccion_reciente"></div>
+        <!-- Espacio en la parte inferior -->
+        <div class="pb-3"></div>
+
+        <!--*Slider de seleccion especial-->
+        <!-- Encabezado de la sección: Selección especial de nuestro equipo -->
+        <h1 class="titillium-web-regular text35 mx-5 text-black mt-3">Selección especial de nuestro equipo</h1>
+
+        <!-- Contenedor de las tarjetas de la selección especial -->
+        <div class="containerCards d-flex flex-nowrap" id="container_coleccion_especial">
+        </div>
+        <div class="pb-3"></div>
+
+    </main>
+
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--*Libreria de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *Llamada al controlador del sitio publico -->
+    <script type="text/javascript" src="../../controlador/utilidades/publico.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <!-- *Llamada al controlador de la página web -->
+    <script type="text/javascript" src="../../controlador/publico/index.js"></script>
+</body>
+
+</html>

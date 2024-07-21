@@ -1,0 +1,99 @@
+/*Estilos para el body*/
+body{
+    background-image:url('../../imagenes/1FONDO.svg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+}
+
+/*Altura del mainContent*/
+.mainContent {
+    height: 100vh;
+}
+
+/*Estilos del Contenedor del Formulario*/
+.ContenedorForm{
+    background-color: white;
+    border-radius: 20px;
+    height: fit-content;
+    padding-bottom: 20px;
+}
+
+/*Estilo del texto de titulo*/
+.titulo{
+    font-size: 36px;
+}
+
+/*Estilo de texto*/
+.textoBienvenida{
+    font-size: 16px;
+    color: #5F5F5F;
+}
+
+/*Estilo para el boton*/
+.botonIngreso{
+    background-color: #0D4560; 
+    width: 100%;
+}
+
+/*Estilo para el borde de los inputs*/
+.bordesAzul{
+    border-color: #146A93;
+}
+
+/*Estilo de iconos*/
+.contraseña, .correo{
+    padding: 15px;
+}
+
+/*Estilo de contenedor del formulario de registro*/
+.ContenedorRegistro{
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+    margin-top: 160px;
+}
+
+/*Estilo de texto*/
+.texto{
+    width: 100%;
+    padding-left: 50px ;
+}
+
+/*Ajustes del contenedor de la imagen*/
+.ContenedorImg{
+    padding-left: 50px ;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+/*Estilo para el boton*/
+.botonIngreso1{
+    width: 80%;
+}
+
+/*Estilo para el boton*/
+.botonIngreso{
+    color: white;
+    background-color: #0D4560;
+}
+
+/*Estilo para el texto */
+.textoT{
+    font-size: 40px;
+}
+
+/*Estilo para el id password1/*/
+#password1{
+    width: 50vw;
+}
+
+/*Estilo para el boton azul*/
+.botonAzul{
+    background-color: #0D4560;
+}

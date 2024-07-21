@@ -1,0 +1,108 @@
+/* Estilos para las celdas de encabezado de la tabla */
+.table thead th {
+    background-color: #0D4560;
+    /* Color de fondo del encabezado de la tabla */
+    color: white;
+    /* Color del texto en el encabezado de la tabla */
+    border: 0;
+    /* Sin bordes en las celdas del encabezado */
+    text-align: center;
+    /* Alineación del texto al centro en el encabezado de la tabla */
+}
+
+button{
+    border: none;
+    background-color: transparent;
+}
+
+.modal-content {
+    background-color: #1A89BD;
+    color: white;
+}
+
+button:hover{
+    background-color: gainsboro;
+}
+
+#tablaCarrito th,
+#tablaCarrito td {
+    border: none;
+    border-bottom: 1px solid #0D4560;
+    /* Añade una línea en la parte inferior de las celdas */
+}
+
+#tablaCarrito th {
+    border-top: 1px solid #0D4560;
+    /* Añade una línea en la parte superior de las celdas de encabezado */
+}
+
+/*BOTON*/
+#comprar {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Estilos para el botón de comprar */
+#Botoncomprar {
+    /* Ancho y altura del 100% del contenedor */
+    width: 100%;
+    height: 100%;
+    /* Bordes redondeados de 20px */
+    border-radius: 20px;
+}
+
+/* Estilos para la imagen del hombre */
+.imgHombre {
+    /* La imagen se ajusta al 100% del ancho del contenedor */
+    width: 100%;
+    /* La imagen cubre completamente el contenedor */
+    object-fit: cover;
+    /* Bordes redondeados de 5px */
+    border-radius: 5px;
+}
+
+/* Estilos para la figura I1 */
+.figuraI1 {
+    /* Posicionamiento en la esquina superior derecha */
+    top: 0;
+    right: 0;
+    /* Altura de 500px */
+    height: 500px;
+    /* Inicialmente oculta */
+    display: none;
+}
+
+/* Estilos para la figura I2 */
+.figuraI2 {
+    /* Posicionamiento en la esquina inferior izquierda */
+    bottom: 0;
+    left: 0;
+    /* Altura de 700px */
+    height: 700px;
+    /* Inicialmente oculta */
+    display: none;
+}
+
+/* Media query para pantallas con un ancho mínimo de 992px */
+@media screen and (min-width: 992px) {
+    /* Mostrar la figura I1 y la figura I2 */
+    .figuraI1, .figuraI2 {
+        display: block;
+    }
+}
+
+/* Estilos para la imagen de la basura */
+.imgBasura {
+    /* Ancho de 30px */
+    width: 30px;
+    /* Altura de 25px */
+    height: 25px;
+    /* La imagen cubre completamente el contenedor */
+    object-fit: cover;
+}
+
+/* Estilos para el contenedor de la tabla */
+.tabla_contenedor {
+    /* Permitir el desplazamiento horizontal */
+    overflow-x: auto;
+}

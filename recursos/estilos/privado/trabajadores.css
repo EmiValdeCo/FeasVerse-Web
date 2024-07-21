@@ -1,0 +1,297 @@
+/* Estilos para el contenedor principal */
+.ContenedorT {
+    min-height: 100%;
+    max-height: 100%;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Estilos para el contenedor del título */
+.ContenedorTitulo {
+    max-height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+/* Estilos para el contenedor de la pestaña */
+.ContenedorPestaña {
+    min-height: 100%;
+    max-height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Estilos para los elementos de la barra de navegación */
+.nav-item {
+    background-color: #146A93;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: -5px;
+    color: white;
+}
+
+/* Estilos para los enlaces de la barra de navegación */
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* Estilos para el contenido principal */
+.contenidoP {
+    background-color: #1591CC;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+/* Estilos para el contenedor del tab control */
+#myTabControl {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+/* Estilos para el rectángulo */
+.rectangle {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #1A89BD;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+/* Estilos para la línea */
+.linea1 {
+    width: 100%;
+    height: 2px;
+    background-color: #146A93;
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Estilos para el texto con clase .textP */
+.textP {
+    color: #146A93;
+}
+
+/* Estilos para la pestaña con clase .tab-pane1 */
+.tab-pane1 {
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+/* Estilos para el contenedor de la tabla */
+.Contenedor-tabla {
+    margin-bottom: 20px;
+    height: 48vh;
+}
+
+/* Personalización del scrollbar dentro de .Contenedor-tabla */
+.Contenedor-tabla {
+    margin-bottom: 20px;
+    height: 48vh;
+    overflow-y: auto; /* Asegura que el scrollbar solo aparezca cuando sea necesario */
+}
+
+/* Estilo del track del scrollbar */
+.Contenedor-tabla::-webkit-scrollbar-track {
+    background-color: #1A89BD; /* Cambia el color de fondo del track del scrollbar */
+}
+
+/* Estilo del thumb (barra) del scrollbar */
+.Contenedor-tabla::-webkit-scrollbar-thumb {
+    background-color: #1A89BD; /* Cambia el color de la barra del scrollbar */
+    border-radius: 5px; /* Añade bordes redondeados al thumb */
+}
+
+/* Estilo del thumb (barra) del scrollbar cuando se desplaza */
+.Contenedor-tabla::-webkit-scrollbar-thumb:hover {
+    background-color: #1A89BD; /* Cambia el color de la barra del scrollbar al pasar el mouse */
+}
+
+/* Estilos para los contenedores de botones */
+.contenedorBotones,
+.contenedorBotones2,
+.contenedorBotones3 {
+    width: 100%;
+    min-height: fit-content;
+    max-height: fit-content;
+    margin-top: -5px;
+}
+
+/* Estilos para contenedorBotones2 */
+.contenedorBotones2 {
+    bottom: 2%;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Estilos para contenedorBotones3 */
+.contenedorBotones3 {
+    bottom: 2%;
+    position: static; /* Cambiado a 'static' para que no sea posicionado de forma absoluta */
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Estilos para el elemento con ID 'tabla-tab' */
+#tabla-tab {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Estilos para ContenedorTotal */
+.ContenedorTotal {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+}
+
+/* Estilos para el elemento con ID 'agregar' */
+#agregar {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para ContenedorTituloA */
+.ContenedorTituloA {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Estilos para ContenedorForm */
+.ContenedorForm {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 50px;
+    padding-top: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Estilos para form-control */
+.form-control {
+    border: #146A93 solid 1px;
+}
+
+.form-select {
+    border: #146A93 solid 1px;
+}
+
+/* Estilos para btn3 y btn2 */
+.btn3, .btn2 {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #146A93;
+    border: solid 0px;
+}
+
+/* Estilos para btn2 */
+.btn2 {
+    background-color: white;
+    border: #8F8F8F 1px solid;
+    color: black;
+}
+
+/* Estilos para form1 */
+.form1 {
+    min-width: 100%;
+}
+
+/* Estilos para table thead th */
+.table thead th {
+    background-color: #0D4560;
+    color: white;
+    border: 0;
+    text-align: center;
+}
+
+/* Estilos para quitar el borde superior de la tabla */
+.table {
+    border-top: 0px;
+}
+
+/* Estilos para quitar el borde superior de la tabla en la sección thead */
+.thead {
+    border-top: #0D4560 solid 0px;
+}
+
+/*PopUp de detalles*/
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: #1A89BD;
+    color: white;
+}
+
+/* Personalización del scrollbar en la tabla */
+#tablaTrabajadores {
+    overflow-y: auto;
+}
+
+/* Estilo del track del scrollbar */
+#tablaTrabajadores::-webkit-scrollbar-track {
+    background-color: #1A89BD; /* Cambia el color de fondo del track del scrollbar */
+}
+
+/* Estilo del thumb (barra) del scrollbar */
+#tablaTrabajadores::-webkit-scrollbar-thumb {
+    background-color: #1A89BD; /* Cambia el color de la barra del scrollbar */
+    border-radius: 5px; /* Añade bordes redondeados al thumb */
+}
+
+/* Estilo del thumb (barra) del scrollbar cuando se desplaza */
+#tablaTrabajadores::-webkit-scrollbar-thumb:hover {
+    background-color: #1A89BD; /* Cambia el color de la barra del scrollbar al pasar el mouse */
+}
+
+/* Hacer que el encabezado de la tabla se mantenga fijo al hacer scroll en el cuerpo de la tabla */
+thead tr th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+

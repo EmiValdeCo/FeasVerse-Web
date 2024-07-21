@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- Declaración del idioma para el documento -->
+<html lang="es">
+
+<!-- ESTILOS DE DOCUMENTACIÓN DEL CODIGO
+* Comentario claro
+! Alerta
+? Pregunta
+TODO importante // realtando algo
+// Comentario tachado
+-->
+
+<head>
+    <!-- TODO Título del documento -->
+    <title>Carrito - FeasVerse</title>
+    <!-- Metadatos de la página web -->
+    <meta charset="utf-8">
+    <meta name="author" content="FeasVerseCompany">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- *IMPORTACIÓN DE RECURSOS EXTERNOS -->
+    <!-- TODO Llamada al icono de la página web -->
+    <link type="image/png" rel="icon" href="../../recursos/imagenes/icono.svg">
+    <!-- *Llamada a las hojas de estilos del framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <!-- *Llamada a las hojas de estilos propios de css -->
+    <link href="../../recursos/estilos/fuentes.css" rel="stylesheet">
+    <link href="../../recursos/estilos/publico/plantilla.css" rel="stylesheet">
+    <link href="../../recursos/estilos/publico/carrito.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- *Contenido principal del documento -->
+    <main>
+        <!--contenedor principal-->
+        <div class="col-lg-12 d-flex flex-column align-items-center position-relative z-3">
+            <!--Carrito-->
+            <div class="col-lg-12 d-none d-flex align-items-center justify-content-center flex-column"
+                id="carritoDeCompras">
+                <!--Encabezado-->
+                <div class="col-lg-10 d-flex mt-4">
+                    <!--Foto de carrito-->
+                    <div class="col-lg-1 d-flex justify-content-center align-items-center me-3">
+                        <img src="../../recursos/imagenes/carritoAzul.svg" width="100%" height="100%">
+                    </div>
+                    <!--Texto-->
+                    <div class="col-lg-5 d-flex flex-column justify-content-center">
+                        <h1 class="titillium-web-bold mb-0">Tu carrito de compras</h1>
+                        <h5 class="titillium-web-light" id="cantidadZapato">Tienes 4 zapatos en tu carrito</h5>
+                    </div>
+                </div>
+                <!--Contenedor de tabla y boton-->
+                <div class="col-lg-10 mt-3 mb-5 z-3 table-responsive ">
+                    <!--Tabla-->
+                    <div class="col-lg-12 z-3 table-responsive">
+                        <div class="table-responsive ">
+                            <!-- Tabla de carrito -->
+                            <table class="table table-hover table-responsive" id="tablaCarrito">
+                                <!-- Cabecera de la tabla -->
+                                <thead class="thead">
+                                    <tr>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Zapato</th>
+                                        <th scope="col">Talla</th>
+                                        <th scope="col">Color</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Sub-total</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <!-- Cuerpo de la tabla -->
+                                <tbody class="text-center align-middle" id="tableBody">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--Div boton y precio-->
+                    <div class="col-lg-12 d-flex justify-content-end">
+                        <!--Precio-->
+                        <div class="col-lg-2 d-flex align-items-center justify-content-center me-2">
+                            <h5 id="totalPedido" class="titillium-web color-5blue"><b>Total:</b> $0</h5>
+                        </div>
+                        <!--Boton-->
+                        <div class="col-lg-2 d-flex align-items-center justify-content-center">
+                            <button type="button" id="comprar"
+                                class="btn text-center btn-primary titillium-web-bold bg-color-5blue text-white"
+                                onclick="botonComprar()"><i class="bi bi-send"></i>
+                                Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--FINALIZAICON DE LA COMPRA-->
+            <div class="col-lg-12 mb-3 d-none" id="compraDatos">
+                <img src="../../recursos/imagenes/figuraIrregular1.svg" class="position-absolute figuraI1 z-0">
+                <img src="../../recursos/imagenes/figuraIrregular2.svg" class="position-absolute figuraI2 z-0">
+                <!--Encabezado-->
+                <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                    <div class="col-lg-10 mt-4 mb-4 d-flex align-items-center">
+                        <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                            <!--Texto-->
+                            <h1 class="titillium-web-bold color-5blue">¡Últimos pasos para comprar!</h1>
+                        </div>
+                    </div>
+                </div>
+                <!--Cuerpo-->
+                <!--Div Revision-->
+                <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center">
+                    <div class="col-lg-12 d-flex justify-content-start">
+                        <div class="col-lg-6 d-flex flex-column justify-content-center">
+                            <div class="col-lg-12 ms-5">
+                                <!--LETRAS-->
+                                <h4 class="titillium-web-bold">Datos personales - Revisión</h4>
+                                <h6 class="titillium-web">Datos para la entrega</h6>
+                                <!--FORMULARIO-->
+                                <div class="ContenedorForm col-lg-12 mt-3 mb-3">
+                                    <form class="row needs-validation form1 col-lg-12" novalidate>
+                                        <!--NOMBRES-->
+                                        <div class="col-md-6 mt-3">
+                                            <input type="text" class="form-control" id="nombreInput"
+                                                placeholder="Ingresa los nombres" value="Adriana Paola" readonly>
+                                        </div>
+                                        <!--APELLIDOS-->
+                                        <div class="col-md-6 mt-3">
+                                            <input type="text" class="form-control" id="apellidosInput"
+                                                placeholder="Ingresa los apellidos" value="Menjía" readonly>
+                                        </div>
+                                        <!--DIRECCION-->
+                                        <div class="col-md-12 mt-3">
+                                            <input type="text" class="form-control" id="direccion"
+                                                placeholder="Ingres la direccion" value="mi casita" readonly>
+                                        </div>
+                                        <!--CORREO ELECTRONICO-->
+                                        <div class="col-md-6 mt-3">
+                                            <input type="email" class="form-control" id="correoInput"
+                                                placeholder="Ingresa el correo electronico"
+                                                value="adrigol.lola@gmail.com" readonly>
+                                        </div>
+                                        <!--TELEFONO-->
+                                        <div class="col-md-6 mt-3">
+                                            <input type="text" class="form-control" id="telefonoInput"
+                                                placeholder="Ingresa el número telefonico" value="7084-2281" readonly>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--DIV metodo de pago-->
+                    <div class="col-lg-12 d-flex justify-content-end mb-5">
+                        <div class="col-lg-6 d-flex flex-column mt-5 mb-2">
+                            <div class="col-lg-12">
+                                <!--LETRAS-->
+                                <h4 class="titillium-web-bold">Método de pago</h4>
+                                <h6 class="titillium-web">Selecciona el método de pago</h6>
+                                <!--METOOD DE PAGA, CHEK RADIO-->
+                                <div class="ContenedorForm col-lg-12 mt-3 mb-4">
+                                    <div class="form-check col-lg-12">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="bitcoin">
+                                        <label class="form-check-label" for="bitcoin">
+                                            Bitcoin
+                                        </label>
+                                    </div>
+                                    <div class="form-check col-lg-12">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="efectivo" checked>
+                                        <label class="form-check-label" for="efectivo">
+                                            Efectivo
+                                        </label>
+                                    </div>
+                                    <div class="form-check col-lg-12">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="paypal"
+                                            checked>
+                                        <label class="form-check-label" for="paypal">
+                                            Paypal
+                                        </label>
+                                    </div>
+                                    <div class="form-check col-lg-12">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="tarjeta" checked>
+                                        <label class="form-check-label" for="tarjeta">
+                                            Tarjeta de credito/debito
+                                        </label>
+                                    </div>
+                                </div>
+                                <!--Total-->
+                                <div
+                                    class="col-lg-12 d-flex flex-column align-items-center justify-content-center mt-4">
+                                    <h6 class="titillium-web-extralight">Total + envio = Total final</h6>
+                                    <h4 class="titillium-web-light" id="totalPagar">$490 + $10 = $500</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 d-flex justify-content-center align-items-center mb-5">
+                        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                            <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                                <!--Boton regresar-->
+                                <div class="col-lg-6" onclick="regresar()">
+                                    <div class="col-lg-12 d-flex" id="botonRegresar">
+                                        <img src="../../recursos/imagenes/flechita_atras.svg" alt="Flechita atras"
+                                            class="me-2">
+                                        <h6 class="titillium-web">Regresar a tu carrito</h6>
+                                    </div>
+                                </div>
+                                <!--Boton pagar-->
+                                <div class="col-lg-3">
+                                    <button type="button" id="Botoncomprar"
+                                        class="btn text-center btn-primary titillium-web-bold bg-color-5blue text-white"
+                                        onclick="comprar()"><i class="bi bi-send"></i>
+                                        Pagar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal para actualizar contraseña-->
+        <div class="modal fade" id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Encabezado del modal -->
+                    <div class="modal-header d-flex justify-content-center align-items-center">
+                        <h1 class="modal-title fs-5 text-center" id="modalTitle">Modificar cantidad de zapato</h1>
+                    </div>
+                    <!-- Formulario para actualizar contraseña -->
+                    <form id="cantForm" name="cantForm">
+                        <div class="modal-body row g-3 d-flex flex-column align-items-center">
+                            <div class="offset-col-1 col-10">
+                                <!-- Campos -->
+                                <div class="col-sm-12 col-md-12">
+                                    <label for="cant" class="form-label">Cantidad:</label>
+                                    <input id="cant" type="number" name="cant"
+                                        class="form-control editableInput" required>
+                                </div>
+                            </div>
+                            <!-- Botones en el pie del modal -->
+                            <div class="modal-footer mt-5 d-flex justify-content-center align-items-center">
+                                <div class="contenedorBotones3 offset-lg-3 col-6">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <!-- Botón para cancelar la operación -->
+                                        <button type="button" id="cancelarBtn"
+                                            class="btn btn2 btn-primary me-2 shadow text18 titillium-web-regular col-4"
+                                            onclick="botonCancelar()">
+                                            Cancelar
+                                        </button>
+                                        <!-- Botón para actualizar el registro -->
+                                        <button type="button" id="btnUpdate"
+                                            class="btn btn3 btn-primary shadow text18 titillium-web-regular col-4"
+                                            onclick="actuEvent()">
+                                            Actualizar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- *Llamada a las hojas de estilos del framework e iconos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--*Libreria de mensajes-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- *Llamada al controlador del sitio publico -->
+    <script type="text/javascript" src="../../controlador/utilidades/componentes.js"></script>
+    <script type="text/javascript" src="../../controlador/utilidades/publico.js"></script>
+    <!-- *Llamada al controlador de carrito -->
+    <script type="text/javascript" src="../../controlador/publico/carrito.js"></script>
+</body>
+
+</html>
