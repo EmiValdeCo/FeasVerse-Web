@@ -393,3 +393,18 @@ function restoreEvrPS() {
     boton.textContent = "Bloquear"; // Restaurar el texto del botón a "Bloquear"
     texto.textContent = ''; // Eliminar el texto del elemento de información
 }
+
+
+const generarReporteActivos = async () => {
+    // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
+    const PATH = new URL(`${SERVER_URL}reports/private/clientes_activos.php`);
+    // Se abre el reporte en una nueva pestaña.
+    window.open(PATH.href);
+}
+
+const generarReporteInactivos = async () => {
+    // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
+    const PATH = new URL(`${SERVER_URL}reports/private/clientes_inactivos.php`);
+    // Se abre el reporte en una nueva pestaña.
+    window.open(PATH.href);
+}

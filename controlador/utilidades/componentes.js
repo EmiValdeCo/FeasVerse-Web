@@ -152,6 +152,34 @@ const pieGraph = (canvas, legends, values, title) => {
     });
 }
 
+const donutGraph = (canvas, legends, values, title) => {
+    // Se declara un arreglo para guardar códigos de colores en formato hexadecimal.
+    let colors = [];
+    // Se generan códigos hexadecimales de 6 cifras de acuerdo con el número de datos a mostrar y se agregan al arreglo.
+    values.forEach(() => {
+        colors.push('#' + (Math.random().toString(16)).substring(2, 8));
+    });
+    // Se crea una instancia para generar el gráfico con los datos recibidos.
+    new Chart(document.getElementById(canvas), {
+        type: 'doughnut',
+        data: {
+            labels: legends,
+            datasets: [{
+                data: values,
+                backgroundColor: colors
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: title
+                }
+            }
+        }
+    });
+}
+
 /*
 *   Función para generar un gráfico de BAr.
 *   Requiere la librería chasrt.js para funcionar.
@@ -210,6 +238,59 @@ const BarVerGraph = (canvas, legends, values, title) => {
         }
     });
 };
+
+const BarVer2Graph = (canvas, legends, values, title) => {
+    // Se declara un arreglo para guardar códigos de colores en formato hexadecimal.
+    let colors = [];
+    // Se generan códigos hexadecimales de 6 cifras de acuerdo con el número de datos a mostrar y se agregan al arreglo.
+    values.forEach(() => {
+        colors.push('#' + (Math.random().toString(16)).substring(2, 8));
+    });
+    // Se crea una instancia para generar el gráfico con los datos recibidos.
+    new Chart(document.getElementById(canvas), {
+        type: 'bar',
+        data: {
+            labels: legends,
+            datasets: [{
+                label: 'Promedio de Calificación',
+                data: values,
+                backgroundColor: colors,
+                borderColor: colors,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: title,
+                    font: {
+                        size: 18
+                    }
+                },
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Calificación'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Zapatos'
+                    }
+                }
+            }
+        }
+    });
+};;
 
 /*
 *   Función asíncrona para cerrar la sesión del usuario.

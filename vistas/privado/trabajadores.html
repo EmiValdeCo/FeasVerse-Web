@@ -134,6 +134,27 @@
                             <span class="clear-icon" onclick="clearSearch()"><i class="bi clear-icon"></i></span>
                         </div>
 
+                        <h1 class="d-flex justify-content-center text-white mb-4 mt-2">Generar reportes</h1>
+                        <div class="d-flex justify-content-center">
+
+                            <button type="button" id="btnSeeReportPendiente"
+                                class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                onclick="generarReporte()">
+                                Todos los trabajadores
+                            </button>
+                            <button type="button" id="btnSeeReportPendiente"
+                                class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                onclick="generarReporteActivos()">
+                                Trabajadores activos
+                            </button>
+                            <button type="button" id="btnSeeReportPendiente"
+                                class="btn btn2 btn-primary ms-4 shadow text18 titillium-web-regular"
+                                onclick="generarReporteInactivos()">
+                                Trabajadores inactivos
+                            </button>
+
+                        </div>
+
                         <div class="Contenedor-tabla z-3 mt-4 table-responsive col-11">
                             <table class="table table-hover table-bordered" id="tablaTrabajadores">
                                 <thead class="thead">

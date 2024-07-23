@@ -21,6 +21,10 @@
     background-color: white;
 }
 
+.btnSeeReportPendiente{
+
+}
+
 /* Estilos para el contenedor de la pestaña */
 .ContenedorPestaña {
     min-height: 100%;
@@ -232,9 +236,8 @@
 
 /* Estilos para btn2 */
 .btn2 {
-    background-color: white;
-    border: #8F8F8F 1px solid;
-    color: black;
+    background-color:#146A93;
+    color: white;
 }
 
 /* Estilos para form1 */
@@ -294,4 +297,3 @@ thead tr th {
     top: 0;
     z-index: 10;
 }
-

@@ -34,6 +34,10 @@
     width: 300px;
 }
 
+.graficContainerCliente{
+    width: 500px;
+}
+
 .mainBody{
     width: fit-content;
 }
@@ -69,7 +73,7 @@
 }
 
 @media screen and (min-width: 550px) {
-    .graficContainer{
+    .graficContainer, .graficContainerCliente{
         width: 550px;
     }
     
