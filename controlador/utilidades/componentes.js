@@ -3,7 +3,7 @@
 *   Parámetros: message (mensaje de confirmación).
 *   Retorno: resultado de la promesa.
 */
-const IP = 'http://192.168.1.18';
+const IP = 'http://localhost';
 // Constante para establecer la ruta base del servidor.
 const SERVER_URL = `${IP}/FeasVerse-Api/api/`;
 
