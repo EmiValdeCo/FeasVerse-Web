@@ -206,7 +206,7 @@ const comprar = async () => {
 const generarReporte = async () => {
     // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
     const PATH = new URL(`${SERVER_URL}reports/public/factura.php`);
-    console.log(PATH.href);
+   
     // Realiza la llamada para generar y guardar el PDF
     const response = await fetch(PATH.href);
     const result = await response.json();

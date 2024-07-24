@@ -33,9 +33,9 @@ const fillTable = async () => {
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         fillSelect(ZAPATOS_API, 'readOneColoresZapato', 'coloresInput', '', FORM);
-        DATA.dataset.forEach(row => {
-            PRECIO_ZAPATO = row.precio_unitario_zapato;
-            CONTAINER_TITLE.innerHTML += `
+        let row = DATA.dataset;
+        PRECIO_ZAPATO = row.precio_unitario_zapato;
+        CONTAINER_TITLE.innerHTML += `
             <!--NOMBRE-->
             <h1 class="m-0 p-0 titillium-web-regular">
                 ${row.nombre_marca} ${row.nombre_zapato}
@@ -45,7 +45,7 @@ const fillTable = async () => {
                 Zapatos tipo ${row.genero_zapato} 
             </h6>
             `;
-            CONTAINER_PRECIO_CALIFICACION.innerHTML += `
+        CONTAINER_PRECIO_CALIFICACION.innerHTML += `
             <!-- PRECIO-->
             <h3 class="m-0 p-0 titillium-web-bold">
                 $${row.precio_unitario_zapato}
@@ -56,7 +56,7 @@ const fillTable = async () => {
                 <p class="titillium-web-bold text25 m-0 align-baselin clYellowStar2">${row.estrellas !== null ? row.estrellas : 0}</p>
             </div>
             `;
-            CONTAINER_DESCRIPCION.innerHTML += `
+        CONTAINER_DESCRIPCION.innerHTML += `
             <div class="tituloDescripcion">
                 <h4 class="m-0 p-0 titillium-web-bold">
                     Descripción
@@ -66,10 +66,9 @@ const fillTable = async () => {
                 </p>
             </div>
             `;
-            CONTAINER_IMAGEN.innerHTML += `
+        CONTAINER_IMAGEN.innerHTML += `
             <img src="${SERVER_URL}helpers/images/zapatos/${row.foto_detalle_zapato}" class="imgShoe">
             `;
-        });
         fillTallas();
         fillResegnas();
         fillSlider();
@@ -221,7 +220,7 @@ const fillTallas = async () => {
     // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
     if (DATA.status) {
         //DATA.dataset.forEach(row => {
-            CONTAINER_TALLAS.innerHTML += `
+        CONTAINER_TALLAS.innerHTML += `
                 <h5 class="titillium-web-regular m-0 p-0">
                     Seleccione un color
                 </h5>
@@ -293,7 +292,7 @@ const fetchColoresDisponibles = async (id_talla) => {
     }
 }
 
-COLOR_INPUT.addEventListener('change', function() {
+COLOR_INPUT.addEventListener('change', function () {
     var selectedValue = COLOR_INPUT.value;
     fetchTallasDisponibles(selectedValue);
 });
