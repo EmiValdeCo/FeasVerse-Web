@@ -67,7 +67,7 @@ const fillTable = async () => {
                     </button>
                 </td>
                 <td>
-                    <button onclick="eliminar(${row.id_detalles_pedido})">
+                    <button onclick="eliminar(${row.id_detalles_pedido}, ${row.cantidad_pedido})">
                         <img src="../../recursos/imagenes/basura.svg" alt="Icono de basura"
                             class="imgBasura">
                     </button>
@@ -125,9 +125,10 @@ const actualizar = async (id, cantidad, idZapato) => {
     idDetalle = id;
     idShoes = idZapato;
     cantdad = cantidad;
-    document.getElementById('cant').value = cantidad; // Asigna la cantidad al input
+    document.getElementById('cantidadNew').value = cantidad; // Asigna la cantidad al input
     const FORM2 = new FormData();
     FORM2.append('id_detalle_zapato', idShoes);
+    FORM2.append('cantidadOld', cantidadOld);
     // Petición para guardar los datos del formulario.
 
     const DATA2 = await fetchData(ZAPATOS_API, 'validationCantidad', FORM2);
@@ -206,7 +207,7 @@ const comprar = async () => {
 const generarReporte = async () => {
     // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
     const PATH = new URL(`${SERVER_URL}reports/public/factura.php`);
-   
+
     // Realiza la llamada para generar y guardar el PDF
     const response = await fetch(PATH.href);
     const result = await response.json();
@@ -238,11 +239,12 @@ const mandarCorreo = async (rutaPDF) => {
 let idPedidoCliente; // Variable para almacenar el ID del pedido del cliente
 
 // Función para eliminar un producto del carrito
-const eliminar = async (id) => {
+const eliminar = async (id, cantidad) => {
     const RESPONSE = await confirmAction('¿Seguro qué quieres eliminar este producto?', 'Se eliminará de tu carrito de compras');
     if (RESPONSE.isConfirmed) {
         const FORM = new FormData();
         FORM.append('idDetallesPedido', id);
+        FORM.append('cantidad', cantidad);
         const DATA = await fetchData(CARRITO_API, 'deleteRow', FORM);
 
         if (DATA.status) {
@@ -312,10 +314,10 @@ const actuEvent = async () => {
                             fillTable();
                             DATA_MODAL.hide();
                         } else {
-                            if(DATA.exception === 'Error de sintaxis en la sentencia SQL'){
+                            if (DATA.exception === 'Error de sintaxis en la sentencia SQL') {
                                 sweetAlert(2, 'Tiene que poner una cantidad menor del stock', false);
                             }
-                            else{ 
+                            else {
                                 makeFieldsReadOnly(false);
                                 sweetAlert(2, DATA.error, false);
                             }
