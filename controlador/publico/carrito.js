@@ -385,7 +385,7 @@ const botonComprar = async () => {
         // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
         if (DATA.status) {
             const ROW = DATA.dataset;
-            NOMBRE_INPUT.innerHTML = ROW.nombre_cliente;
+            NOMBRE_INPUT.value = ROW.nombre_cliente;
             APELLIDOS_INPUT.value = ROW.apellido_cliente;
             TELEFONO_INPUT.value = ROW.telefono_cliente;
             CORREO_INPUT.value = ROW.correo_cliente;
