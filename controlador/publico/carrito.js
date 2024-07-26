@@ -176,8 +176,9 @@ const comprar = async () => {
             const DATA = await fetchData(CARRITO_API, 'update', FORM1);
 
             if (DATA.status) {
-                paga(); // Muestra la notificación de éxito
+                await paga(); // Muestra la notificación de éxito
                 fillTable(); // Vuelve a cargar la tabla
+                generarReporte();
             } else {
                 if (DATA === 'Acceso denegado') {
                     await sweetAlert(3, 'Debes de iniciar sesión', false);
@@ -199,6 +200,37 @@ const comprar = async () => {
 
             }
         }
+    }
+}
+
+const generarReporte = async () => {
+    // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
+    const PATH = new URL(`${SERVER_URL}reports/public/factura.php`);
+
+    // Realiza la llamada para generar y guardar el PDF
+    const response = await fetch(PATH.href);
+    const result = await response.json();
+
+    if (result.status) {
+        // Si el PDF se generó y guardó correctamente, abrir el PDF en una nueva ventana
+        window.open(result.rutaPDF);
+
+        // Enviar el correo con la ruta del PDF
+        await mandarCorreo(result.rutaPDF);
+    } else {
+        sweetAlert(3, result.message, false);
+    }
+}
+
+const mandarCorreo = async (rutaPDF) => {
+    const FORM = new FormData();
+    FORM.append('rutaPDF', rutaPDF);
+    const DATA = await fetchData(PEDIDOS_API, 'enviarFactura', FORM);
+
+    if (DATA.status) {
+        sweetAlert(1, DATA.message, false);
+    } else {
+        sweetAlert(3, DATA.error, false);
     }
 }
 
@@ -352,7 +384,7 @@ const botonComprar = async () => {
         // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
         if (DATA.status) {
             const ROW = DATA.dataset;
-            NOMBRE_INPUT.innerHTML = ROW.nombre_cliente;
+            NOMBRE_INPUT.value = ROW.nombre_cliente;
             APELLIDOS_INPUT.value = ROW.apellido_cliente;
             TELEFONO_INPUT.value = ROW.telefono_cliente;
             CORREO_INPUT.value = ROW.correo_cliente;
