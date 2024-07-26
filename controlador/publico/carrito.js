@@ -17,7 +17,6 @@ const TOTAL_PAGAR = document.getElementById('totalPagar'); // Elemento para most
 
 const CLIENTES_API = 'services/publica/cliente.php'; // URL de la API de clientes
 const ZAPATOS_API = 'services/publica/zapatos.php'; // URL de la API de zapatos
-const PEDIDOS_API = 'services/publica/pedidos.php'; // URL de la API de pedidos
 
 // Declaración de constantes para el modal, el título del modal y el formulario de comentario.
 const DATA_MODAL = new bootstrap.Modal('#dataModal'), // Instancia del modal de Bootstrap
@@ -67,7 +66,7 @@ const fillTable = async () => {
                     </button>
                 </td>
                 <td>
-                    <button onclick="eliminar(${row.id_detalles_pedido}, ${row.cantidad_pedido})">
+                    <button onclick="eliminar(${row.id_detalles_pedido})">
                         <img src="../../recursos/imagenes/basura.svg" alt="Icono de basura"
                             class="imgBasura">
                     </button>
@@ -101,6 +100,7 @@ const fillTable = async () => {
             const DATA2 = await fetchData(CARRITO_API, 'createRow', FORM1);
 
             if (DATA2.status) {
+                sweetAlert(4, DATA.error, true);
                 TEXT_PRECIO_TOTAL.innerHTML = `<b>Total:</b> $${0}`;
             } else {
                 sweetAlert(4, DATA.error, true);
@@ -125,10 +125,9 @@ const actualizar = async (id, cantidad, idZapato) => {
     idDetalle = id;
     idShoes = idZapato;
     cantdad = cantidad;
-    document.getElementById('cantidadNew').value = cantidad; // Asigna la cantidad al input
+    document.getElementById('cant').value = cantidad; // Asigna la cantidad al input
     const FORM2 = new FormData();
     FORM2.append('id_detalle_zapato', idShoes);
-    FORM2.append('cantidadOld', cantidadOld);
     // Petición para guardar los datos del formulario.
 
     const DATA2 = await fetchData(ZAPATOS_API, 'validationCantidad', FORM2);
@@ -177,9 +176,8 @@ const comprar = async () => {
             const DATA = await fetchData(CARRITO_API, 'update', FORM1);
 
             if (DATA.status) {
-                await paga(); // Muestra la notificación de éxito
+                paga(); // Muestra la notificación de éxito
                 fillTable(); // Vuelve a cargar la tabla
-                generarReporte(); // Genera el reporte de la compra
             } else {
                 if (DATA === 'Acceso denegado') {
                     await sweetAlert(3, 'Debes de iniciar sesión', false);
@@ -204,47 +202,14 @@ const comprar = async () => {
     }
 }
 
-const generarReporte = async () => {
-    // Se declara una constante tipo objeto con la ruta específica del reporte en el servidor.
-    const PATH = new URL(`${SERVER_URL}reports/public/factura.php`);
-
-    // Realiza la llamada para generar y guardar el PDF
-    const response = await fetch(PATH.href);
-    const result = await response.json();
-
-    if (result.status) {
-        // Si el PDF se generó y guardó correctamente, abrir el PDF en una nueva ventana
-        window.open(result.rutaPDF);
-
-        // Enviar el correo con la ruta del PDF
-        await mandarCorreo(result.rutaPDF);
-    } else {
-        sweetAlert(3, result.message, false);
-    }
-}
-
-const mandarCorreo = async (rutaPDF) => {
-    const FORM = new FormData();
-    FORM.append('rutaPDF', rutaPDF);
-    const DATA = await fetchData(PEDIDOS_API, 'enviarFactura', FORM);
-
-    if (DATA.status) {
-        sweetAlert(1, DATA.message, false);
-    } else {
-        sweetAlert(3, DATA.error, false);
-    }
-}
-
-
 let idPedidoCliente; // Variable para almacenar el ID del pedido del cliente
 
 // Función para eliminar un producto del carrito
-const eliminar = async (id, cantidad) => {
+const eliminar = async (id) => {
     const RESPONSE = await confirmAction('¿Seguro qué quieres eliminar este producto?', 'Se eliminará de tu carrito de compras');
     if (RESPONSE.isConfirmed) {
         const FORM = new FormData();
         FORM.append('idDetallesPedido', id);
-        FORM.append('cantidad', cantidad);
         const DATA = await fetchData(CARRITO_API, 'deleteRow', FORM);
 
         if (DATA.status) {
@@ -314,10 +279,10 @@ const actuEvent = async () => {
                             fillTable();
                             DATA_MODAL.hide();
                         } else {
-                            if (DATA.exception === 'Error de sintaxis en la sentencia SQL') {
+                            if(DATA.exception === 'Error de sintaxis en la sentencia SQL'){
                                 sweetAlert(2, 'Tiene que poner una cantidad menor del stock', false);
                             }
-                            else {
+                            else{ 
                                 makeFieldsReadOnly(false);
                                 sweetAlert(2, DATA.error, false);
                             }
@@ -387,7 +352,7 @@ const botonComprar = async () => {
         // Se comprueba si la respuesta es satisfactoria, de lo contrario se muestra un mensaje con la excepción.
         if (DATA.status) {
             const ROW = DATA.dataset;
-            NOMBRE_INPUT.value = ROW.nombre_cliente;
+            NOMBRE_INPUT.innerHTML = ROW.nombre_cliente;
             APELLIDOS_INPUT.value = ROW.apellido_cliente;
             TELEFONO_INPUT.value = ROW.telefono_cliente;
             CORREO_INPUT.value = ROW.correo_cliente;
